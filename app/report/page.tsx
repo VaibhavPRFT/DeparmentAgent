@@ -1,166 +1,204 @@
 import type { Metadata } from "next";
-import { report } from "@/data/report";
+import { report, type FlagKind } from "@/data/report";
 
 export const metadata: Metadata = {
   title: "Optimizely Trend & Content Opportunities — Royal Cyber",
 };
 
-function Chip({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="break-all rounded-full border border-opti-line bg-opti-chip px-2.5 py-1 text-xs text-opti-muted">
-      {children}
-    </span>
-  );
-}
+const FLAG_CLASS: Record<FlagKind, string> = {
+  ai: "border-[#2c4a9e] text-[#cfe0ff]",
+  ent: "border-[#1f7d6e] text-[#bff0e4]",
+  gap: "border-[#7d5a1f] text-[#ffd9a8]",
+};
 
-function Card({ children }: { children: React.ReactNode }) {
+function Section({
+  n,
+  title,
+  intro,
+  children,
+}: {
+  n: string;
+  title: string;
+  intro?: string;
+  children: React.ReactNode;
+}) {
   return (
-    <section className="my-6 rounded-2xl border border-opti-line bg-opti-panel p-6 sm:p-7">
+    <section className="my-9">
+      <h2 className="text-[19px] font-semibold tracking-tight">
+        <span className="mr-2 font-semibold text-opti-teal">{n}</span>
+        {title}
+      </h2>
+      {intro ? (
+        <p className="mb-4 mt-1 max-w-3xl text-[13.5px] text-opti-muted">
+          {intro}
+        </p>
+      ) : (
+        <div className="mb-2" />
+      )}
       {children}
     </section>
   );
 }
 
-function H2({
-  children,
-  sub,
-}: {
-  children: React.ReactNode;
-  sub?: string;
-}) {
+function Card({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-4 text-xl font-bold">
+    <div className="my-3 rounded-2xl border border-opti-line bg-opti-panel p-5">
       {children}
-      {sub ? (
-        <span className="ml-2 text-sm font-normal text-opti-muted">{sub}</span>
-      ) : null}
-    </h2>
+    </div>
   );
 }
 
+function Scores({ items }: { items: { label: string; pri?: boolean }[] }) {
+  return (
+    <div className="mt-2 flex flex-wrap gap-1.5">
+      {items.map((s, i) => (
+        <span
+          key={i}
+          className={`rounded-md border px-2.5 py-1 text-[11.5px] ${
+            s.pri
+              ? "border-opti-accent bg-opti-accent font-semibold text-white"
+              : "border-opti-line bg-opti-chip text-opti-muted"
+          }`}
+        >
+          {s.label}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+const TH = "px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-opti-teal";
+const TD = "border-b border-opti-line px-3 py-2.5 align-top";
+
 export default function ReportPage() {
   return (
-    <div className="bg-opti-navy">
+    <div className="bg-gradient-to-b from-[#070b16] to-opti-navy">
       <div className="mx-auto max-w-5xl px-6 py-10 text-opti-ink">
-        <header>
-          <div className="text-xs font-bold uppercase tracking-[0.16em] text-opti-teal">
-            {report.eyebrow}
-          </div>
-          <h1 className="mt-2 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <header className="mb-7 border-b border-opti-line pb-6">
+          <h1 className="text-[27px] font-bold tracking-tight">
             {report.title}
           </h1>
-          <p className="mt-1 text-sm text-opti-muted">
-            Generated {report.generated}
+          <p className="mt-1.5 text-sm text-opti-muted">
+            {report.sub} · Generated {report.generated}
           </p>
-          <p className="mt-4 max-w-3xl text-[17px] text-opti-muted">
-            {report.lede}
-          </p>
+          <div className="mt-3.5 flex flex-wrap gap-2">
+            {report.tags.map((t, i) => (
+              <span
+                key={i}
+                className={`rounded-full border px-2.5 py-1 text-xs ${
+                  t.hot
+                    ? "border-opti-accent bg-opti-accent text-white"
+                    : "border-opti-line bg-opti-chip text-opti-muted"
+                }`}
+              >
+                {t.label}
+              </span>
+            ))}
+          </div>
         </header>
 
-        {/* TRENDS */}
-        <Card>
-          <H2 sub="· ranked by momentum">Top Emerging Trends</H2>
+        <Section
+          n="01"
+          title="Top Emerging Trends"
+          intro="Clusters ranked by momentum (signal volume, recency weighting, and source diversity). Every cluster below cleared the momentum threshold and is anchored to dated releases, roadmap items, or documented capabilities."
+        >
           {report.trends.map((t) => (
             <div
               key={t.rank}
-              className="my-4 border-l-[3px] border-opti-accent py-1.5 pl-4"
+              className="flex items-start gap-3.5 border-b border-opti-line py-3.5 last:border-b-0"
             >
-              <h3 className="text-base font-semibold">
-                {t.rank}. {t.title}{" "}
-                <span className="text-opti-muted">
-                  (momentum {t.momentum})
-                </span>
-              </h3>
-              <p className="mt-1 text-opti-muted">{t.body}</p>
-              <div className="mt-2 flex flex-wrap gap-1.5">
-                {t.sources.map((s) => (
-                  <Chip key={s}>{s}</Chip>
-                ))}
+              <div className="flex h-[30px] w-[30px] flex-none items-center justify-center rounded-lg bg-opti-accent text-sm font-bold text-white">
+                {t.rank}
+              </div>
+              <div className="flex-1">
+                <h3 className="text-[15.5px] font-semibold">{t.title}</h3>
+                <p className="mt-0.5 text-[13.5px] text-opti-muted">{t.body}</p>
+                <div className="mt-1.5 flex flex-wrap gap-1.5">
+                  {t.flags.map((f, i) => (
+                    <span
+                      key={i}
+                      className={`rounded-[5px] border px-2 py-0.5 text-[11px] ${FLAG_CLASS[f.kind]}`}
+                    >
+                      {f.label}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
-        </Card>
+        </Section>
 
-        {/* RELEASES */}
-        <Card>
-          <H2 sub="· latest from Release notes by product">Release Updates</H2>
+        <Section
+          n="02"
+          title="Release Updates"
+          intro="Dated entries from official Optimizely release notes within the lookback window, newest first."
+        >
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full border-collapse text-[13.5px]">
               <thead>
-                <tr className="text-left text-xs uppercase tracking-wide text-opti-teal">
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Product
-                  </th>
-                  <th className="border-b border-opti-line px-3 py-2.5">Date</th>
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Release Highlight
-                  </th>
-                  <th className="border-b border-opti-line px-3 py-2.5">Type</th>
+                <tr>
+                  <th className={TH}>Product</th>
+                  <th className={TH}>Date</th>
+                  <th className={TH}>Release Highlight</th>
+                  <th className={TH}>Type</th>
                 </tr>
               </thead>
               <tbody>
                 {report.releases.map((r, i) => (
                   <tr key={i}>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top font-medium whitespace-nowrap">
+                    <td className={`${TD} whitespace-nowrap font-medium`}>
                       {r.product}
                     </td>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top whitespace-nowrap text-opti-muted">
+                    <td className={`${TD} whitespace-nowrap text-opti-muted`}>
                       {r.date}
                     </td>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top text-opti-muted">
+                    <td className={`${TD} text-opti-muted`}>
                       {r.highlight}
+                      <span className="mt-1.5 block break-all text-[11.5px] text-[#6f80a4]">
+                        {r.source}
+                      </span>
                     </td>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top whitespace-nowrap text-opti-muted">
-                      {r.type}
+                    <td className={TD}>
+                      <span className="whitespace-nowrap rounded-md border border-opti-line bg-opti-chip px-2 py-0.5 text-[11.5px] text-opti-muted">
+                        {r.type}
+                      </span>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </Card>
+        </Section>
 
-        {/* EVENTS */}
-        <Card>
-          <H2 sub="· from Optimizely Events & webinars">Upcoming Events</H2>
+        <Section
+          n="03"
+          title="Upcoming Events"
+          intro="Events upcoming relative to today, sourced from the Optimizely events listing and individual event pages."
+        >
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full border-collapse text-[13.5px]">
               <thead>
-                <tr className="text-left text-xs uppercase tracking-wide text-opti-teal">
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Event
-                  </th>
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    When / Format
-                  </th>
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Focus
-                  </th>
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Register
-                  </th>
+                <tr>
+                  <th className={TH}>Event</th>
+                  <th className={TH}>When / Format</th>
+                  <th className={TH}>Focus</th>
+                  <th className={TH}>Register</th>
                 </tr>
               </thead>
               <tbody>
                 {report.events.map((e, i) => (
                   <tr key={i}>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top font-medium">
-                      {e.event}
-                    </td>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top whitespace-nowrap text-opti-muted">
-                      {e.when}
-                    </td>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top text-opti-muted">
-                      {e.focus}
-                    </td>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top">
+                    <td className={`${TD} font-medium`}>{e.event}</td>
+                    <td className={`${TD} text-opti-muted`}>{e.when}</td>
+                    <td className={`${TD} text-opti-muted`}>{e.focus}</td>
+                    <td className={TD}>
                       <a
-                        href={`https://${e.register}`}
+                        href={e.register}
                         target="_blank"
-                        rel="noreferrer"
-                        className="break-all text-opti-accent hover:underline"
+                        rel="noopener noreferrer"
+                        className="inline-block whitespace-nowrap rounded-lg bg-opti-accent px-3 py-1.5 text-[13px] font-semibold text-white hover:bg-[#2f5ae0]"
                       >
-                        {e.register}
+                        Register
                       </a>
                     </td>
                   </tr>
@@ -168,116 +206,164 @@ export default function ReportPage() {
               </tbody>
             </table>
           </div>
-        </Card>
+        </Section>
 
-        {/* BLOGS */}
-        <Card>
-          <H2>High-Value Blog Opportunities</H2>
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="text-left text-xs uppercase tracking-wide text-opti-teal">
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Title
-                  </th>
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Audience
-                  </th>
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Engagement
-                  </th>
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Difficulty
-                  </th>
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Why Now
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {report.blogs.map((b, i) => (
-                  <tr key={i}>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top font-medium">
-                      {b.title}
-                    </td>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top text-opti-muted">
-                      {b.audience}
-                    </td>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top text-opti-muted">
-                      {b.engagement}
-                    </td>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top text-opti-muted">
-                      {b.difficulty}
-                    </td>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top text-opti-muted">
-                      {b.whyNow}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        <Section
+          n="04"
+          title="Product Roadmap"
+          intro="Near-term items pulled from the current / Now / Q2 sections of each product-updates page. Forward-looking and informational only — Optimizely states the roadmap is not binding and may change."
+        >
+          <div className="grid gap-3.5 sm:grid-cols-2">
+            {report.roadmap.map((c, i) => (
+              <div
+                key={i}
+                className="rounded-xl border border-opti-line bg-opti-chip p-4"
+              >
+                <div className="text-xs font-semibold uppercase tracking-wide text-opti-teal">
+                  {c.phase}
+                </div>
+                <h3 className="mt-0.5 text-[15px] font-semibold">{c.product}</h3>
+                <ul className="my-2.5 list-disc space-y-1 pl-[18px] text-[13.5px] text-opti-muted">
+                  {c.items.map((it, j) => (
+                    <li key={j}>{it}</li>
+                  ))}
+                </ul>
+                <a
+                  href={c.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[13px] font-semibold text-opti-accent hover:underline"
+                >
+                  View roadmap →
+                </a>
+              </div>
+            ))}
           </div>
-        </Card>
+        </Section>
 
-        {/* WHITEPAPERS */}
-        <Card>
-          <H2>Whitepaper Opportunities</H2>
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="text-left text-xs uppercase tracking-wide text-opti-teal">
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Topic
-                  </th>
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Business Value
-                  </th>
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Technical Depth
-                  </th>
-                  <th className="border-b border-opti-line px-3 py-2.5">
-                    Ideal Audience
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {report.whitepapers.map((w, i) => (
-                  <tr key={i}>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top font-medium">
-                      {w.topic}
-                    </td>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top text-opti-muted">
-                      {w.businessValue}
-                    </td>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top text-opti-muted">
-                      {w.technicalDepth}
-                    </td>
-                    <td className="border-b border-opti-line px-3 py-2.5 align-top text-opti-muted">
-                      {w.audience}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </Card>
-
-        {/* LINKEDIN */}
-        <Card>
-          <H2>LinkedIn Post Ideas</H2>
-          {report.linkedin.map((g) => (
-            <div key={g.group} className="my-3">
-              <h4 className="mb-1.5 text-sm font-semibold text-opti-accent">
-                {g.group}
-              </h4>
-              <ul className="list-disc space-y-1.5 pl-5 text-opti-muted">
-                {g.ideas.map((idea, i) => (
-                  <li key={i}>{idea}</li>
-                ))}
-              </ul>
-            </div>
+        <Section
+          n="05"
+          title="High-Value Blog Opportunities"
+          intro="Blog angles tied to in-window releases, roadmap items, or events. Scores are 1–10; composite priority weights AI relevance, enterprise relevance, momentum, uniqueness, and search trend."
+        >
+          {report.blogs.map((b, i) => (
+            <Card key={i}>
+              <h3 className="text-base font-semibold">{b.title}</h3>
+              <p className="my-2 text-[13.5px] text-opti-muted">{b.why}</p>
+              <Scores
+                items={[
+                  { label: `Audience: ${b.audience}` },
+                  { label: `Difficulty: ${b.difficulty}` },
+                  { label: `Engagement ${b.engagement}` },
+                  { label: `Uniqueness ${b.uniqueness}` },
+                  { label: `Composite priority ${b.priority}`, pri: true },
+                ]}
+              />
+            </Card>
           ))}
-        </Card>
+        </Section>
+
+        <Section
+          n="06"
+          title="Whitepaper Opportunities"
+          intro="Longer-form, enterprise-oriented assets for buying committees and architecture reviews."
+        >
+          {report.whitepapers.map((w, i) => (
+            <Card key={i}>
+              <h3 className="text-base font-semibold">{w.title}</h3>
+              <p className="my-2 text-[13.5px] text-opti-muted">{w.why}</p>
+              <Scores
+                items={[
+                  { label: `Audience: ${w.audience}` },
+                  { label: `Difficulty: ${w.difficulty}` },
+                  { label: `Engagement ${w.engagement}` },
+                  { label: `Uniqueness ${w.uniqueness}` },
+                  { label: `Composite priority ${w.priority}`, pri: true },
+                ]}
+              />
+            </Card>
+          ))}
+        </Section>
+
+        <Section
+          n="07"
+          title="LinkedIn Post Ideas"
+          intro="Short, evidence-led posts that ride current releases and events."
+        >
+          {report.linkedin.map((l, i) => (
+            <Card key={i}>
+              <h3 className="text-base font-semibold">{l.title}</h3>
+              <p className="my-2 text-[13.5px] text-opti-muted">{l.why}</p>
+              <Scores
+                items={[
+                  { label: `Audience: ${l.audience}` },
+                  { label: `Engagement ${l.engagement}` },
+                  { label: `Uniqueness ${l.uniqueness}` },
+                ]}
+              />
+            </Card>
+          ))}
+        </Section>
+
+        <Section
+          n="08"
+          title="Competitive Insight"
+          intro="Each focus cluster benchmarked against the competitor set."
+        >
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-[13.5px]">
+              <thead>
+                <tr>
+                  <th className={TH}>Theme</th>
+                  <th className={TH}>Optimizely Position</th>
+                  <th className={TH}>Competitor Position</th>
+                  <th className={TH}>Opportunity</th>
+                </tr>
+              </thead>
+              <tbody>
+                {report.competitive.map((c, i) => (
+                  <tr key={i}>
+                    <td className={`${TD} font-medium`}>{c.theme}</td>
+                    <td className={`${TD} text-opti-muted`}>{c.optimizely}</td>
+                    <td className={`${TD} text-opti-muted`}>{c.competitor}</td>
+                    <td className={`${TD} text-opti-muted`}>{c.opportunity}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Section>
+
+        <Section
+          n="09"
+          title="Recommended Immediate Actions"
+          intro="Top items by composite priority, blending AI and enterprise relevance, momentum, uniqueness, and freshness of the underlying signal."
+        >
+          {report.actions.map((a) => (
+            <Card key={a.n}>
+              <h3 className="text-base font-semibold">
+                {a.n}. {a.title}
+              </h3>
+              <p className="my-2 text-[13.5px] text-opti-muted">{a.why}</p>
+              <Scores
+                items={[
+                  { label: `Composite priority ${a.priority}`, pri: true },
+                  { label: `Format: ${a.format}` },
+                ]}
+              />
+            </Card>
+          ))}
+        </Section>
+
+        <Section n="10" title="Next 7 Days">
+          <ul className="list-disc space-y-2 pl-5 text-sm text-opti-muted">
+            {report.next7.map((it, i) => (
+              <li key={i}>
+                <b className="text-opti-ink">{it.bold}</b> {it.text}
+              </li>
+            ))}
+          </ul>
+        </Section>
       </div>
     </div>
   );

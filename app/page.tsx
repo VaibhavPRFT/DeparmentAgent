@@ -3,10 +3,7 @@ import { report } from "@/data/report";
 import { weeklyPlan } from "@/data/weeklyPlan";
 
 export default function HomePage() {
-  const totalTasks = weeklyPlan.weeks.reduce(
-    (n, w) => n + w.tasks.length,
-    0
-  );
+  const totalTasks = weeklyPlan.weeks.reduce((n, w) => n + w.tasks.length, 0);
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-10">
@@ -30,11 +27,11 @@ export default function HomePage() {
           className="group rounded-2xl border border-[#243154] bg-opti-navy p-7 text-opti-ink shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
         >
           <div className="text-xs font-bold uppercase tracking-[0.16em] text-opti-teal">
-            {report.eyebrow}
+            Optimizely Department Agent · Weekly Sweep
           </div>
           <h2 className="mt-2 text-2xl font-bold">{report.title}</h2>
           <p className="mt-3 line-clamp-4 text-sm text-opti-muted">
-            {report.lede}
+            {report.sub}
           </p>
           <div className="mt-5 flex flex-wrap gap-4 text-sm text-opti-muted">
             <span>
@@ -47,7 +44,7 @@ export default function HomePage() {
               <b className="text-opti-ink">{report.releases.length}</b> releases
             </span>
             <span>
-              <b className="text-opti-ink">{report.events.length}</b> events
+              <b className="text-opti-ink">{report.roadmap.length}</b> roadmaps
             </span>
           </div>
           <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-opti-accent">
@@ -69,7 +66,7 @@ export default function HomePage() {
           <p className="mt-3 text-sm text-[#5a6b82]">
             A {weeklyPlan.weeks.length}-week execution plan covering MCP, Graph,
             Opal, CMS migrations and Configured Commerce — broken into team
-            focus areas and day-by-day tasks with status tracking.
+            focus areas, day-by-day tasks with owners, and a RACI matrix.
           </p>
           <div className="mt-5 flex flex-wrap gap-4 text-sm text-[#5a6b82]">
             <span>
@@ -77,6 +74,10 @@ export default function HomePage() {
             </span>
             <span>
               <b className="text-rc-blue">{totalTasks}</b> tasks
+            </span>
+            <span>
+              <b className="text-rc-blue">{weeklyPlan.raci.rows.length}</b> RACI
+              rows
             </span>
           </div>
           <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-rc-accent">
