@@ -23,7 +23,7 @@ export default function HomePage() {
 
       <section className="grid gap-6 md:grid-cols-2">
         <Link
-          href="/report"
+          href="/newsletter"
           className="group rounded-2xl border border-[#243154] bg-opti-navy p-7 text-opti-ink shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
         >
           <div className="text-xs font-bold uppercase tracking-[0.16em] text-opti-teal">
@@ -48,7 +48,7 @@ export default function HomePage() {
             </span>
           </div>
           <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-opti-accent">
-            Open trend report
+            Open newsletter
             <span className="transition group-hover:translate-x-0.5">→</span>
           </div>
         </Link>
@@ -92,7 +92,7 @@ export default function HomePage() {
           Latest sweep
         </h3>
         <p className="mt-2 text-sm text-[#5a6b82]">
-          Trend report generated{" "}
+          Newsletter generated{" "}
           <b className="text-[#1c2733]">{report.generated}</b> · Weekly plan
           generated <b className="text-[#1c2733]">{weeklyPlan.generated}</b>.
         </p>

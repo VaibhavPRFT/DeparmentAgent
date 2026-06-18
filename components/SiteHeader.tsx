@@ -25,10 +25,10 @@ export default function SiteHeader() {
             Dashboard
           </Link>
           <Link
-            href="/report"
+            href="/newsletter"
             className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15"
           >
-            Trend Report
+            Newsletter
           </Link>
           <Link
             href="/weekly-plan"
