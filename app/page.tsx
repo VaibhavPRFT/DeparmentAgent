@@ -1,9 +1,14 @@
 import Link from "next/link";
 import { report } from "@/data/report";
 import { weeklyPlan } from "@/data/weeklyPlan";
+import { accelerators } from "@/data/accelerators";
 
 export default function HomePage() {
   const totalTasks = weeklyPlan.weeks.reduce((n, w) => n + w.tasks.length, 0);
+  const totalBenefits = accelerators.items.reduce(
+    (n, a) => n + a.benefits.length,
+    0,
+  );
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-10">
@@ -15,9 +20,10 @@ export default function HomePage() {
           Optimizely Insights Dashboard
         </h1>
         <p className="mt-3 max-w-3xl text-[17px] text-[#5a6b82]">
-          A single home for what our Optimizely agents produce each week — the
-          Department Agent&apos;s trend &amp; content sweep, and the rolling
-          six-week execution plan. Pick an agent to dive in.
+          A single home for what our Optimizely practice produces — the
+          Department Agent&apos;s trend &amp; content sweep, the rolling
+          six-week execution plan, and the Royal Cyber accelerators that extend
+          the platform. Pick a card to dive in.
         </p>
       </section>
 
@@ -87,7 +93,63 @@ export default function HomePage() {
         </Link>
       </section>
 
-      <section className="mt-10 rounded-xl border border-[#dde3ec] bg-white p-6">
+      <section className="mt-6">
+        <Link
+          href="/accelerators"
+          className="group block rounded-2xl border border-opti-line bg-opti-navy p-7 text-opti-ink shadow-sm transition duration-200 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-xl"
+        >
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+            <div className="max-w-3xl">
+              <div className="text-xs font-bold uppercase tracking-[0.16em] text-opti-teal">
+                {accelerators.org} · Optimizely Center of Excellence
+              </div>
+              <h2 className="mt-2 text-2xl font-bold">{accelerators.title}</h2>
+              <p className="mt-3 text-sm text-opti-muted">{accelerators.intro}</p>
+              <div className="mt-5 flex flex-wrap gap-4 text-sm text-opti-muted">
+                <span>
+                  <b className="text-opti-ink">{accelerators.items.length}</b>{" "}
+                  accelerators
+                </span>
+                <span>
+                  <b className="text-opti-ink">{totalBenefits}</b> customer
+                  benefits
+                </span>
+                <span>
+                  <b className="text-opti-ink">4</b> platform areas
+                </span>
+              </div>
+            </div>
+            <div className="inline-flex shrink-0 items-center gap-1.5 self-start rounded-full bg-[#0d3b24] px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15633c]">
+              Explore accelerators
+              <span className="transition group-hover:translate-x-0.5">→</span>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {accelerators.items.map((a) => (
+              <div
+                key={a.slug}
+                className="rounded-xl border border-opti-line bg-white p-4"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="flex h-7 w-7 flex-none items-center justify-center rounded-lg bg-opti-accent text-xs font-bold text-white">
+                    {a.n}
+                  </span>
+                  <span className="rounded-full bg-opti-chip px-2 py-0.5 text-[10.5px] font-semibold uppercase tracking-wide text-opti-teal">
+                    {a.maturity}
+                  </span>
+                </div>
+                <h3 className="mt-2.5 text-[15px] font-semibold leading-snug">
+                  {a.name}
+                </h3>
+                <p className="mt-1 text-[12.5px] text-opti-muted">{a.tagline}</p>
+              </div>
+            ))}
+          </div>
+        </Link>
+      </section>
+
+      <section className="mt-6 rounded-xl border border-[#dde3ec] bg-white p-6">
         <h3 className="text-sm font-bold uppercase tracking-wide text-rc-blue">
           Latest sweep
         </h3>
