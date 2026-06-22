@@ -24,7 +24,7 @@ export default function HomePage() {
       <section className="grid gap-6 md:grid-cols-2">
         <Link
           href="/newsletter"
-          className="group rounded-2xl border border-[#243154] bg-opti-navy p-7 text-opti-ink shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
+          className="group rounded-2xl border border-opti-line bg-opti-navy p-7 text-opti-ink shadow-sm transition duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl"
         >
           <div className="text-xs font-bold uppercase tracking-[0.16em] text-opti-teal">
             Optimizely Department Agent · Weekly Sweep
@@ -47,7 +47,7 @@ export default function HomePage() {
               <b className="text-opti-ink">{report.roadmap.length}</b> roadmaps
             </span>
           </div>
-          <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-opti-accent">
+          <div className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-[#0d3b24] px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15633c]">
             Open newsletter
             <span className="transition group-hover:translate-x-0.5">→</span>
           </div>
@@ -55,7 +55,7 @@ export default function HomePage() {
 
         <Link
           href="/weekly-plan"
-          className="group rounded-2xl border border-[#dde3ec] bg-white p-7 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
+          className="group rounded-2xl border border-[#dde3ec] bg-white p-7 shadow-sm transition duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl"
         >
           <div className="text-xs font-bold uppercase tracking-[0.16em] text-rc-accent">
             {weeklyPlan.org} · Weekly Plan Agent
@@ -80,7 +80,7 @@ export default function HomePage() {
               rows
             </span>
           </div>
-          <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-rc-accent">
+          <div className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-[#0d3b24] px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15633c]">
             Open weekly plan
             <span className="transition group-hover:translate-x-0.5">→</span>
           </div>

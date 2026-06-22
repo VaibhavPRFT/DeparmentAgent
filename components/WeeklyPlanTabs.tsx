@@ -5,7 +5,7 @@ import type { WeeklyPlan, Raci } from "@/data/weeklyPlan";
 import { StatusBadge, TypeBadge } from "@/components/badges";
 
 const RACI_CLASS: Record<Exclude<Raci, "">, string> = {
-  R: "bg-[#d8e8ff] text-[#1456b8]",
+  R: "bg-[#d3eef2] text-[#0b6e7d]",
   A: "bg-[#d9f2e3] text-[#13794a]",
   C: "bg-[#fff3cd] text-[#8a6d00]",
   I: "bg-[#eceff3] text-[#5a6b82]",
@@ -29,7 +29,7 @@ export default function WeeklyPlanTabs({ plan }: { plan: WeeklyPlan }) {
             className={`rounded-t-lg border border-b-0 px-5 py-2 text-sm font-semibold transition ${
               w.id === active
                 ? "border-rc-blue bg-rc-blue text-white"
-                : "border-[#dde3ec] bg-[#eef2f8] text-[#41526b] hover:bg-[#e0e8f4]"
+                : "border-[#cfe0d6] bg-[#eef5f0] text-[#41615a] hover:bg-[#e0efe7]"
             }`}
           >
             {w.label}
@@ -145,7 +145,7 @@ function RaciPane({ plan }: { plan: WeeklyPlan }) {
         RACI Matrix — Roles &amp; Responsibilities
       </h2>
       <div className="mt-2 flex flex-wrap items-center gap-2 text-[13px] text-[#41526b]">
-        <span className="rounded-full bg-[#d8e8ff] px-2 py-0.5 text-[11px] font-bold text-[#1456b8]">
+        <span className="rounded-full bg-[#d3eef2] px-2 py-0.5 text-[11px] font-bold text-[#0b6e7d]">
           R
         </span>
         Responsible

@@ -1,11 +1,22 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const NAV = [
+  { href: "/", label: "Dashboard" },
+  { href: "/newsletter", label: "Newsletter" },
+  { href: "/weekly-plan", label: "Weekly Plan" },
+];
 
 export default function SiteHeader() {
+  const pathname = usePathname();
+
   return (
-    <header className="bg-gradient-to-r from-rc-blue to-rc-accent text-white">
+    <header className="bg-gradient-to-r from-[#0a4f30] via-[#0f6e41] to-[#1f9a57] text-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/15 text-sm font-bold tracking-tight">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-lime text-sm font-extrabold tracking-tight text-lime-ink">
             RC
           </div>
           <div>
@@ -17,25 +28,27 @@ export default function SiteHeader() {
             </div>
           </div>
         </Link>
-        <nav className="flex items-center gap-1 text-sm font-semibold">
-          <Link
-            href="/"
-            className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15"
-          >
-            Dashboard
-          </Link>
-          <Link
-            href="/newsletter"
-            className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15"
-          >
-            Newsletter
-          </Link>
-          <Link
-            href="/weekly-plan"
-            className="rounded-md px-3 py-1.5 text-white/90 transition hover:bg-white/15"
-          >
-            Weekly Plan
-          </Link>
+        <nav className="flex items-center gap-1.5 text-sm font-semibold">
+          {NAV.map((item) => {
+            const active =
+              item.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={`rounded-full px-4 py-1.5 transition ${
+                  active
+                    ? "bg-lime text-lime-ink shadow-sm"
+                    : "text-white/90 hover:bg-lime/25 hover:text-white"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </header>
