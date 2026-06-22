@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { WeeklyPlan, Raci } from "@/data/weeklyPlan";
 import { StatusBadge, TypeBadge } from "@/components/badges";
 
@@ -11,8 +11,45 @@ const RACI_CLASS: Record<Exclude<Raci, "">, string> = {
   I: "bg-[#eceff3] text-[#5a6b82]",
 };
 
+const MONTHS: Record<string, number> = {
+  Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+  Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+};
+
+// Parse the start date out of a week subtitle such as
+// "Jun 22 – Jun 26, 2026  |  ..." -> local timestamp for Jun 22, 2026.
+function weekStart(subtitle: string): number | null {
+  const m = subtitle.match(/([A-Z][a-z]{2})\s+(\d{1,2})\b.*?(\d{4})/);
+  if (!m) return null;
+  const month = MONTHS[m[1]];
+  const day = Number(m[2]);
+  const year = Number(m[3]);
+  if (month === undefined || !day || !year) return null;
+  return new Date(year, month, day).getTime();
+}
+
+// Choose the week that matches "today": the latest week whose start date is on
+// or before now (so Jun 22 lands on Week 4). Falls back to the first week when
+// today is before the plan starts, and naturally lands on the last week when
+// today is past the plan. Survives data regeneration since it reads subtitles.
+function currentWeekId(weeks: WeeklyPlan["weeks"], now: number): string {
+  let chosen = weeks[0]?.id ?? "";
+  for (const w of weeks) {
+    const start = weekStart(w.subtitle);
+    if (start !== null && start <= now) chosen = w.id;
+  }
+  return chosen;
+}
+
 export default function WeeklyPlanTabs({ plan }: { plan: WeeklyPlan }) {
+  // Start deterministic (first week) so server-rendered and first client render
+  // match; then snap to the current week of the month once mounted in the browser.
   const [active, setActive] = useState(plan.weeks[0]?.id ?? "");
+
+  useEffect(() => {
+    setActive(currentWeekId(plan.weeks, Date.now()));
+  }, [plan.weeks]);
+
   const isRaci = active === "raci";
   const week = plan.weeks.find((w) => w.id === active) ?? plan.weeks[0];
 
