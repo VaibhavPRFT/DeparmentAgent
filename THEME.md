@@ -75,3 +75,14 @@ The whole card scales up ~2% and lifts with a deeper shadow on hover.
 - The weekly auto-deploy regenerates ONLY `data/report.ts` and `data/weeklyPlan.ts`.
   It must never modify the theme files (tailwind.config.ts, components, page layouts,
   globals.css). Data and theme are decoupled, so the theme persists automatically.
+
+## 8. Behaviours to preserve
+
+- **`/weekly-plan` opens on the current week of the month.**
+  `components/WeeklyPlanTabs.tsx` reads each week's start date from its `subtitle`
+  (e.g. "Jun 22 – Jun 26, 2026  |  …") and, once mounted in the browser, selects the
+  latest week whose start date is on or before today — so Jun 22 lands on **Week 4**.
+  It falls back to Week 1 before the plan starts and to the last week after it ends.
+  The choice is derived at view time from the subtitle dates, so it keeps working
+  after every weekly data regeneration. Do **not** hard-code a default week or remove
+  this logic; the weekly deploy agent must never overwrite this component.
