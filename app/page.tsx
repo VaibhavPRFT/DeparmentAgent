@@ -2,11 +2,23 @@ import Link from "next/link";
 import { report } from "@/data/report";
 import { weeklyPlan } from "@/data/weeklyPlan";
 import { accelerators } from "@/data/accelerators";
+import { projectsData } from "@/data/projects";
 
 export default function HomePage() {
   const totalTasks = weeklyPlan.weeks.reduce((n, w) => n + w.tasks.length, 0);
   const totalBenefits = accelerators.items.reduce(
     (n, a) => n + a.benefits.length,
+    0,
+  );
+
+  const currentProjects = projectsData.projects.filter(
+    (p) => p.status === "current",
+  );
+  const projectPeople = new Set(
+    currentProjects.flatMap((p) => p.members.map((m) => m.name)),
+  ).size;
+  const projectSeats = currentProjects.reduce(
+    (n, p) => n + p.members.length,
     0,
   );
 
@@ -22,8 +34,8 @@ export default function HomePage() {
         <p className="mt-3 max-w-3xl text-[17px] text-[#5a6b82]">
           A single home for what our Optimizely practice produces — the
           Department Agent&apos;s trend &amp; content sweep, the rolling
-          six-week execution plan, and the Royal Cyber accelerators that extend
-          the platform. Pick a card to dive in.
+          six-week execution plan, the Royal Cyber accelerators, and the live
+          project teams. Pick a card to dive in.
         </p>
       </section>
 
@@ -144,6 +156,56 @@ export default function HomePage() {
                 </h3>
                 <p className="mt-1 text-[12.5px] text-opti-muted">{a.tagline}</p>
               </div>
+            ))}
+          </div>
+        </Link>
+      </section>
+
+      <section className="mt-6">
+        <Link
+          href="/projects"
+          className="group block rounded-2xl border border-[#dde3ec] bg-white p-7 shadow-sm transition duration-200 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-xl"
+        >
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+            <div className="max-w-3xl">
+              <div className="text-xs font-bold uppercase tracking-[0.16em] text-rc-accent">
+                {projectsData.org} · Project Teams
+              </div>
+              <h2 className="mt-2 text-2xl font-bold text-rc-blue">
+                Optimizely Project Teams
+              </h2>
+              <p className="mt-3 text-sm text-[#5a6b82]">
+                Every running Optimizely engagement, the people on each team and
+                their designation — with interactive views of team members by
+                project, project manager, account manager or delivery manager.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-4 text-sm text-[#5a6b82]">
+                <span>
+                  <b className="text-rc-blue">{currentProjects.length}</b>{" "}
+                  projects
+                </span>
+                <span>
+                  <b className="text-rc-blue">{projectPeople}</b> people
+                </span>
+                <span>
+                  <b className="text-rc-blue">{projectSeats}</b> team seats
+                </span>
+              </div>
+            </div>
+            <div className="inline-flex shrink-0 items-center gap-1.5 self-start rounded-full bg-[#0d3b24] px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15633c]">
+              Open projects
+              <span className="transition group-hover:translate-x-0.5">→</span>
+            </div>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            {currentProjects.map((p) => (
+              <span
+                key={p.id}
+                className="rounded-full border border-[#dde3ec] bg-[#f6fbf8] px-3 py-1 text-[12.5px] font-medium text-rc-blue"
+              >
+                {p.name}
+              </span>
             ))}
           </div>
         </Link>

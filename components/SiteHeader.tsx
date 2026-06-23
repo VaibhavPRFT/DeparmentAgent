@@ -8,6 +8,7 @@ const NAV = [
   { href: "/newsletter", label: "Newsletter" },
   { href: "/weekly-plan", label: "Weekly Plan" },
   { href: "/accelerators", label: "Accelerators" },
+  { href: "/projects", label: "Projects" },
 ];
 
 export default function SiteHeader() {
@@ -29,7 +30,7 @@ export default function SiteHeader() {
             </div>
           </div>
         </Link>
-        <nav className="flex items-center gap-1.5 text-sm font-semibold">
+        <nav className="flex flex-wrap items-center gap-1.5 text-sm font-semibold">
           {NAV.map((item) => {
             const active =
               item.href === "/"
