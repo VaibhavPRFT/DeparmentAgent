@@ -90,136 +90,544 @@ export interface Report {
 }
 
 export const report: Report = {
-  title: "Optimizely Trend and Content Opportunities",
-  generated: "June 19, 2026",
-  sub: "A weekly read for content marketers, DevRel leads, solution architects, and product marketers: the signals worth acting on across Opal, Graph, Configured Commerce, CMS 13, Visual Builder, and the MCP Server — each tied to a dated release, event, or roadmap item.",
-  tags: [
-    { label: "Breakout: Opal agents go production-grade", hot: true },
-    { label: "Lookback window: 90 days" },
-    { label: "Focus: Agentic AI · Graph-first commerce · B2B / Configured Commerce" },
-  ],
-  trends: [
+  "title": "Optimizely Trend and Content Opportunities",
+  "generated": "June 24, 2026",
+  "sub": "The department's weekly read on what shipped, what's coming, and where the highest-value content plays sit across Opal, Configured Commerce, CMS, Graph, and Experimentation.",
+  "tags": [
     {
-      rank: 1,
-      title: "Opal agents go production-grade",
-      body: "The dominant signal of the window. June brought the Quality tab (Output Evaluation, Execution Guardrails, Execution Advisor), in-chat PowerPoint/Word creation, Skills, Memory, and a wave of new specialized agents. Community is following closely (Opal cost-vs-value and \"Learning by Doing\" series, mid-June).",
-      flags: [
-        { kind: "ai", label: "AI relevance" },
-        { kind: "ent", label: "Enterprise relevance" },
-      ],
+      "label": "Breakout: Opal Agent Platform goes governance-grade",
+      "hot": true
     },
     {
-      rank: 2,
-      title: "MCP Server becomes the integration story",
-      body: "Experimentation MCP Server (Claude Desktop, Claude Code, Cursor, VS Code Copilot, Windsurf), a CMS SaaS MCP server, and Opal remote MCP connectors (Notion, GitHub, Contentful, Gamma, Sanity, ClickUp). Optimizely's MCP footprint spans content, experimentation, and commerce — broader than test-only rivals.",
-      flags: [
-        { kind: "ai", label: "AI relevance" },
-        { kind: "ent", label: "Enterprise relevance" },
-      ],
+      "label": "Lookback window: 90 days (Mar 26 – Jun 24, 2026)"
     },
     {
-      rank: 3,
-      title: "Graph-first commerce & editor-led search",
-      body: "The Graph Search Management Portal (beta, May 21) hands pinned results, synonyms, and search analytics to editors without developer involvement. Combined with Smooth Rebuild and RAG-for-Graph, Graph is increasingly the delivery layer for both content and Configured Commerce catalogs.",
-      flags: [
-        { kind: "ent", label: "Enterprise relevance" },
-        { kind: "gap", label: "Editor-led search guidance still emerging" },
-      ],
+      "label": "Focus: Agentic AI · MCP everywhere · B2B / Configured Commerce"
+    }
+  ],
+  "trends": [
+    {
+      "rank": 1,
+      "title": "The Opal Agent Platform goes governance-grade",
+      "body": "June was the heaviest Opal release month yet: the June 1 Quality tab (Output Evaluation, Execution Guardrails, Execution Advisor), a June 4 wave of five experimentation/audience agents plus EU app hosting, and June 8 PowerPoint/Word generation. The story has shifted from \"AI features\" to scaling and governing a fleet of specialized agents. Signals span the Opal release notes, World blogs (\"Understanding Opal Cost vs Value,\" Jun 15; \"Learning by Doing – OPAL Series Ep 02,\" Jun 14), and partner posts.",
+      "flags": [
+        {
+          "kind": "ai",
+          "label": "AI relevance"
+        },
+        {
+          "kind": "ent",
+          "label": "Enterprise relevance"
+        }
+      ]
     },
     {
-      rank: 4,
-      title: "CMS 13 GA reshapes the PaaS conversation",
-      body: "CMS 13 reached GA on March 31, followed by Opal Chat + tools (April 7) and Forms 6.0.0 (April 9). Community output is heavy — content variations, page-tree governance, Opti ID SSO/SCIM — making CMS 13 migration a durable content theme.",
-      flags: [
-        { kind: "ent", label: "Enterprise relevance" },
-      ],
+      "rank": 2,
+      "title": "MCP everywhere — and Commerce completes the B2B order",
+      "body": "Optimizely now has a Remote MCP Server for Experimentation, a CMS (SaaS) MCP server (\"Connect your AI client to CMS,\" Jun 4), and a Commerce MCP that authenticates a buyer, manages the cart, takes payment, and submits a full B2B order from inside chat. Community posts (vaibhav's two-part \"AI That Speaks Commerce,\" Jacob Pretorius' \"First Look\") are ahead of official docs — an open content gap, and the strongest Configured Commerce angle of the quarter.",
+      "flags": [
+        {
+          "kind": "ai",
+          "label": "AI relevance"
+        },
+        {
+          "kind": "ent",
+          "label": "Enterprise relevance"
+        },
+        {
+          "kind": "gap",
+          "label": "Docs gap — community ahead"
+        }
+      ]
     },
     {
-      rank: 5,
-      title: "Configured Commerce / B2B leans agentic",
-      body: "Q2 '26 roadmap centers on Cloudflare-for-SaaS (O2O), website-level search configuration, and Datadog in Mission Control, with Opal tools and LLMs.txt support extending the B2B storefront for AI-driven discovery and complex catalogs.",
-      flags: [
-        { kind: "ai", label: "AI relevance" },
-        { kind: "ent", label: "Enterprise relevance" },
-      ],
+      "rank": 3,
+      "title": "Configured Commerce / B2B leans into agentic + Graph-first",
+      "body": "\"Commerce 15 and CMS 13: Optimizely's Next Step Toward AI-Powered, Graph-First Commerce\" (Apr) frames the direction. The Q2 '26 Configured Commerce roadmap adds Ngram part-number search, additional Opal tools, Cloudflare-for-SaaS O2O, and website-level search; Q3 brings Google AI Search GA, AI bulk translations, and B2B profiles in ODP. The Jul 14 CAB at AD Summit is explicitly about AI's impact on configured commerce.",
+      "flags": [
+        {
+          "kind": "ai",
+          "label": "AI relevance"
+        },
+        {
+          "kind": "ent",
+          "label": "Enterprise relevance"
+        }
+      ]
     },
     {
-      rank: 6,
-      title: "Experimentation automation & governance",
-      body: "Program-level Opal agents (Program Overview, Value Estimator, Backlog Prioritization, June 4) plus EU data residency and FX Change Approvals push experimentation from test-creation toward measurable, governed programs — a differentiator vs. copilot-only rivals.",
-      flags: [
-        { kind: "ai", label: "AI relevance" },
-        { kind: "ent", label: "Enterprise relevance" },
-      ],
+      "rank": 4,
+      "title": "Agentic CMS & GEO measurement become real product surface",
+      "body": "CMS 13 reached GA (Mar 31) with Opal Chat/tools (Apr 7). CMS (SaaS) shipped the Agent Visibility Analytics dashboard (Jun 10) to track how AI platforms crawl and cite your site, plus the JS SDK GA (May 5) and DAM GA (May 18). World blogs on CMS 13 content variations and page-tree management are active. The Jun 30 webinar \"Your Enterprise CMS calls itself agentic?\" is a ready-made content hook.",
+      "flags": [
+        {
+          "kind": "ai",
+          "label": "AI relevance"
+        },
+        {
+          "kind": "ent",
+          "label": "Enterprise relevance"
+        },
+        {
+          "kind": "gap",
+          "label": "GEO guidance emerging"
+        }
+      ]
     },
+    {
+      "rank": 5,
+      "title": "Experimentation turns into an agent-run lifecycle",
+      "body": "The June 4 agent drop (Experimentation Program Overview, Experiment Value Estimator, Backlog Prioritization, plus Standard & Real-time Audience Builders) pairs with roadmap items: the Feature Experimentation MCP Server (Q2 '26), Experiment Plan Creation Agent, and Idea Builder. The pitch is a full ideation-to-QBR loop run by agents, not point AI helpers.",
+      "flags": [
+        {
+          "kind": "ai",
+          "label": "AI relevance"
+        },
+        {
+          "kind": "ent",
+          "label": "Enterprise relevance"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "Watchlist",
+      "body": "Adaptive Intelligence (Opal roadmap, an org-specific conversion model) and Voice Mode are forward-looking and lightly sourced — track for a future issue rather than build against now.",
+      "flags": []
+    }
   ],
-  releases: [
-    { product: "Optimizely Opal", date: "Jun 8, 2026", highlight: "PowerPoint and Word document creation — Opal can read, create, and edit .docx and .pptx files via the code-execution tool.", source: "support.optimizely.com", type: "Enhancement" },
-    { product: "Optimizely Opal", date: "Jun 4, 2026", highlight: "EU app hosting (data residency); Limitless 1:1 Personalization; new experimentation + ODP audience agents; Microsoft Teams/Outlook & Google Ads tools; Gamma and GitHub remote MCP connectors.", source: "support.optimizely.com", type: "Enhancement" },
-    { product: "Optimizely Graph", date: "Jun 2, 2026", highlight: "Gateway 3.29.0 — webhooks now fire immediately after a purge-cache request; fixes missing content types after a source deploys to a new slot.", source: "support.optimizely.com", type: "Bug fixes" },
-    { product: "Optimizely Opal", date: "Jun 1, 2026", highlight: "Quality tab for specialized agents — Output Evaluation (scored runs), Execution Guardrails (drift detection), and Execution Advisor (recovery + sensitive-call review).", source: "support.optimizely.com", type: "Enhancement" },
-    { product: "Optimizely Opal", date: "May 27, 2026", highlight: "Skills section added to specialized agent create/edit — apply reusable org context (brand voice, taxonomies, compliance) without rewriting prompts.", source: "support.optimizely.com", type: "Enhancement" },
-    { product: "Optimizely Graph", date: "May 25, 2026", highlight: "Content Graph 4.4.1 — fixes to _fulltext highlight extracts, decimal property indexing, and Edit-mode search across many locales.", source: "support.optimizely.com", type: "Bug fixes" },
-    { product: "Optimizely Opal", date: "May 22, 2026", highlight: "CMS 13 tools — list/create/update content and content types, SEO analysis/edit, and GEO audit/apply from Opal.", source: "support.optimizely.com", type: "Enhancement" },
-    { product: "Optimizely Graph", date: "May 21, 2026", highlight: "(Beta) Graph Search Management Portal — editors configure pinned results, synonyms, and view search analytics with no developer involvement.", source: "support.optimizely.com", type: "Enhancement" },
-    { product: "Optimizely Opal", date: "May 11, 2026", highlight: "CMS (SaaS) Opal tools for styles — list, view, create, and update styles for rows, columns, sections, and content types via Opal chat.", source: "support.optimizely.com", type: "Enhancement" },
-    { product: "Optimizely Opal", date: "May 7, 2026", highlight: "Memory, Artifacts page, remote MCP servers (Notion, Contentful, Sanity, ClickUp), Google Workspace tools, and RAG tools including rag_retrieve_from_optimizely_graph.", source: "support.optimizely.com", type: "Enhancement" },
-    { product: "Optimizely Graph", date: "Apr 21, 2026", highlight: "Content Graph 4.4.0 — improved HttpClient resilience plus LinkItem URL, Forms sync, and Smooth Rebuild language fixes.", source: "support.optimizely.com", type: "Enhancement & bug fixes" },
-    { product: "CMS 13 (PaaS)", date: "Apr 9, 2026", highlight: "Optimizely Forms 6.0.0 made compatible with CMS 13; import/export flow fix.", source: "support.optimizely.com", type: "Enhancement & bug fix" },
-    { product: "CMS 13 (PaaS)", date: "Apr 7, 2026", highlight: "Released Opal Chat and tools (Optimizely.Cms.OpalChat 2.0.0) to create/manage content and content types, optimize SEO, and improve AI discoverability.", source: "support.optimizely.com", type: "Enhancement" },
-    { product: "Web Experimentation", date: "Apr 2026", highlight: "Optimizely Experimentation MCP server — connects AI clients (Claude Desktop, Claude Code, Claude.ai, Cursor, VS Code + Copilot, Windsurf) to experimentation data via OAuth 2.0.", source: "support.optimizely.com", type: "Enhancement" },
-    { product: "CMS 13 (PaaS)", date: "Mar 31, 2026", highlight: "CMS 13 general availability (GA) release — modern .NET foundation, Graph-powered search, Visual Builder, and AI-first workflows.", source: "support.optimizely.com", type: "GA release" },
+  "releases": [
+    {
+      "product": "CMS (SaaS)",
+      "date": "Jun 18, 2026",
+      "highlight": "Notice: Preview3 CMS REST API reaches end-of-life on Aug 1, 2026 — migrate integrations.",
+      "source": "CMS (SaaS) release notes",
+      "type": "Deprecation"
+    },
+    {
+      "product": "CMS (SaaS)",
+      "date": "Jun 10, 2026",
+      "highlight": "Agent Visibility Analytics dashboard — monitor which AI platforms crawl and cite your site, built on CDN logs and Opal insights.",
+      "source": "CMS (SaaS) release notes",
+      "type": "Enhancement"
+    },
+    {
+      "product": "Opal",
+      "date": "Jun 8, 2026",
+      "highlight": "PowerPoint and Word document creation — Opal can read, create, and edit .docx/.pptx with code execution enabled.",
+      "source": "Opal release notes",
+      "type": "Enhancement"
+    },
+    {
+      "product": "CMS (SaaS)",
+      "date": "Jun 8, 2026",
+      "highlight": "Multi-select in the Content Manager picker for faster bulk content actions.",
+      "source": "CMS (SaaS) release notes",
+      "type": "Enhancement"
+    },
+    {
+      "product": "Opal",
+      "date": "Jun 4, 2026",
+      "highlight": "Agent wave: EU app hosting; five new agents (Experimentation Program Overview, Experiment Value Estimator, Backlog Prioritization, Standard & Real-time Audience Builder); Microsoft Teams/Outlook + Google Ads tools; Gamma & GitHub remote MCP connectors; Limitless 1:1 Personalization.",
+      "source": "Opal release notes",
+      "type": "Enhancement"
+    },
+    {
+      "product": "CMS (SaaS)",
+      "date": "Jun 4, 2026",
+      "highlight": "\"Connect your AI client to CMS (SaaS)\" — CMS SaaS remote MCP server; plus controls for when environments receive platform updates.",
+      "source": "CMS (SaaS) release notes",
+      "type": "Enhancement"
+    },
+    {
+      "product": "Opal",
+      "date": "Jun 1, 2026",
+      "highlight": "Quality tab for specialized agents — Output Evaluation (scored runs), Execution Guardrails (drift detection), and Execution Advisor (recovery + sensitive-action review).",
+      "source": "Opal release notes",
+      "type": "Enhancement"
+    },
+    {
+      "product": "Opal",
+      "date": "May 22, 2026",
+      "highlight": "CMS 13 content, SEO, and GEO tools for Opal (content types, publishing, SEO/GEO analysis).",
+      "source": "Opal release notes",
+      "type": "Enhancement"
+    },
+    {
+      "product": "CMS (SaaS)",
+      "date": "May 21, 2026",
+      "highlight": "(Beta) Manage Optimizely Graph search without developer help.",
+      "source": "CMS (SaaS) release notes",
+      "type": "Enhancement (Beta)"
+    },
+    {
+      "product": "CMS (SaaS)",
+      "date": "May 18, 2026",
+      "highlight": "DAM integration reaches general availability; rebuild Optimizely Graph indexes without downtime; flexible property-type mapping.",
+      "source": "CMS (SaaS) release notes",
+      "type": "GA / Enhancement"
+    },
+    {
+      "product": "Opal",
+      "date": "May 11, 2026",
+      "highlight": "CMS (SaaS) style-management tools in Opal Chat (list, view, create, update styles).",
+      "source": "Opal release notes",
+      "type": "Enhancement"
+    },
+    {
+      "product": "Opal",
+      "date": "May 7, 2026",
+      "highlight": "Memory, Artifacts page, action cards, multi-turn conversation mode, RAG for CMP, and Idea Builder (Web Experimentation).",
+      "source": "Opal release notes",
+      "type": "Enhancement"
+    },
+    {
+      "product": "CMS (SaaS)",
+      "date": "May 5, 2026",
+      "highlight": "JavaScript SDK reaches general availability.",
+      "source": "CMS (SaaS) release notes",
+      "type": "GA"
+    },
+    {
+      "product": "CMS 13 (PaaS)",
+      "date": "Apr 9, 2026",
+      "highlight": "Optimizely Forms 6.0.0 made compatible with CMS 13; import/export flow bug fix.",
+      "source": "CMS 13 release notes",
+      "type": "Enhancement & bug fix"
+    },
+    {
+      "product": "CMS 13 (PaaS)",
+      "date": "Apr 7, 2026",
+      "highlight": "Opal Chat and tools released (Optimizely.Cms.OpalChat 2.0.0 NuGet) — content, SEO, and GEO tooling for CMS 13.",
+      "source": "CMS 13 release notes",
+      "type": "Enhancement"
+    },
+    {
+      "product": "CMS 13 (PaaS)",
+      "date": "Mar 31, 2026",
+      "highlight": "Optimizely CMS 13 general availability — modern .NET foundation, Visual Builder, Graph-powered search, embedded DAM, AI-first workflows.",
+      "source": "CMS 13 release notes",
+      "type": "GA release"
+    }
   ],
-  events: [
-    { event: "Opticon 2026 — New York", when: "Sep 1, 2026 · In-person (Javits Center, NYC); includes Online access", focus: "Agentic digital experiences; luminary keynote with Seth Godin; breakouts, masterclasses, product demos.", register: "https://events.optimizely.com/Opticon26NY" },
-    { event: "Opticon 2026 — London", when: "Oct 13, 2026 · In-person (Barbican, London); includes Online access", focus: "Agentic digital experiences for EMEA marketers and digital leaders.", register: "https://events.optimizely.com/Opticon26London" },
-    { event: "Opticon 2026 — Online", when: "Oct 21, 2026 · Virtual", focus: "Free online sessions on agentic AI, content, commerce, and experimentation.", register: "https://www.optimizely.com/insights/events/opticon/online/" },
+  "events": [
+    {
+      "event": "Summer Series: Opal in Action",
+      "when": "Weekly · every Tuesday (online)",
+      "focus": "Live demos: Opal for faster campaigns, content at scale, and smarter experiments.",
+      "register": "https://www.optimizely.com/insights/summer-series-opal-in-action/"
+    },
+    {
+      "event": "Your Enterprise CMS calls itself agentic?",
+      "when": "Jun 30, 2026 · Online",
+      "focus": "What \"agentic CMS\" really means; the questions to ask CMS vendors; CMS 13 re-platforming.",
+      "register": "https://www.optimizely.com/insights/events/"
+    },
+    {
+      "event": "Optimizely London Developer Meetup",
+      "when": "Jul 2, 2026 · In-person (London)",
+      "focus": "Technical discussions, networking, and knowledge sharing for the developer community.",
+      "register": "https://www.optimizely.com/insights/events/"
+    },
+    {
+      "event": "Optimizely CAB Meeting at AD Summit",
+      "when": "Jul 14, 2026 · In-person",
+      "focus": "Customer advisory board on AI in the B2B world and its impact on Configured Commerce.",
+      "register": "https://www.optimizely.com/insights/events/"
+    },
+    {
+      "event": "After Hours at the Stockroom",
+      "when": "Jul 15, 2026 · In-person",
+      "focus": "Speakeasy-style networking reception during night two of AD Summit.",
+      "register": "https://www.optimizely.com/insights/events/"
+    },
+    {
+      "event": "Optimizely Digital Summit Sydney 2026",
+      "when": "Aug 14, 2026 · In-person (Sydney)",
+      "focus": "Leaders on harnessing AI and experimentation for intelligent digital experiences.",
+      "register": "https://www.optimizely.com/insights/events/"
+    },
+    {
+      "event": "Operation Opal (partners)",
+      "when": "Ongoing · Partner program",
+      "focus": "Opal Innovation Challenge and Opal Certification World Tour for partners.",
+      "register": "https://www.optimizely.com/operation-opal/"
+    }
   ],
-  roadmap: [
-    { product: "Optimizely Opal", phase: "Now / near-term", items: ["Limitless 1:1 ABM — agent-built, CRM-driven account pages on crawlable URLs", "Adaptive Intelligence — org-specific model trained on what converts", "Action Cards — act on AI recommendations inside the workflow", "Conversational Agents and Voice Mode", "Agent Library and guided onboarding"], link: "https://www.optimizely.com/product-updates/ai/" },
-    { product: "Content Management (CMS)", phase: "Q2 2026", items: ["Page Builder & Page Variation agents from existing models", "MCP server for CMS — designs to CMS-ready components", "Visual Builder multi-layout, blueprint editing, content-model locking", "Taxonomy & tagging; multi-step forms", "JavaScript SDK, ISR, and TinyMCE for SaaS"], link: "https://www.optimizely.com/product-updates/content-management/" },
-    { product: "Content Marketing (CMP)", phase: "Now / near-term", items: ["Image Generation — structured inputs, templates, multi-brand", "Opal for managing assets — metadata, alt text, auto-archive", "Suggested Assets via brief and relevancy scores", "Resource Management and Brand Portal", "Omnichannel publishing to SaaS CMS"], link: "https://www.optimizely.com/product-updates/content-marketing/" },
-    { product: "Configured Commerce", phase: "Q2 '26", items: ["Cloudflare for SaaS (Orange-to-Orange) — bring your own edge/WAF", "Website-level search configuration for multi-site teams", "Datadog visibility inside Mission Control", "Now: order-approval activity log, ngram part-number search", "Now: additional Opal tools for commerce"], link: "https://www.optimizely.com/product-updates/commerce/" },
-    { product: "Web Experimentation", phase: "In beta / in development", items: ["Custom Fields (beta) — required metadata, queryable program data", "Developer Mode and Web Companion browser extension", "Variation & template creation in the Visual Editor", "Frequentist (beta) and Bayesian stats engines", "Akamai support for Edge Delivery; Contextual Bandits deeper insights"], link: "https://www.optimizely.com/product-updates/web-experimentation/" },
-    { product: "Feature Experimentation", phase: "Q2 2026", items: ["Experimentation MCP Server — create flags/experiments conversationally", "React SDK v4 — unlocks Holdouts and Contextual Multi-Armed Bandit", "Flag Status across all environments; Custom Fields", "Team & Owner flag fields for governance", "Copy-a-flag-rule across environments; Change Approvals"], link: "https://www.optimizely.com/product-updates/feature-experimentation/" },
-    { product: "Personalization", phase: "In development", items: ["Custom Fields and Developer Mode", "Variation & template creation in the Visual Editor", "Contextual Bandits — deeper segment-level insights", "Frequentist and Bayesian stats engines", "Akamai support for Edge Delivery"], link: "https://www.optimizely.com/product-updates/personalization/" },
-    { product: "Data Platform (ODP)", phase: "Q2 '26", items: ["CMS–ODP plugin — real-time audiences inside CMS visitor groups", "Opal onboarding agent and integration tools", "Opal contextual actions surfaced across ODP", "Building on agentic audience management (smart suggestions, RTS)"], link: "https://www.optimizely.com/product-updates/platform/" },
+  "roadmap": [
+    {
+      "product": "Opal (AI)",
+      "phase": "Now / near-term",
+      "items": [
+        "Limitless 1:1 ABM — per-account pages built from CRM data on real URLs",
+        "Adaptive Intelligence — org-specific model trained on what converts",
+        "Action Cards — act on AI recommendations inline",
+        "Conversational Agents & Voice Mode",
+        "Add remote MCPs in a few steps"
+      ],
+      "link": "https://www.optimizely.com/product-updates/ai/"
+    },
+    {
+      "product": "Content Management (CMS)",
+      "phase": "Q2 2026",
+      "items": [
+        "Page Builder & Page Variation agents",
+        "MCP server for CMS (design → components)",
+        "Visual Builder multi-layout, blueprint editing, content-model locking",
+        "Taxonomy & tagging; multi-step forms",
+        "JavaScript SDK improvements, ISR, TinyMCE for SaaS"
+      ],
+      "link": "https://www.optimizely.com/product-updates/content-management/"
+    },
+    {
+      "product": "Content Marketing (CMP)",
+      "phase": "Now / near-term",
+      "items": [
+        "Image generation: structured inputs, multi-brand",
+        "Opal for asset management (metadata, alt text, auto-archive)",
+        "Suggested Assets via brief relevancy scores",
+        "Resource management & capacity planning",
+        "Brand Portal; omnichannel publishing to SaaS CMS"
+      ],
+      "link": "https://www.optimizely.com/product-updates/content-marketing/"
+    },
+    {
+      "product": "Configured Commerce",
+      "phase": "Q2 '26 · Now",
+      "items": [
+        "Order Approval activity log",
+        "Ngrams for part-number searches",
+        "Custom promotion-code errors; one-time shipping address",
+        "Additional Opal tools",
+        "Next: website-level search, DAM for existing customers"
+      ],
+      "link": "https://www.optimizely.com/product-updates/commerce/"
+    },
+    {
+      "product": "Web Experimentation",
+      "phase": "In beta / in development",
+      "items": [
+        "Custom Fields (beta); Developer Mode",
+        "Contextual Bandits — deeper segment insights",
+        "Web Companion Chrome extension",
+        "Variation & template creation in the Visual Editor",
+        "Frequentist & Bayesian stats engines; Akamai edge delivery"
+      ],
+      "link": "https://www.optimizely.com/product-updates/web-experimentation/"
+    },
+    {
+      "product": "Feature Experimentation",
+      "phase": "Q2 2026",
+      "items": [
+        "Experimentation MCP Server",
+        "React SDK v4 refactor (unlocks Holdouts + CMAB)",
+        "Flag Status across all environments",
+        "Custom Fields; Team & Owner flag fields",
+        "Contextual Bandits; copy a flag rule across environments"
+      ],
+      "link": "https://www.optimizely.com/product-updates/feature-experimentation/"
+    },
+    {
+      "product": "Personalization",
+      "phase": "Recently released / in development",
+      "items": [
+        "Variation Development Agent (Opal in the Visual Editor)",
+        "Experimentation context in Opal; experience templates",
+        "Conditional activation (click/hover/scroll/exit-intent)",
+        "Variation & template creation in the Visual Editor",
+        "Contextual Bandits deeper insights; Bayesian engine"
+      ],
+      "link": "https://www.optimizely.com/product-updates/personalization/"
+    },
+    {
+      "product": "Data Platform (ODP)",
+      "phase": "Q2 '26",
+      "items": [
+        "CMS–ODP plugin for real-time personalization",
+        "Opal onboarding agent & integration tools",
+        "Opal contextual actions across ODP",
+        "Agentic audience management: smart suggestions",
+        "Specialized audience agents; intent-aware creation"
+      ],
+      "link": "https://www.optimizely.com/product-updates/platform/"
+    }
   ],
-  blogs: [
-    { title: "Building production-grade Opal agents: what the Quality tab changes", why: "The June 1 Quality tab (Output Evaluation, Execution Guardrails, Execution Advisor) is the first real answer to \"how do we scale agents safely.\" Show evaluation criteria, guardrail modes, and sensitive-call review with a concrete agent.", audience: "DevRel leads & solution architects", difficulty: "Intermediate", engagement: 9, uniqueness: 8, priority: 9.2 },
-    { title: "Connect Claude, Cursor & VS Code to Optimizely with the Experimentation MCP Server", why: "The April MCP server release supports Claude Desktop/Code, Cursor, VS Code Copilot, and Windsurf via OAuth 2.0. A step-by-step \"query your experiments in natural language\" walkthrough captures the highest-velocity developer theme.", audience: "DevRel leads & solution architects", difficulty: "Intermediate", engagement: 9, uniqueness: 9, priority: 8.3 },
-    { title: "Graph-first commerce: tuning Configured Commerce search with the new Search Management Portal", why: "The May 21 Graph Search Management Portal lets editors own pinned results and synonyms; pair with the Q2 website-level search roadmap for a B2B angle.", audience: "Solution architects & product marketers", difficulty: "Intermediate", engagement: 8, uniqueness: 8, priority: 7.6 },
-    { title: "Scaling B2B account content with Limitless 1:1 Personalization (and what's next with 1:1 ABM)", why: "Limitless 1:1 Personalization shipped June 4; the Opal roadmap's Limitless 1:1 ABM extends it to CRM-driven account pages — a natural Configured Commerce / B2B narrative.", audience: "Product & content marketers", difficulty: "Beginner", engagement: 8, uniqueness: 8, priority: 7.6 },
-    { title: "What CMS 13 GA means for developers: Graph search, Opal Chat, and migration paths", why: "GA landed March 31 with Opal Chat (April 7) and Forms 6.0.0 (April 9); community migration questions are peaking.", audience: "DevRel leads & solution architects", difficulty: "Intermediate", engagement: 8, uniqueness: 6, priority: 7.3 },
-    { title: "GEO at scale: getting cited by LLMs with Opal GEO agents and CMS 13 GEO tools", why: "CMS 13 ships paas_cms_geo_analysis / geo_apply (May 22) and Configured Commerce adds LLMs.txt support — a practical, search-trending topic.", audience: "Content & product marketers", difficulty: "Beginner", engagement: 8, uniqueness: 8, priority: 7.2 },
+  "blogs": [
+    {
+      "title": "Completing the B2B Buyer Journey with the Optimizely MCP Server",
+      "why": "The Commerce MCP can authenticate a buyer, manage the cart, take payment, and submit a full order in chat — community posts (May) are ahead of official docs.",
+      "audience": "Solution architects, B2B product marketers",
+      "difficulty": "Advanced",
+      "engagement": 9,
+      "uniqueness": 9,
+      "priority": 9.0
+    },
+    {
+      "title": "Agentic CMS, Defined: What CMS 13's Page Builder Agent, MCP Server & Agent Visibility Analytics Actually Do",
+      "why": "Ties directly to the Jun 30 webinar and the Jun 10 Agent Visibility Analytics release; \"agentic CMS\" is a contested term buyers are actively researching.",
+      "audience": "Content marketers, DevRel",
+      "difficulty": "Intermediate",
+      "engagement": 9,
+      "uniqueness": 8,
+      "priority": 8.5
+    },
+    {
+      "title": "Graph-First Commerce: How Optimizely Graph + Commerce 15 + CMS 13 Reshape Search & Discovery",
+      "why": "The Apr \"Graph-First Commerce\" post set the narrative; CMS (SaaS) shipped marketer-managed Graph search (beta, May 21) and zero-downtime index rebuilds (May 18).",
+      "audience": "Solution architects, product marketers",
+      "difficulty": "Advanced",
+      "engagement": 7,
+      "uniqueness": 8,
+      "priority": 7.5
+    },
+    {
+      "title": "From A/B Test to Autonomous Program: Optimizely's New Experimentation Agents",
+      "why": "The Jun 4 drop added Program Overview, Value Estimator, and Backlog Prioritization agents — a clean before/after for experimentation ops.",
+      "audience": "Experimentation leads, product marketers",
+      "difficulty": "Intermediate",
+      "engagement": 8,
+      "uniqueness": 7,
+      "priority": 7.5
+    }
   ],
-  whitepapers: [
-    { title: "Enterprise AI governance for agentic marketing: evaluations, guardrails & EU data residency", why: "The June 1 Quality tab plus June 4 EU app hosting let Optimizely make a governance argument competitors are still assembling. Frame the agent lifecycle: evaluate, guardrail, recover, and keep data in-region.", audience: "Solution architects & product marketers", difficulty: "Advanced", engagement: 8, uniqueness: 9, priority: 8.1 },
-    { title: "The agentic commerce stack: Configured Commerce + Opal + Graph for B2B distributors", why: "Q2 Configured Commerce (Cloudflare O2O, website-level search, Datadog), Opal commerce tools, and Graph-powered catalog search form a defensible B2B/distributor story where B2C-led rivals are weaker.", audience: "Solution architects & product marketers", difficulty: "Advanced", engagement: 8, uniqueness: 8, priority: 7.8 },
+  "whitepapers": [
+    {
+      "title": "The Enterprise Guide to Agentic AI Governance in Marketing",
+      "why": "The Opal Quality tab (Output Evaluation, Execution Guardrails, Execution Advisor) plus EU hosting are governance capabilities most competitors don't yet match — a wide-open content gap.",
+      "audience": "Enterprise buyers, DevRel leads, security/compliance stakeholders",
+      "difficulty": "Advanced",
+      "engagement": 8,
+      "uniqueness": 9,
+      "priority": 8.5
+    },
+    {
+      "title": "Graph-First, AI-Ready Commerce: A Reference Architecture for B2B Distributors",
+      "why": "Consolidates Configured Commerce + Graph + Opal + ODP B2B profiles into one buildable blueprint for manufacturers and distributors.",
+      "audience": "Solution architects, enterprise B2B buyers",
+      "difficulty": "Advanced",
+      "engagement": 8,
+      "uniqueness": 8,
+      "priority": 8.0
+    }
   ],
-  linkedin: [
-    { title: '"Opal now builds your PowerPoint and Word docs in-chat" (June 8)', why: "A 60-second workflow: prompt → on-brand deck via the code-execution tool. High shareability, low production cost.", audience: "Content & product marketers", engagement: 8, uniqueness: 7 },
-    { title: "\"Remote MCP connectors turn Opal into your team's hub\"", why: "Notion, GitHub, Contentful, Gamma, Sanity, ClickUp (May 7 / June 4). One graphic showing the connector grid; CTA to the docs.", audience: "DevRel leads & solution architects", engagement: 7, uniqueness: 7 },
+  "linkedin": [
+    {
+      "title": "\"Your enterprise CMS calls itself agentic? Here's the 5-question checklist.\"",
+      "why": "Riff on the Jun 30 webinar; arm buyers with the questions that separate agentic CMS 13 from AI-washed positioning.",
+      "audience": "DevRel & product marketers",
+      "engagement": 8,
+      "uniqueness": 7
+    },
+    {
+      "title": "\"Five Opal experimentation agents shipped on June 4 — here's which to deploy first.\"",
+      "why": "Rank Program Overview, Value Estimator, and Backlog Prioritization by time-to-value for a lean experimentation team.",
+      "audience": "Experimentation leads & product marketers",
+      "engagement": 7,
+      "uniqueness": 6
+    },
+    {
+      "title": "\"We ran a full B2B order inside a chat window. Here's the architecture.\"",
+      "why": "Carousel walking through the Commerce MCP buyer journey — auth, cart, payment, order submit, procurement — with the Configured Commerce angle front and center.",
+      "audience": "Solution architects & B2B marketers",
+      "engagement": 9,
+      "uniqueness": 9
+    }
   ],
-  competitive: [
-    { theme: "Agentic AI for DXP/CMS", optimizely: "Opal: 15+ OOTB agents, Quality tab governance, Skills, Memory, in-chat doc creation, broad connector set.", competitor: "Sitecore Agentic Studio (XM Cloud, launched Symposium 2025); Adobe Experience Platform Agent Orchestrator (agentic layer with human oversight).", opportunity: "Lead on agent governance and evaluation depth; publish guidance rivals have not matched." },
-    { theme: "MCP / open-standard integration", optimizely: "MCP Server across experimentation, CMS, and Opal connectors — content + testing + commerce.", competitor: "VWO MCP server (ChatGPT, n8n); Kameleoon MCP + Prompt-Based Experimentation; Shopify first-party MCP + ACP/UCP.", opportunity: "Position the full-suite MCP story vs. test-only rivals; ship Claude Code quickstart repos." },
-    { theme: "Agentic commerce (B2B)", optimizely: "Configured Commerce + Opal tools + Graph search; LLMs.txt; B2B schema in ODP; bring-your-own edge.", competitor: "Salesforce Agentforce Commerce (acquiring Cimulate); Shopify Sidekick + agentic protocols; Bloomreach Discovery + Clarity.", opportunity: "Own the distributor/manufacturer B2B niche where rivals are B2C-led; lead with Graph-first commerce." },
-    { theme: "Experimentation automation", optimizely: "Program-level Opal agents (Program Overview, Value Estimator, Backlog Prioritization); MCP server; Idea Builder.", competitor: "Kameleoon AI Copilot + PBX 2.0 agents (webinar May 5, 2026); VWO AI + MCP.", opportunity: "Differentiate on program ROI and QBR-style reporting vs. competitors' test-creation focus." },
-    { theme: "Graph-first content/commerce search", optimizely: "Optimizely Graph with editor-led Search Management Portal (beta), Smooth Rebuild, RAG-for-Graph.", competitor: "No recent public activity found for a directly comparable graph-delivery + editor search portal in the competitor set.", opportunity: "Promote no-developer search tuning (pinned results, synonyms, analytics) as a clear differentiator." },
+  "competitive": [
+    {
+      "theme": "Agentic AI orchestration",
+      "optimizely": "Opal Agent Platform: specialized agents, Skills, agent directory, and Quality-tab governance across the suite.",
+      "competitor": "Adobe AEP Agent Orchestrator (GA 2025); Sitecore SitecoreAI / Agentic Studio / Stream (acquired Scrunch); Salesforce Agentforce.",
+      "opportunity": "Lead on cross-suite agents plus governance — few rivals pair both."
+    },
+    {
+      "theme": "MCP & open agent interoperability",
+      "optimizely": "Remote MCP Server for Experimentation, CMS (SaaS) MCP, and a Commerce MCP that completes a full B2B order; GitHub/Gamma connectors.",
+      "competitor": "Bloomreach Loomi MCP + Loomi Connect (ChatGPT catalogs); Kameleoon ships tests via MCP; Contentful relies on community-built MCP servers.",
+      "opportunity": "Own \"the MCP that places the order\" — unmatched commerce depth."
+    },
+    {
+      "theme": "B2B / Configured Commerce AI",
+      "optimizely": "Configured Commerce + Opal agents, Ngram part-number search, Vertex AI semantic/visual search, Product Promotion agent, B2B profiles in ODP.",
+      "competitor": "Salesforce Agentforce Commerce Buyer Agent & Guided Shopping for B2B; Shopify Sidekick (no B2B-specific AI yet); Bloomreach Loomi.",
+      "opportunity": "Push distributor/manufacturer buyer-journey stories where Shopify has no B2B AI answer."
+    },
+    {
+      "theme": "Agentic CMS & GEO measurement",
+      "optimizely": "CMS 13 agentic surface (Page Builder Agent, MCP), Agent Visibility / GEO Analytics, embedded DAM, Visual Builder.",
+      "competitor": "Sitecore SitecoreAI + Scrunch (AI search visibility); Adobe LLM Optimizer + GenStudio; Contentful agentic workflows.",
+      "opportunity": "Win the GEO-measurement narrative; tie to the Jun 30 \"agentic CMS\" webinar."
+    },
+    {
+      "theme": "Experimentation automation",
+      "optimizely": "Full-lifecycle Opal experimentation agents, FX MCP server, Holdouts, Bayesian & frequentist engines.",
+      "competitor": "Kameleoon AI Copilot & PBX 2.0 agents (MCP); VWO Tier-2 AI (heatmap/session-replay, no MCP).",
+      "opportunity": "Contrast a governed, end-to-end agent lifecycle against point AI features."
+    },
+    {
+      "theme": "Enterprise AI governance",
+      "optimizely": "Opal Quality tab (Output Evaluation, Execution Guardrails, Execution Advisor), EU app hosting, agent evaluations.",
+      "competitor": "Adobe emphasizes \"human oversight\"; across VWO, Kameleoon, and Dynamic Yield: No recent public activity found on agent governance.",
+      "opportunity": "Largest open gap — claim AI-governance leadership before rivals respond."
+    }
   ],
-  actions: [
-    { n: 1, title: "Ship the Opal Quality-tab agent guide", why: "Production-grade agents blog tying evaluations, guardrails, and the execution advisor to a real build.", priority: 9.2, format: "Technical blog" },
-    { n: 2, title: "Publish the Experimentation MCP Server tutorial + GitHub sample", why: "Natural-language access from Claude Code, Cursor, and VS Code; capture the breakout developer theme.", priority: 8.3, format: "Tutorial + GitHub sample" },
-    { n: 3, title: "Commission the AI governance whitepaper", why: "Evaluations, guardrails, and EU data residency as the enterprise differentiator while rivals catch up.", priority: 8.1, format: "Whitepaper" },
-    { n: 4, title: "Produce the B2B agentic commerce whitepaper", why: "Configured Commerce + Opal + Graph for distributors and manufacturers.", priority: 7.8, format: "Whitepaper" },
-    { n: 5, title: "Draft the Limitless 1:1 Personalization blog", why: "Account-based content at scale, bridging to the 1:1 ABM roadmap item.", priority: 7.7, format: "Blog" },
+  "actions": [
+    {
+      "n": 1,
+      "title": "Ship the Commerce MCP buyer-journey blog",
+      "why": "The highest-value, lowest-coverage play; pairs a technical walkthrough with a B2B order diagram while the docs gap is still open.",
+      "priority": 9.0,
+      "format": "Technical blog + diagram"
+    },
+    {
+      "n": 2,
+      "title": "Publish \"Agentic CMS, Defined\"",
+      "why": "Ahead of the Jun 30 webinar, anchored on CMS 13 + the Agent Visibility Analytics release, so the piece feeds event registration.",
+      "priority": 8.5,
+      "format": "Explainer blog"
+    },
+    {
+      "n": 3,
+      "title": "Produce the live demo: a full B2B order via Opal + the Commerce MCP Server",
+      "why": "Record once, reuse for the CAB at AD Summit (Jul 14) and the LinkedIn carousel.",
+      "priority": 8.2,
+      "format": "Demo video"
+    },
+    {
+      "n": 4,
+      "title": "Run the LinkedIn \"agentic CMS checklist\" post",
+      "why": "This week, to capture the search interest the webinar is generating.",
+      "priority": 7.8,
+      "format": "LinkedIn post"
+    },
+    {
+      "n": 5,
+      "title": "Open-source an Optimizely Remote MCP Server quickstart",
+      "why": "Manage flags & experiments from Claude/ChatGPT to seed developer adoption and GitHub signal.",
+      "priority": 7.5,
+      "format": "GitHub quickstart"
+    }
   ],
-  next7: [
-    { bold: "Lock two pieces:", text: "the Opal Quality-tab blog and the Experimentation MCP Server tutorial — both ride peak momentum and have working capabilities to demo." },
-    { bold: "Open Opticon content runway:", text: "with New York registration live (Sep 1), brief an Opticon teaser series anchored on agentic experiences and the Seth Godin keynote." },
-    { bold: "Capture the Graph Search Management Portal beta", text: "in a short demo while it is novel; line up an editor-led search angle for Configured Commerce." },
-    { bold: "Queue the LinkedIn posts", text: "on in-chat document creation (June 8) and remote MCP connectors to keep weekly cadence between long-form pieces." },
-    { bold: "Validate competitor claims", text: "before publishing the comparison whitepaper — re-check Salesforce/Cimulate, Sitecore Agentic Studio, and VWO/Kameleoon MCP pages for any updates." },
-  ],
+  "next7": [
+    {
+      "bold": "Today – Fri:",
+      "text": "Draft and review the Commerce MCP buyer-journey blog; line up an architecture diagram."
+    },
+    {
+      "bold": "By Jun 30:",
+      "text": "Publish \"Agentic CMS, Defined\" and the LinkedIn checklist post to coincide with the \"Your Enterprise CMS calls itself agentic?\" webinar."
+    },
+    {
+      "bold": "Tuesday:",
+      "text": "Promote the next Summer Series — Opal in Action session to the marketing list."
+    },
+    {
+      "bold": "This week:",
+      "text": "Storyboard the B2B-order demo recording for reuse at the Jul 14 CAB at AD Summit."
+    },
+    {
+      "bold": "Backlog:",
+      "text": "Scope the AI-governance whitepaper and the Remote MCP Server GitHub quickstart for next sprint."
+    }
+  ]
 };

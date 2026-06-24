@@ -29,60 +29,133 @@ export interface ProjectsData {
 }
 
 export const projectsData: ProjectsData = {
-  org: "Royal Cyber",
-  generated: "Jun 22, 2026",
-  projects: [
+  "org": "Royal Cyber",
+  "generated": "Jun 22, 2026",
+  "projects": [
     {
-      id: "je-dunn-construction",
-      name: "JE Dunn Construction",
-      status: "current",
-      members: [
-        { name: "Vaibhav Warhadpande", designation: "Practice Head" },
-        { name: "Aniket Dabholkar", designation: "Technical Lead" },
-        { name: "Akash Sharma", designation: "Software Engineer" },
-        { name: "Asvini Rajan S S", designation: "Trainee" },
-        { name: "Kiruthika Rajendran", designation: "Project Manager" },
-        { name: "Krishna Kumar", designation: "Delivery Manager" },
-        { name: "Sourav Roy", designation: "Account Manager" },
-      ],
+      "id": "je-dunn-construction",
+      "name": "JE Dunn Construction",
+      "status": "current",
+      "members": [
+        {
+          "name": "Vaibhav Warhadpande",
+          "designation": "Practice Head"
+        },
+        {
+          "name": "Aniket Dabholkar",
+          "designation": "Technical Lead"
+        },
+        {
+          "name": "Akash Sharma",
+          "designation": "Software Engineer"
+        },
+        {
+          "name": "Asvini Rajan S S",
+          "designation": "Trainee"
+        },
+        {
+          "name": "Kiruthika Rajendran",
+          "designation": "Project Manager"
+        },
+        {
+          "name": "Krishna Kumar",
+          "designation": "Delivery Manager"
+        },
+        {
+          "name": "Sourav Roy",
+          "designation": "Account Manager"
+        }
+      ]
     },
     {
-      id: "white-cap-canada-construction",
-      name: "White Cap Canada Construction",
-      status: "current",
-      members: [
-        { name: "Swapnil Undage", designation: "Software Engineer" },
-        { name: "Ritesh Hadawale", designation: "Senior Software Engineer" },
-        { name: "Monika Pal", designation: "Project Manager" },
-        { name: "Krishna Kumar", designation: "Delivery Manager" },
-        { name: "Sourav Roy", designation: "Account Manager" },
-      ],
+      "id": "white-cap-canada-construction",
+      "name": "White Cap Canada Construction",
+      "status": "current",
+      "members": [
+        {
+          "name": "Swapnil Undage",
+          "designation": "Software Engineer"
+        },
+        {
+          "name": "Ritesh Hadawale",
+          "designation": "Senior Software Engineer"
+        },
+        {
+          "name": "Monika Pal",
+          "designation": "Project Manager"
+        },
+        {
+          "name": "Krishna Kumar",
+          "designation": "Delivery Manager"
+        },
+        {
+          "name": "Sourav Roy",
+          "designation": "Account Manager"
+        }
+      ]
     },
     {
-      id: "white-cap-usa-construction",
-      name: "White Cap USA Construction",
-      status: "current",
-      members: [
-        { name: "Saurabh Mayekar", designation: "Solution Architect" },
-        { name: "Swapnil Varade", designation: "Senior Software Engineer" },
-        { name: "Monika Pal", designation: "Project Manager" },
-        { name: "Krishna Kumar", designation: "Delivery Manager" },
-        { name: "Sourav Roy", designation: "Account Manager" },
-      ],
+      "id": "white-cap-usa-construction",
+      "name": "White Cap USA Construction",
+      "status": "current",
+      "members": [
+        {
+          "name": "Saurabh Mayekar",
+          "designation": "Solution Architect"
+        },
+        {
+          "name": "Swapnil Varade",
+          "designation": "Senior Software Engineer"
+        },
+        {
+          "name": "Monika Pal",
+          "designation": "Project Manager"
+        },
+        {
+          "name": "Krishna Kumar",
+          "designation": "Delivery Manager"
+        },
+        {
+          "name": "Sourav Roy",
+          "designation": "Account Manager"
+        }
+      ]
     },
     {
-      id: "rent-a-center",
-      name: "Rent A Center",
-      status: "current",
-      members: [
-        { name: "Savita Sapra", designation: "Senior Technical Lead" },
-        { name: "Megha Rai", designation: "Senior Software Engineer" },
-        { name: "Shipra S", designation: "Technical Lead" },
-        { name: "Anshul Kasana", designation: "Senior Software Engineer" },
-        { name: "Dhriti Kumawat", designation: "Senior Software Engineer" },
-        { name: "Kanchan Rautela", designation: "Project Manager" },
-        { name: "Sourav Roy", designation: "Account Manager" },
-      ],
-    },
-  ],
-};
+      "id": "rent-a-center",
+      "name": "Rent A Center",
+      "status": "current",
+      "members": [
+        {
+          "name": "Savita Sapra",
+          "designation": "Senior Technical Lead"
+        },
+        {
+          "name": "Megha Rai",
+          "designation": "Senior Software Engineer"
+        },
+        {
+          "name": "Shipra S",
+          "designation": "Technical Lead"
+        },
+        {
+          "name": "Anshul Kasana",
+          "designation": "Senior Software Engineer"
+        },
+        {
+          "name": "Dhriti Kumawat",
+          "designation": "Senior Software Engineer"
+        },
+        {
+          "name": "Kanchan Rautela",
+          "designation": "Project Manager"
+        },
+        {
+          "name": "Sourav Roy",
+          "designation": "Account Manager"
+        }
+      ]
+    }
+  ]
+}
+;
