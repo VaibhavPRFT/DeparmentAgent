@@ -1,11 +1,16 @@
 import Link from "next/link";
 import { report } from "@/data/report";
 import { weeklyPlan } from "@/data/weeklyPlan";
+import { quarterlyPlan } from "@/data/quarterlyPlan";
 import { accelerators } from "@/data/accelerators";
 import { projectsData } from "@/data/projects";
 
 export default function HomePage() {
   const totalTasks = weeklyPlan.weeks.reduce((n, w) => n + w.tasks.length, 0);
+  const totalInitiatives = quarterlyPlan.quarters.reduce(
+    (n, q) => n + q.initiatives.length,
+    0,
+  );
   const totalBenefits = accelerators.items.reduce(
     (n, a) => n + a.benefits.length,
     0,
@@ -34,8 +39,8 @@ export default function HomePage() {
         <p className="mt-3 max-w-3xl text-[17px] text-[#5a6b82]">
           A single home for what our Optimizely practice produces — the
           Department Agent&apos;s trend &amp; content sweep, the rolling
-          six-week execution plan, the Royal Cyber accelerators, and the live
-          project teams. Pick a card to dive in.
+          six-week execution plan, the quarterly roadmap, the Royal Cyber
+          accelerators, and the live project teams. Pick a card to dive in.
         </p>
       </section>
 
@@ -101,6 +106,76 @@ export default function HomePage() {
           <div className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-[#0d3b24] px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15633c]">
             Open weekly plan
             <span className="transition group-hover:translate-x-0.5">→</span>
+          </div>
+        </Link>
+      </section>
+
+      <section className="mt-6">
+        <Link
+          href="/quarterly-plan"
+          className="group block rounded-2xl border border-opti-line bg-opti-navy p-7 text-opti-ink shadow-sm transition duration-200 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-xl"
+        >
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+            <div className="max-w-3xl">
+              <div className="text-xs font-bold uppercase tracking-[0.16em] text-opti-teal">
+                {quarterlyPlan.org} · Quarterly Roadmap
+              </div>
+              <h2 className="mt-2 text-2xl font-bold">
+                Optimizely Quarterly Plan
+              </h2>
+              <p className="mt-3 text-sm text-opti-muted">
+                {quarterlyPlan.fiscalNote}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-4 text-sm text-opti-muted">
+                <span>
+                  <b className="text-opti-ink">
+                    {quarterlyPlan.quarters.length}
+                  </b>{" "}
+                  quarters
+                </span>
+                <span>
+                  <b className="text-opti-ink">{totalInitiatives}</b> initiatives
+                </span>
+                <span>
+                  <b className="text-opti-ink">Q3 + Q4</b> 2026
+                </span>
+              </div>
+            </div>
+            <div className="inline-flex shrink-0 items-center gap-1.5 self-start rounded-full bg-[#0d3b24] px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15633c]">
+              Open quarterly plan
+              <span className="transition group-hover:translate-x-0.5">→</span>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-3 md:grid-cols-2">
+            {quarterlyPlan.quarters.map((q) => (
+              <div
+                key={q.id}
+                className="rounded-xl border border-opti-line bg-white p-4"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="rounded-lg bg-opti-accent px-2 py-0.5 text-xs font-bold text-white">
+                    {q.label}
+                  </span>
+                  <span className="text-[12.5px] font-medium text-opti-muted">
+                    {q.period}
+                  </span>
+                </div>
+                <p className="mt-2 text-[13px] text-opti-muted">{q.theme}</p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {Array.from(new Set(q.initiatives.map((i) => i.track)))
+                    .slice(0, 5)
+                    .map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full bg-opti-chip px-2 py-0.5 text-[11px] font-semibold text-opti-teal"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                </div>
+              </div>
+            ))}
           </div>
         </Link>
       </section>
@@ -214,7 +289,9 @@ export default function HomePage() {
         <p className="mt-2 text-sm text-[#5a6b82]">
           Newsletter generated{" "}
           <b className="text-[#1c2733]">{report.generated}</b> · Weekly plan
-          generated <b className="text-[#1c2733]">{weeklyPlan.generated}</b>.
+          generated <b className="text-[#1c2733]">{weeklyPlan.generated}</b> ·
+          Quarterly plan{" "}
+          <b className="text-[#1c2733]">{quarterlyPlan.generated}</b>.
         </p>
       </section>
     </div>
