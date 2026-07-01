@@ -1,12 +1,10 @@
 import Link from "next/link";
 import { report } from "@/data/report";
-import { weeklyPlan } from "@/data/weeklyPlan";
 import { quarterlyPlan } from "@/data/quarterlyPlan";
 import { accelerators } from "@/data/accelerators";
 import { projectsData } from "@/data/projects";
 
 export default function HomePage() {
-  const totalTasks = weeklyPlan.weeks.reduce((n, w) => n + w.tasks.length, 0);
   const totalInitiatives = quarterlyPlan.quarters.reduce(
     (n, q) => n + q.initiatives.length,
     0,
@@ -38,16 +36,16 @@ export default function HomePage() {
         </h1>
         <p className="mt-3 max-w-3xl text-[17px] text-[#5a6b82]">
           A single home for what our Optimizely practice produces — the
-          Department Agent&apos;s trend &amp; content sweep, the rolling
-          six-week execution plan, the quarterly roadmap, the Royal Cyber
-          accelerators, and the live project teams. Pick a card to dive in.
+          Department Agent&apos;s trend &amp; content sweep, the quarterly
+          roadmap, the Royal Cyber accelerators, and the live project teams.
+          Pick a card to dive in.
         </p>
       </section>
 
       <section className="grid gap-6 md:grid-cols-2">
         <Link
           href="/newsletter"
-          className="group rounded-2xl border border-opti-line bg-opti-navy p-7 text-opti-ink shadow-sm transition duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl"
+          className="group flex flex-col rounded-2xl border border-opti-line bg-opti-navy p-7 text-opti-ink shadow-sm transition duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl"
         >
           <div className="text-xs font-bold uppercase tracking-[0.16em] text-opti-teal">
             Optimizely Department Agent · Weekly Sweep
@@ -70,101 +68,60 @@ export default function HomePage() {
               <b className="text-opti-ink">{report.roadmap.length}</b> roadmaps
             </span>
           </div>
-          <div className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-[#0d3b24] px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15633c]">
-            Open newsletter
-            <span className="transition group-hover:translate-x-0.5">→</span>
+          <div className="mt-auto pt-6">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0d3b24] px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15633c]">
+              Open newsletter
+              <span className="transition group-hover:translate-x-0.5">→</span>
+            </span>
           </div>
         </Link>
 
         <Link
-          href="/weekly-plan"
-          className="group rounded-2xl border border-[#dde3ec] bg-white p-7 shadow-sm transition duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl"
+          href="/quarterly-plan"
+          className="group flex flex-col rounded-2xl border border-[#dde3ec] bg-white p-7 shadow-sm transition duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl"
         >
           <div className="text-xs font-bold uppercase tracking-[0.16em] text-rc-accent">
-            {weeklyPlan.org} · Weekly Plan Agent
+            {quarterlyPlan.org} · Quarterly Roadmap
           </div>
           <h2 className="mt-2 text-2xl font-bold text-rc-blue">
-            Optimizely Weekly Plan
+            Optimizely Quarterly Plan
           </h2>
           <p className="mt-3 text-sm text-[#5a6b82]">
-            A {weeklyPlan.weeks.length}-week execution plan covering MCP, Graph,
-            Opal, CMS migrations and Configured Commerce — broken into team
-            focus areas, day-by-day tasks with owners, and a RACI matrix.
+            {quarterlyPlan.fiscalNote}
           </p>
           <div className="mt-5 flex flex-wrap gap-4 text-sm text-[#5a6b82]">
             <span>
-              <b className="text-rc-blue">{weeklyPlan.weeks.length}</b> weeks
+              <b className="text-rc-blue">{quarterlyPlan.quarters.length}</b>{" "}
+              quarters
             </span>
             <span>
-              <b className="text-rc-blue">{totalTasks}</b> tasks
+              <b className="text-rc-blue">{totalInitiatives}</b> initiatives
             </span>
             <span>
-              <b className="text-rc-blue">{weeklyPlan.raci.rows.length}</b> RACI
-              rows
+              <b className="text-rc-blue">Q3 + Q4</b> 2026
             </span>
           </div>
-          <div className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-[#0d3b24] px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15633c]">
-            Open weekly plan
-            <span className="transition group-hover:translate-x-0.5">→</span>
-          </div>
-        </Link>
-      </section>
 
-      <section className="mt-6">
-        <Link
-          href="/quarterly-plan"
-          className="group block rounded-2xl border border-opti-line bg-opti-navy p-7 text-opti-ink shadow-sm transition duration-200 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-xl"
-        >
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
-            <div className="max-w-3xl">
-              <div className="text-xs font-bold uppercase tracking-[0.16em] text-opti-teal">
-                {quarterlyPlan.org} · Quarterly Roadmap
-              </div>
-              <h2 className="mt-2 text-2xl font-bold">
-                Optimizely Quarterly Plan
-              </h2>
-              <p className="mt-3 text-sm text-opti-muted">
-                {quarterlyPlan.fiscalNote}
-              </p>
-              <div className="mt-5 flex flex-wrap gap-4 text-sm text-opti-muted">
-                <span>
-                  <b className="text-opti-ink">
-                    {quarterlyPlan.quarters.length}
-                  </b>{" "}
-                  quarters
-                </span>
-                <span>
-                  <b className="text-opti-ink">{totalInitiatives}</b> initiatives
-                </span>
-                <span>
-                  <b className="text-opti-ink">Q3 + Q4</b> 2026
-                </span>
-              </div>
-            </div>
-            <div className="inline-flex shrink-0 items-center gap-1.5 self-start rounded-full bg-[#0d3b24] px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15633c]">
-              Open quarterly plan
-              <span className="transition group-hover:translate-x-0.5">→</span>
-            </div>
-          </div>
-
-          <div className="mt-6 grid gap-3 md:grid-cols-2">
+          <div className="mt-6 grid gap-3">
             {quarterlyPlan.quarters.map((q) => (
               <div
                 key={q.id}
-                className="rounded-xl border border-opti-line bg-white p-4"
+                className="rounded-xl border border-[#dde3ec] bg-[#f6fbf8] p-4"
               >
                 <div className="flex items-center gap-2">
-                  <span className="rounded-lg bg-opti-accent px-2 py-0.5 text-xs font-bold text-white">
+                  <span className="rounded-lg bg-rc-blue px-2 py-0.5 text-xs font-bold text-white">
                     {q.label}
                   </span>
-                  <span className="text-[12.5px] font-medium text-opti-muted">
+                  <span className="text-[12.5px] font-medium text-[#5a6b82]">
                     {q.period}
                   </span>
                 </div>
-                <p className="mt-2 text-[13px] text-opti-muted">{q.theme}</p>
+                <p className="mt-2 line-clamp-2 text-[13px] text-[#5a6b82]">
+                  {q.theme}
+                </p>
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {Array.from(new Set(q.initiatives.map((i) => i.track)))
-                    .slice(0, 5)
+                    .slice(0, 4)
                     .map((t) => (
                       <span
                         key={t}
@@ -176,6 +133,13 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-auto pt-6">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0d3b24] px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-[#15633c]">
+              Open quarterly plan
+              <span className="transition group-hover:translate-x-0.5">→</span>
+            </span>
           </div>
         </Link>
       </section>
@@ -288,9 +252,7 @@ export default function HomePage() {
         </h3>
         <p className="mt-2 text-sm text-[#5a6b82]">
           Newsletter generated{" "}
-          <b className="text-[#1c2733]">{report.generated}</b> · Weekly plan
-          generated <b className="text-[#1c2733]">{weeklyPlan.generated}</b> ·
-          Quarterly plan{" "}
+          <b className="text-[#1c2733]">{report.generated}</b> · Quarterly plan{" "}
           <b className="text-[#1c2733]">{quarterlyPlan.generated}</b>.
         </p>
       </section>
