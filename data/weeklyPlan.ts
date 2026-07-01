@@ -62,7 +62,7 @@ export interface WeeklyPlan {
 
 export const weeklyPlan: WeeklyPlan = {
   org: "Royal Cyber",
-  generated: "Jul 01, 2026 15:40 IST",
+  generated: "Jul 01, 2026 16:02 IST",
   weeks: [
     {
       id: "wk1",
