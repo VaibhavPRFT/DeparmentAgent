@@ -1,18 +1,55 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { WeeklyPlan, Raci } from "@/data/weeklyPlan";
 import { StatusBadge, TypeBadge } from "@/components/badges";
 
 const RACI_CLASS: Record<Exclude<Raci, "">, string> = {
-  R: "bg-[#d8e8ff] text-[#1456b8]",
+  R: "bg-[#d3eef2] text-[#0b6e7d]",
   A: "bg-[#d9f2e3] text-[#13794a]",
   C: "bg-[#fff3cd] text-[#8a6d00]",
   I: "bg-[#eceff3] text-[#5a6b82]",
 };
 
+const MONTHS: Record<string, number> = {
+  Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+  Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+};
+
+// Parse the start date out of a week subtitle such as
+// "Jun 22 – Jun 26, 2026  |  ..." -> local timestamp for Jun 22, 2026.
+function weekStart(subtitle: string): number | null {
+  const m = subtitle.match(/([A-Z][a-z]{2})\s+(\d{1,2})\b.*?(\d{4})/);
+  if (!m) return null;
+  const month = MONTHS[m[1]];
+  const day = Number(m[2]);
+  const year = Number(m[3]);
+  if (month === undefined || !day || !year) return null;
+  return new Date(year, month, day).getTime();
+}
+
+// Choose the week that matches "today": the latest week whose start date is on
+// or before now (so Jun 22 lands on Week 4). Falls back to the first week when
+// today is before the plan starts, and naturally lands on the last week when
+// today is past the plan. Survives data regeneration since it reads subtitles.
+function currentWeekId(weeks: WeeklyPlan["weeks"], now: number): string {
+  let chosen = weeks[0]?.id ?? "";
+  for (const w of weeks) {
+    const start = weekStart(w.subtitle);
+    if (start !== null && start <= now) chosen = w.id;
+  }
+  return chosen;
+}
+
 export default function WeeklyPlanTabs({ plan }: { plan: WeeklyPlan }) {
+  // Start deterministic (first week) so server-rendered and first client render
+  // match; then snap to the current week of the month once mounted in the browser.
   const [active, setActive] = useState(plan.weeks[0]?.id ?? "");
+
+  useEffect(() => {
+    setActive(currentWeekId(plan.weeks, Date.now()));
+  }, [plan.weeks]);
+
   const isRaci = active === "raci";
   const week = plan.weeks.find((w) => w.id === active) ?? plan.weeks[0];
 
@@ -29,7 +66,7 @@ export default function WeeklyPlanTabs({ plan }: { plan: WeeklyPlan }) {
             className={`rounded-t-lg border border-b-0 px-5 py-2 text-sm font-semibold transition ${
               w.id === active
                 ? "border-rc-blue bg-rc-blue text-white"
-                : "border-[#dde3ec] bg-[#eef2f8] text-[#41526b] hover:bg-[#e0e8f4]"
+                : "border-[#cfe0d6] bg-[#eef5f0] text-[#41615a] hover:bg-[#e0efe7]"
             }`}
           >
             {w.label}
@@ -145,7 +182,7 @@ function RaciPane({ plan }: { plan: WeeklyPlan }) {
         RACI Matrix — Roles &amp; Responsibilities
       </h2>
       <div className="mt-2 flex flex-wrap items-center gap-2 text-[13px] text-[#41526b]">
-        <span className="rounded-full bg-[#d8e8ff] px-2 py-0.5 text-[11px] font-bold text-[#1456b8]">
+        <span className="rounded-full bg-[#d3eef2] px-2 py-0.5 text-[11px] font-bold text-[#0b6e7d]">
           R
         </span>
         Responsible

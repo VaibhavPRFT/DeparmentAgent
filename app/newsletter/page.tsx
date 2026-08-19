@@ -6,9 +6,9 @@ export const metadata: Metadata = {
 };
 
 const FLAG_CLASS: Record<FlagKind, string> = {
-  ai: "border-[#2c4a9e] text-[#cfe0ff]",
-  ent: "border-[#1f7d6e] text-[#bff0e4]",
-  gap: "border-[#7d5a1f] text-[#ffd9a8]",
+  ai: "border-[#d8c9f2] bg-[#efe9fb] text-[#5b2bb5]",
+  ent: "border-[#bfe3cc] bg-[#e7f6ee] text-[#15703f]",
+  gap: "border-[#f0d9a8] bg-[#fdf1db] text-[#9a6212]",
 };
 
 function Section({
@@ -72,7 +72,7 @@ const TD = "border-b border-opti-line px-3 py-2.5 align-top";
 
 export default function ReportPage() {
   return (
-    <div className="bg-gradient-to-b from-[#070b16] to-opti-navy">
+    <div className="bg-gradient-to-b from-[#eef7f1] to-white">
       <div className="mx-auto max-w-5xl px-6 py-10 text-opti-ink">
         <header className="mb-7 border-b border-opti-line pb-6">
           <h1 className="text-[27px] font-bold tracking-tight">
@@ -154,7 +154,7 @@ export default function ReportPage() {
                     </td>
                     <td className={`${TD} text-opti-muted`}>
                       {r.highlight}
-                      <span className="mt-1.5 block break-all text-[11.5px] text-[#6f80a4]">
+                      <span className="mt-1.5 block break-all text-[11.5px] text-[#7c8c83]">
                         {r.source}
                       </span>
                     </td>
@@ -196,7 +196,7 @@ export default function ReportPage() {
                         href={e.register}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block whitespace-nowrap rounded-lg bg-opti-accent px-3 py-1.5 text-[13px] font-semibold text-white hover:bg-[#2f5ae0]"
+                        className="inline-block whitespace-nowrap rounded-full bg-[#0d3b24] px-4 py-1.5 text-[13px] font-semibold text-white transition hover:bg-[#15633c]"
                       >
                         Register
                       </a>

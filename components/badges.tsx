@@ -10,7 +10,7 @@ const STATUS_LABEL: Record<TaskStatus, string> = {
 const STATUS_CLASS: Record<TaskStatus, string> = {
   todo: "bg-[#eceff3] text-[#5a6b82]",
   prog: "bg-[#fff3cd] text-[#8a6d00]",
-  sched: "bg-[#d8e8ff] text-[#1456b8]",
+  sched: "bg-[#d3eef2] text-[#0b6e7d]",
   done: "bg-[#d9f2e3] text-[#13794a]",
 };
 
@@ -25,8 +25,8 @@ export function StatusBadge({ status }: { status: TaskStatus }) {
 }
 
 const TYPE_CLASS: Record<string, string> = {
-  "Blog Post": "bg-[#e3edff] text-[#1456b8]",
-  Blog: "bg-[#e3edff] text-[#1456b8]",
+  "Blog Post": "bg-[#d3eef2] text-[#0b6e7d]",
+  Blog: "bg-[#d3eef2] text-[#0b6e7d]",
   Whitepaper: "bg-[#efe3ff] text-[#6a2fb8]",
   "LinkedIn Post": "bg-[#d9f0f7] text-[#0b6e8f]",
   "Internal Milestone": "bg-[#fde8d9] text-[#a35413]",
