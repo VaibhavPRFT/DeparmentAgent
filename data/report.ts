@@ -92,25 +92,25 @@ export interface Report {
 
 export const report: Report = {
   "title": "Optimizely Trend and Content Opportunities",
-  "generated": "July 29, 2026",
+  "generated": "August 20, 2026",
   "sub": "A weekly, evidence-led scan of Optimizely product signals, releases, events, and the content angles worth acting on — for content marketers, DevRel leads, solution architects, and product marketers.",
   "tags": [
     {
-      "label": "Breakout: Opal agents move from novelty to operational fabric",
+      "label": "Breakout: The agentic-DXP race broadens — Sitecore, Adobe, and Bloomreach all shipped agent platforms this quarter",
       "hot": true
     },
     {
-      "label": "Signal window: 90 days (ending Jul 29, 2026)"
+      "label": "Signal window: 90 days (ending Aug 20, 2026)"
     },
     {
-      "label": "Focus: Configured Commerce / B2B & Agentic AI"
+      "label": "Focus: CMS 13 GEO/Content Agents · Opal Model Upgrades · Preview3 Migration"
     }
   ],
   "trends": [
     {
       "rank": 1,
-      "title": "Opal agents move from novelty to operational fabric",
-      "body": "The Agent Library now ships 45+ one-click agents and Skills Builder reached GA (Opal release notes, June 30, 2026), while the July 22 release added Google Search Console and Product Recommendations reporting tools. Opal University crossed 375 agents built and a 1,500-person waitlist (Optimizely press). This is the breakout theme of the quarter — agentic execution is now the default entry point across the suite.",
+      "title": "Opal ships agent-building tools and a quiet model upgrade to Claude Opus 5",
+      "body": "The July 29 release added Agent Builder and Skill Builder so admins can configure and iterate on agents and skills directly inside Opal Chat, plus Safe URL Browsing, Version History, and remote MCP support. The August 14 update raised the ceiling further, upgrading the Complex and Code inference levels to run on claude-opus-5 and shipping graph_pinned_result and graph_synonyms tools for managing Optimizely Graph search behavior from inside chat (Opal release notes).",
       "flags": [
         {
           "kind": "ai",
@@ -124,28 +124,24 @@ export const report: Report = {
     },
     {
       "rank": 2,
-      "title": "Graph-first B2B commerce lands with Commerce Connect 15",
-      "body": "Commerce Connect 15 GA (May 2026) makes Optimizely Graph the default search and delivery layer, deprecates Search & Navigation (Find) for commerce, brings Visual Builder and Opal into the catalog editor, and modernizes onto .NET 10 / CMS 13. Follow-on packages shipped through June–July 2026. For manufacturers and distributors, this is the clearest graph-first B2B story Optimizely has told.",
+      "title": "CMS 13 gets its own content-modeling and GEO agents",
+      "body": "The August 17 CMS 13 release notes document a Content Model Creation agent that analyzes a URL or image to propose a best-practice content model, and a GEO Schema Optimization agent that recommends or generates JSON-LD schema for LLM discoverability. Both build on the SEO/GEO agent work Opal shipped in June, moving GEO from a dashboard you read to a task an agent performs for you.",
       "flags": [
         {
           "kind": "ai",
           "label": "AI relevance"
         },
         {
-          "kind": "ent",
-          "label": "Enterprise relevance"
+          "kind": "gap",
+          "label": "Content gap"
         }
       ]
     },
     {
       "rank": 3,
-      "title": "MCP Server turns the suite into an agent-accessible platform",
-      "body": "The Experimentation MCP server went GA to all customers (Web & Feature Experimentation release notes, April 2026), joined by Analytics, Commerce, and CMS (SaaS) MCP servers. Community walkthroughs (World blogs, May 2026) show the full B2B buyer journey — question to placed order — running inside a chat client. MCP is officially documented, not just community-discussed.",
+      "title": "Commerce Connect 15 finishes its PCI and async-order overhaul",
+      "body": "Commerce Connect 15 GA removes the legacy credit-card storage APIs entirely in favor of tokenized payment providers (Stripe, Adyen, PayPal), adds async versions of every IOrderRepository / ICartProvider / IPaymentPlanProvider method for non-blocking order operations, and defaults catalog entries to Visual Builder editing alongside CMS content. For B2B teams mid-upgrade, PCI compliance and async I/O are now forcing functions, not optional modernization.",
       "flags": [
-        {
-          "kind": "ai",
-          "label": "AI relevance"
-        },
         {
           "kind": "ent",
           "label": "Enterprise relevance"
@@ -154,31 +150,27 @@ export const report: Report = {
     },
     {
       "rank": 4,
-      "title": "Experimentation automation compounds: CMABs, Idea builder, agents",
-      "body": "Feature Experimentation shipped Contextual Multi-Armed Bandits powered by Opal (April 28), Idea builder (June 22), and Hypothesis / Test-plan fields (July 2). The roadmap adds Change Approvals, Bayesian and Frequentist stats engines, and an Experiment Plan Creation agent that pushes plans to Jira. The center of gravity is shifting from manual A/B setup to AI-assisted, governed programs.",
+      "title": "The agentic-DXP race stops being an Optimizely-only story",
+      "body": "Sitecore's SitecoreAI (Agentic Studio, roughly 20 agents, built on Microsoft Azure) and Adobe's agentic push in Commerce — framing storefronts as serving \"humans and AI agents\" alike — both landed this quarter, and Bloomreach continues to lean on Loomi and a three-time Gartner Leader position in Search and Product Discovery. Opal's Agent Library (45+ agents) and governance controls are still the widest catalog, but the competitive gap on agent count and marketing is closing fast.",
       "flags": [
-        {
-          "kind": "ai",
-          "label": "AI relevance"
-        },
         {
           "kind": "ent",
           "label": "Enterprise relevance"
+        },
+        {
+          "kind": "gap",
+          "label": "Content gap"
         }
       ]
     },
     {
       "rank": 5,
-      "title": "Enterprise AI governance becomes a first-class capability",
-      "body": "Opal added agent sharing and visibility controls and instance/agent-level model provider selection (June 24–30), CSV/Excel execution-log export for audit, and an Agent Usage dashboard for credit and adoption tracking. Roadmap items — Agent Evaluations, Execution Guardrails, Notifications — extend this. Community discussion is active but official governance guidance is still thin: a content gap worth owning.",
+      "title": "CMS (SaaS) forces a breaking-change migration: Preview3 is gone",
+      "body": "On August 1, 2026, Optimizely retired the Preview3 CMS REST API endpoints and began disabling access; any CMS (SaaS) app still calling them needed to be on REST API v1 before the cutoff. It's a small technical note with an outsized blast radius for any integration built a couple of years ago and never revisited.",
       "flags": [
         {
           "kind": "ent",
           "label": "Enterprise relevance"
-        },
-        {
-          "kind": "ai",
-          "label": "AI relevance"
         },
         {
           "kind": "gap",
@@ -188,158 +180,108 @@ export const report: Report = {
     },
     {
       "rank": 6,
-      "title": "GEO/AEO: making content discoverable to LLMs",
-      "body": "CMS 13 added the Agent Visibility Analytics dashboard (June 10) showing how AI platforms crawl your site, a beta \"clean markdown for AI agents\" edge feature (April), and Opal GEO/SEO schema and metadata agents. As AI-referral traffic grows, generative-engine optimization is a fast-rising, under-served content lane.",
+      "title": "PIM becomes an Opal surface, not just a system of record",
+      "body": "The August 4 Product Information Management update added Opal system tools that pull Dashboard statistics on request, plus primary-category management and a faster Bulk Edit. It's a small release, but it's the clearest sign yet that Opal's reach is extending past CMS, Commerce, and Experimentation into the product-data layer B2B catalogs depend on.",
       "flags": [
         {
           "kind": "ai",
           "label": "AI relevance"
         },
         {
-          "kind": "gap",
-          "label": "Content gap"
+          "kind": "ent",
+          "label": "Enterprise relevance"
         }
       ]
     }
   ],
   "releases": [
     {
-      "product": "Opal",
-      "date": "Jul 22, 2026",
-      "highlight": "Google Search Console connector tools; Product Recommendations algorithm-performance reporting tools.",
-      "source": "support.optimizely.com",
-      "type": "Enhancement"
-    },
-    {
-      "product": "Optimizely Graph",
-      "date": "Jul 6, 2026",
-      "highlight": "(Beta) Search UI adds a Performance dashboard and self-service Development accounts.",
-      "source": "support.optimizely.com",
-      "type": "Beta"
-    },
-    {
-      "product": "Feature Experimentation",
-      "date": "Jul 2, 2026",
-      "highlight": "Optional Hypothesis and Test-plan fields on A/B rules; filter/sort by them on the Flags dashboard.",
-      "source": "support.optimizely.com",
-      "type": "Enhancement"
-    },
-    {
-      "product": "Commerce Connect",
-      "date": "Jul 2026",
-      "highlight": "EPiServer.Commerce 15.0.2 and 14.45.5 maintenance packages (personalization, orders, promotions).",
-      "source": "support.optimizely.com",
-      "type": "Bug fix"
-    },
-    {
-      "product": "Opal",
-      "date": "Jun 30, 2026",
-      "highlight": "Agent Library (45+ one-click agents); Skills Builder GA; agent sharing/visibility controls; image editor; new CMS 13 GEO/SEO agents.",
-      "source": "support.optimizely.com",
-      "type": "Enhancement"
-    },
-    {
-      "product": "Opal",
-      "date": "Jun 24, 2026",
-      "highlight": "Model-provider selection at instance and specialized-agent level; activity-stream tool status and context pills.",
-      "source": "support.optimizely.com",
-      "type": "Enhancement"
-    },
-    {
-      "product": "Optimizely Graph",
-      "date": "Jun 23, 2026",
-      "highlight": "Content Graph 4.4.2 — save/publish no longer blocks on indexing, removing editor timeouts.",
-      "source": "support.optimizely.com",
-      "type": "Enhancement"
-    },
-    {
-      "product": "Feature Experimentation",
-      "date": "Jun 22, 2026",
-      "highlight": "Idea builder uses Opal to generate testable hypotheses from a page URL, goals, and prior tests.",
-      "source": "support.optimizely.com",
-      "type": "Enhancement"
-    },
-    {
-      "product": "Feature Experimentation",
-      "date": "Jun 18, 2026",
-      "highlight": "Contextual Bandit Results page shows attribute importance and relative improvement per variation.",
-      "source": "support.optimizely.com",
-      "type": "Enhancement"
-    },
-    {
       "product": "CMS 13 (PaaS)",
-      "date": "Jun 10, 2026",
-      "highlight": "Agent Visibility Analytics dashboard — shows how AI platforms crawl and interact with your site.",
+      "date": "Aug 17, 2026",
+      "highlight": "Content Model Creation and GEO Schema Optimization agents documented for CMS 13 — build content models from a URL/image, generate JSON-LD schema for LLM discoverability.",
       "source": "support.optimizely.com",
       "type": "Enhancement"
     },
     {
-      "product": "CMS 13 (PaaS)",
-      "date": "Jun 1, 2026",
-      "highlight": "CMS.Core 13.1.0 — flexible external-content property mappings, Graph Conventions API, VisibleInMenu in Graph.",
+      "product": "Opal",
+      "date": "Aug 14, 2026",
+      "highlight": "Complex and Code inference levels upgraded to claude-opus-5; added graph_pinned_result and graph_synonyms tools for Optimizely Graph.",
       "source": "support.optimizely.com",
       "type": "Enhancement"
     },
     {
-      "product": "Optimizely Graph",
-      "date": "May 21, 2026",
-      "highlight": "(Beta) Search Management Portal — marketer-controlled Pinned Results and Synonyms, no developer needed.",
+      "product": "Optimizely PIM",
+      "date": "Aug 4, 2026",
+      "highlight": "Primary category management, faster Bulk Edit on the Product List, and a 30-day notification auto-retention policy.",
       "source": "support.optimizely.com",
-      "type": "Beta"
+      "type": "Enhancement"
     },
     {
-      "product": "Feature Experimentation",
-      "date": "May 18, 2026",
-      "highlight": "(Beta) Feature Rollouts (progressive release with metric tracking); React SDK v4.0.0 with async CMAB hooks.",
+      "product": "CMS (SaaS)",
+      "date": "Aug 1, 2026",
+      "highlight": "Preview3 REST API endpoints retired; apps must run on CMS REST API v1.",
       "source": "support.optimizely.com",
-      "type": "Beta"
+      "type": "Breaking change"
     },
     {
-      "product": "Commerce Connect 15",
-      "date": "May 2026",
-      "highlight": "GA — graph-first commerce, Visual Builder and Opal in the catalog editor, external content via OCP, .NET 10.",
+      "product": "Experimentation MCP",
+      "date": "Aug 2026",
+      "highlight": "Remote MCP Server now open to all Web & Feature Experimentation customers — no waitlist or separate sign-up.",
       "source": "support.optimizely.com",
       "type": "GA release"
     },
     {
-      "product": "Web & Feature Experimentation",
-      "date": "Apr 29, 2026",
-      "highlight": "Experimentation MCP server GA — connects Claude, Cursor, Copilot, and Windsurf via OAuth 2.0 / Opti ID.",
+      "product": "Opal",
+      "date": "Jul 29, 2026",
+      "highlight": "Agent Builder and Skill Builder GA in Opal Chat; Safe URL Browsing, Version History, Nested Workflows, remote MCP support, Gmail/HubSpot/ZoomInfo connectors.",
+      "source": "support.optimizely.com",
+      "type": "GA release"
+    },
+    {
+      "product": "Commerce Connect 15",
+      "date": "Jul 2026",
+      "highlight": "Async IOrderRepository / ICartProvider / IPaymentPlanProvider methods GA; credit-card storage APIs removed for PCI DSS compliance.",
       "source": "support.optimizely.com",
       "type": "Enhancement"
     },
     {
       "product": "Feature Experimentation",
-      "date": "Apr 28, 2026",
-      "highlight": "Contextual Multi-Armed Bandits (Opal-powered), plus Custom Fields and Flag Statuses.",
+      "date": "Jul 7, 2026",
+      "highlight": "React SDK v4 async CMAB decision hooks (useDecideAsync, useDecideForKeysAsync); Local holdouts; Owner/Teams fields on flags.",
       "source": "support.optimizely.com",
       "type": "Enhancement"
     }
   ],
   "events": [
     {
-      "event": "Summer Series: Opal in Action",
-      "when": "Weekly, Tuesdays · Online",
-      "focus": "Live Opal AI demos and practical takeaways for marketing teams",
-      "register": "https://www.optimizely.com/insights/summer-series-opal-in-action/"
-    },
-    {
-      "event": "Partner Forum",
-      "when": "Aug 12, 2026 · On-location (invite-only)",
-      "focus": "Gathering for Optimizely partners",
-      "register": "https://www.optimizely.com/field-notes/events/partner-forum/"
-    },
-    {
-      "event": "Optimizely Digital Summit Sydney 2026",
-      "when": "Aug 13–14, 2026 · On-location, Sydney",
-      "focus": "Leaders shaping the next era of digital experience",
-      "register": "https://www.optimizely.com/field-notes/events/digital-summit-2026-sydney/"
-    },
-    {
       "event": "Content and Beyond",
       "when": "Aug 20, 2026 · Online",
-      "focus": "B2B, Commerce",
+      "focus": "B2B, Commerce, AI",
       "register": "https://www.optimizely.com/field-notes/events/content-and-beyond/"
+    },
+    {
+      "event": "OMVP Webinar for ANZ Partners",
+      "when": "Aug 28, 2026 · Online",
+      "focus": "How the Optimizely MVP program works for partners",
+      "register": "https://www.optimizely.com/field-notes/events/omvp-webinar-for-anz-partners/"
+    },
+    {
+      "event": "Camp Opticon (Opticon New York)",
+      "when": "Aug 31–Sep 1, 2026 · On-location, Javits Center, NYC",
+      "focus": "Flagship keynotes and hands-on sessions",
+      "register": "https://www.optimizely.com/field-notes/opticon/"
+    },
+    {
+      "event": "Optimizely Customer Day — Hamburg",
+      "when": "Sep 2, 2026 · On-location, Hamburg",
+      "focus": "Agentic email marketing, customers",
+      "register": "https://www.optimizely.com/field-notes/events/customer-day-hamburg/"
+    },
+    {
+      "event": "Experimentation Forum Oslo",
+      "when": "Sep 3, 2026 · On-location, Oslo",
+      "focus": "A/B testing, AI, analytics, data-driven growth",
+      "register": "https://www.optimizely.com/field-notes/events/experimentation-forum-oslo/"
     },
     {
       "event": "What's new, what's next — Optimizely Commerce Connect",
@@ -357,25 +299,25 @@ export const report: Report = {
   "roadmap": [
     {
       "product": "Opal (AI)",
-      "phase": "Now / Coming soon",
+      "phase": "Q3 roadmap",
       "items": [
-        "Limitless 1:1 ABM — per-account microsites built and refreshed by agents",
-        "Adaptive Intelligence — org-specific model trained on what converts",
-        "Action Cards — act on AI recommendations in-workflow",
-        "Code Execution Environment — Python sandbox producing decks, Excel, charts",
-        "Add Remote MCPs; Agent Evaluations & Execution Guardrails"
+        "Voice Mode — hands-free, real-time chat with Opal",
+        "Virtual Teammates — bundle agents/tools into a configurable teammate (e.g., Chief of Staff)",
+        "Human-in-the-loop — native approval checkpoints embedded in workflows",
+        "Channel Packs & Brand Packs — on-brand campaign assets generated in seconds",
+        "Deeper Tools & MCP reach — Slack, Gmail, Google Ads, ZoomInfo and more"
       ],
       "link": "https://www.optimizely.com/product-updates/ai/"
     },
     {
       "product": "Content Management (CMS)",
-      "phase": "Q2 roadmap",
+      "phase": "Now / Next",
       "items": [
-        "Agentic Page Building from existing content models",
-        "MCP server for CMS (design-to-component)",
-        "Visual Builder: multi-layout, blueprint editing, content-model locking",
-        "Content Manager improvements; taxonomy & tagging",
-        "JavaScript SDK improvements; TinyMCE for SaaS"
+        "Multi-layout and blueprint editing in Visual Builder",
+        "Content-model locking and taxonomy/tagging improvements",
+        "CMS MCP server rollout to more design-to-component workflows",
+        "JavaScript SDK improvements; TinyMCE for SaaS",
+        "Further Opal content agents beyond Content Model Creation and GEO Schema Optimization"
       ],
       "link": "https://www.optimizely.com/product-updates/content-management/"
     },
@@ -422,7 +364,7 @@ export const report: Report = {
         "Change Approvals — vetted flag/experiment changes",
         "Bayesian stats engine; Unified Results Page",
         "Experiment Plan Creation agent (pushes plans to Jira)",
-        "Idea Builder agent (coming from Web to Feature Exp)"
+        "Global holdouts, extending the newly shipped Local holdouts"
       ],
       "link": "https://www.optimizely.com/product-updates/feature-experimentation/"
     },
@@ -451,35 +393,35 @@ export const report: Report = {
   ],
   "blogs": [
     {
-      "title": "Graph-First B2B Commerce: What Commerce Connect 15 Changes for Your Catalog and Search",
-      "why": "Why now: Commerce 15 GA (May 2026) makes Optimizely Graph the default search layer and deprecates Find for commerce. Architects need a clear migration and design narrative while the GA is fresh.",
-      "audience": "Solution architects, product marketers",
-      "difficulty": "Advanced",
-      "engagement": 8,
-      "uniqueness": 9,
-      "priority": 8.5
-    },
-    {
-      "title": "Wiring the Optimizely MCP Server into a Full B2B Buyer Journey",
-      "why": "Why now: Experimentation MCP is GA (April 2026) and Commerce/CMS MCP servers are live; community demos show question-to-order in a chat client. A canonical, reproducible walkthrough is missing.",
-      "audience": "DevRel, solution architects",
+      "title": "The Agentic DXP Race: Benchmarking Opal Against Sitecore's Agentic Studio, Adobe's Commerce Agents, and Bloomreach's Loomi",
+      "why": "Why now: Sitecore, Adobe, and Bloomreach all made agentic announcements this quarter. Buyers are actively comparing agent platforms and independent content on the comparison is thin.",
+      "audience": "Product marketers, analysts, prospects",
       "difficulty": "Advanced",
       "engagement": 9,
       "uniqueness": 9,
       "priority": 9.0
     },
     {
-      "title": "From 45+ Prebuilt Agents to Production: An Opal Agent Library Playbook",
-      "why": "Why now: The Agent Library and Skills Builder GA (June 30) plus July connector tools give marketers a one-click starting point. A practical \"pick, customize, ship\" guide capitalizes on the release.",
-      "audience": "Content & product marketers",
+      "title": "Inside CMS 13's New Content Model & GEO Schema Agents: A First Look",
+      "why": "Why now: The August 17 release is fresh and has no independent walkthrough yet. Solution architects and content teams need a hands-on look before wider rollout.",
+      "audience": "Solution architects, content engineers",
       "difficulty": "Intermediate",
-      "engagement": 9,
-      "uniqueness": 7,
+      "engagement": 8,
+      "uniqueness": 8,
       "priority": 8.0
     },
     {
-      "title": "CMAB vs A/B: When to Let Contextual Bandits Decide in Feature Experimentation",
-      "why": "Why now: CMABs (April 28) and the new Contextual Bandit Results page (June 18) close the loop from test to targeting. Practitioners need decision criteria, not just a feature announcement.",
+      "title": "The Preview3 Sunset: A Migration Checklist for CMS (SaaS) Teams",
+      "why": "Why now: Preview3 endpoints were retired August 1. Any integration that hasn't moved to REST API v1 is already broken and searching for guidance.",
+      "audience": "Developers, technical architects",
+      "difficulty": "Intermediate",
+      "engagement": 8,
+      "uniqueness": 6,
+      "priority": 7.5
+    },
+    {
+      "title": "Local Holdouts vs. Global Holdouts: A Decision Guide for Feature Experimentation",
+      "why": "Why now: Local holdouts shipped July 7 alongside Owner/Teams fields. Practitioners need decision criteria for when to hold back a rule vs. an entire project.",
       "audience": "Experimentation leads, data teams",
       "difficulty": "Advanced",
       "engagement": 7,
@@ -487,183 +429,183 @@ export const report: Report = {
       "priority": 7.5
     },
     {
-      "title": "GEO/AEO for CMS 13: Making Content Discoverable to LLMs with Opal",
-      "why": "Why now: The Agent Visibility Analytics dashboard (June 10), markdown-for-agents beta, and Opal GEO/SEO schema agents give a concrete toolset for a fast-rising, under-served topic.",
-      "audience": "Content marketers, SEO leads",
-      "difficulty": "Intermediate",
-      "engagement": 9,
-      "uniqueness": 8,
-      "priority": 8.5
-    },
-    {
-      "title": "Search Without a Developer: Optimizely Graph's Search Management Portal",
-      "why": "Why now: The beta portal (May 21) plus the July 6 performance dashboard let marketers own Pinned Results and Synonyms. A short enablement piece drives adoption ahead of GA.",
-      "audience": "Content marketers, merchandisers",
+      "title": "Claude Opus 5 Inside Opal: What the Inference-Level Upgrade Actually Changes",
+      "why": "Why now: The August 14 update quietly moved Complex and Code inference to claude-opus-5. Admins want to know what changed in output quality, latency, and cost.",
+      "audience": "Admins, technical marketers",
       "difficulty": "Beginner–Intermediate",
       "engagement": 7,
-      "uniqueness": 7,
+      "uniqueness": 8,
+      "priority": 7.0
+    },
+    {
+      "title": "PIM Meets Opal: Agentic Product Data Management Arrives",
+      "why": "Why now: The August 4 PIM release adds Opal system tools and primary-category management — a new, largely uncovered surface for Opal.",
+      "audience": "Merchandisers, PIM admins",
+      "difficulty": "Beginner–Intermediate",
+      "engagement": 6,
+      "uniqueness": 8,
       "priority": 7.0
     }
   ],
   "whitepapers": [
     {
-      "title": "The Graph-First, Agentic Commerce Blueprint for Manufacturers & Distributors",
-      "why": "Combines Commerce 15, Optimizely Graph, Opal, and the Commerce MCP server into a reference architecture for complex B2B catalogs. Anchors the Configured Commerce narrative for enterprise buyers.",
-      "audience": "Solution architects, product marketers, enterprise buyers",
+      "title": "Benchmarking the Big Four Agentic DXPs: Optimizely, Adobe, Sitecore, Bloomreach",
+      "why": "Buying committees are actively comparing agent counts, governance, and MCP access across these four vendors this quarter. A structured, evidence-based benchmark fills a live gap.",
+      "audience": "Enterprise buyers, analysts",
       "difficulty": "Advanced",
       "engagement": 8,
       "uniqueness": 9,
       "priority": 8.5
     },
     {
-      "title": "Governing Agentic MarTech: A Trust, Guardrails, and Audit Framework",
-      "why": "Turns Opal's role-based sharing, model-provider selection, execution-log export, and roadmap guardrails/evaluations into an enterprise governance model. Fills a live content gap and answers procurement's top objection.",
-      "audience": "Enterprise/IT buyers, solution architects",
+      "title": "Governing Model Choice in Opal: Inference Levels, Claude Opus 5, and Cost Control",
+      "why": "Enterprise buyers ask about cost and governance the moment a vendor changes the model behind an AI feature. Turns the August inference-level upgrade into a procurement-ready explainer.",
+      "audience": "IT/procurement, solution architects",
       "difficulty": "Intermediate",
-      "engagement": 8,
-      "uniqueness": 8,
-      "priority": 8.0
-    },
-    {
-      "title": "Migrating CMS 12 + Commerce 14 to CMS 13 + Commerce 15 with Agentic AI Accelerators",
-      "why": "Field-tested upgrade playbook — PageData → ExperienceData, Find → Graph, Visual Builder adoption, and AI Migration Accelerator skills. High demand from partners and architects mid-upgrade.",
-      "audience": "Solution architects, DevRel, partners",
-      "difficulty": "Advanced",
       "engagement": 7,
       "uniqueness": 8,
       "priority": 7.5
+    },
+    {
+      "title": "Migrating Off Preview3: An Enterprise CMS (SaaS) API Modernization Playbook",
+      "why": "The August 1 retirement leaves any unmigrated integration broken. A structured playbook for auditing, migrating, and testing against REST API v1 has high, immediate demand.",
+      "audience": "Enterprise architects, IT buyers",
+      "difficulty": "Advanced",
+      "engagement": 7,
+      "uniqueness": 7,
+      "priority": 7.0
     }
   ],
   "linkedin": [
     {
-      "title": "The number that proves agentic adoption is real",
-      "why": "375 AI agents built and a 1,500-person waitlist from Opal University. Frame the shift from 'AI curiosity' to 'AI in the workflow' — invite comments on what teams would automate first.",
+      "title": "Three DXPs, three agent platforms, one very busy August",
+      "why": "Sitecore's Agentic Studio, Adobe's agentic Commerce framing, and Bloomreach's Loomi all surfaced this month. A roundup post positions Optimizely's Agent Library and governance depth in context.",
       "audience": "Marketing leaders",
       "engagement": 8,
-      "uniqueness": 7
+      "uniqueness": 8
     },
     {
-      "title": "Commerce 15 makes Optimizely Graph the default — and retires Find for commerce",
-      "why": "A dev-facing post on the graph-first architecture and single GraphQL endpoint for catalog + external content. Strong for solution architects.",
-      "audience": "Solution architects, developers",
+      "title": "Claude Opus 5 just quietly got wired into Opal",
+      "why": "The August 14 inference-level upgrade is easy to miss in release notes but meaningful for anyone running Complex or Code-level agents. Frame it as 'what changed under the hood.'",
+      "audience": "Technical marketers, admins",
       "engagement": 7,
       "uniqueness": 7
     },
     {
-      "title": "Two new Opal tools merchandisers should try this week",
-      "why": "Tie to the July 22 release: Google Search Console insights and Product Recommendations algorithm-performance reporting, both inside Opal.",
-      "audience": "Merchandisers, marketers",
-      "engagement": 7,
-      "uniqueness": 6
-    },
-    {
-      "title": "Let the bandit decide: CMAB in plain language",
-      "why": "A three-line explainer on when contextual bandits beat a fixed A/B test, linking to the new results page. High save-rate potential.",
-      "audience": "Experimentation leads",
-      "engagement": 7,
-      "uniqueness": 7
-    },
-    {
-      "title": "Register drive for Commerce Connect 'What's new, what's next' (Sep 10)",
-      "why": "Countdown-style post with the concrete agenda hooks; pairs with the Aug 20 Content and Beyond session.",
-      "audience": "Commerce customers, marketers",
+      "title": "Preview3 is officially retired — did your integration make the cut?",
+      "why": "A direct, slightly cautionary post pointing teams to the migration checklist. High relevance for anyone who missed the August 1 deadline.",
+      "audience": "Developers",
       "engagement": 6,
       "uniqueness": 6
+    },
+    {
+      "title": "PIM finally gets an Opal seat at the table",
+      "why": "Tie to the August 4 release: Opal system tools for PIM dashboards and primary-category management. A short, concrete feature spotlight.",
+      "audience": "Merchandisers, PIM admins",
+      "engagement": 6,
+      "uniqueness": 7
+    },
+    {
+      "title": "Save the date: Camp Opticon hits NYC, Aug 31–Sep 1",
+      "why": "Countdown-style registration push for the flagship event, pairing with the Sep 3 Oslo Experimentation Forum for a two-city hook.",
+      "audience": "Practitioners, partners",
+      "engagement": 6,
+      "uniqueness": 5
     }
   ],
   "competitive": [
     {
       "theme": "Agentic AI / prebuilt agents",
-      "optimizely": "Opal Agent Library (45+ agents), Skills Builder GA, role-based governance",
-      "competitor": "Sitecore Agentic Studio (~20 agents); Adobe Commerce Developer Agent (Summit 2026)",
-      "opportunity": "Lead on breadth + marketing-specific agents + governance depth, not just agent count"
+      "optimizely": "Opal Agent Library (45+ agents), Agent Builder/Skill Builder GA, model-provider choice incl. Claude Opus 5",
+      "competitor": "Sitecore Agentic Studio (~20 agents, SitecoreAI on Azure); Adobe framing storefronts for 'humans and AI agents'",
+      "opportunity": "Lead on breadth, governance depth (sharing, guardrails, evaluations), and model choice — not just agent count"
     },
     {
-      "theme": "MCP / agentic commerce",
-      "optimizely": "MCP servers across Commerce, Experimentation, Analytics, CMS (SaaS)",
-      "competitor": "Shopify UCP + Catalog/Cart/Checkout MCP, Agentic Storefronts default (Mar 24, 2026); Adobe Commerce MCP; Sitecore Marketer MCP; Contentful native MCP",
-      "opportunity": "Own the full B2B buyer journey (quote-to-order) across one suite vs. storefront-only MCP"
+      "theme": "MCP / agentic access",
+      "optimizely": "MCP servers across Experimentation (remote, open to all customers), Commerce, Analytics, CMS (SaaS)",
+      "competitor": "Adobe Commerce Optimizer SaaS enrichment layer; Bloomreach's Loomi agent framework",
+      "opportunity": "Own the 'no waitlist, all customers' access story while rivals gate agent features by tier"
     },
     {
-      "theme": "Graph-first B2B commerce",
-      "optimizely": "Commerce 15 graph-first, external content via OCP, unified catalog + content search",
-      "competitor": "Bloomreach (Loomi + B2B connector for Salesforce Commerce Cloud); Salesforce Commerce Cloud",
-      "opportunity": "Single GraphQL endpoint unifying native + external catalog and CMS content is differentiated"
+      "theme": "Content modeling / GEO for AI discoverability",
+      "optimizely": "CMS 13 Content Model Creation + GEO Schema Optimization agents; Agent Visibility Analytics",
+      "competitor": "Sitecore Agentic Studio content-migration agents; no direct GEO-schema equivalent found for Adobe or Bloomreach",
+      "opportunity": "First-mover message: automated GEO schema generation is still a gap for the competitor set"
     },
     {
-      "theme": "AI merchandising / 1:1 personalization",
-      "optimizely": "Limitless 1:1 personalization; contextual bandits; Opal catalog content generation",
-      "competitor": "Bloomreach Loomi merchandising agents; Dynamic Yield — no recent public activity found",
-      "opportunity": "Tie personalization to experimentation evidence — a proof story rivals lack"
+      "theme": "Commerce modernization",
+      "optimizely": "Commerce Connect 15 — async order APIs, PCI-compliant tokenized payments, Visual Builder-first catalog",
+      "competitor": "Adobe Commerce Optimizer (SaaS enrichment layer); Bloomreach Discovery (3x Gartner Leader, Search & Product Discovery)",
+      "opportunity": "Pair the PCI/async infrastructure story with Bloomreach's search strength as a distinct modernization angle"
     },
     {
-      "theme": "Experimentation automation",
-      "optimizely": "Opal-powered CMABs, Idea builder, Experimentation MCP, agent-assisted programs",
-      "competitor": "VWO + AB Tasty merged (Evi agent, EmotionsAI); Kameleoon predictive targeting",
-      "opportunity": "Suite-native experimentation data + MCP access is a moat amid competitor consolidation"
+      "theme": "Product data / PIM",
+      "optimizely": "Opal system tools now reach into PIM — Dashboard stats, primary-category management",
+      "competitor": "No direct PIM-agent equivalent surfaced for Sitecore, Adobe, or Bloomreach this quarter",
+      "opportunity": "Early and largely uncontested — worth a dedicated content push before competitors catch up"
     }
   ],
   "actions": [
     {
       "n": 1,
-      "title": "Publish the Commerce Connect 15 graph-first technical blog this week",
-      "why": "The GA window is the moment to own the 'Find → Graph' narrative for B2B architects.",
+      "title": "Publish the Preview3 migration checklist this week",
+      "why": "The cutoff already passed (Aug 1) — any customer still on Preview3 is in an active break/fix situation and searching for guidance now.",
       "priority": 9.0,
-      "format": "Blog"
+      "format": "Blog + checklist"
     },
     {
       "n": 2,
-      "title": "Ship the Optimizely MCP Server B2B buyer-journey walkthrough",
-      "why": "With a runnable GitHub sample — highest uniqueness and directly differentiated vs. storefront-only competitor MCPs.",
+      "title": "Ship the CMS 13 Content Model & GEO Schema agent walkthrough",
+      "why": "The Aug 17 release is fresh and the feature has no independent write-up yet.",
       "priority": 8.5,
-      "format": "Blog + GitHub sample"
+      "format": "How-to blog + short demo video"
     },
     {
       "n": 3,
-      "title": "Produce the Opal Agent Library playbook",
-      "why": "For content and product marketers, tied to the June 30 and July 22 releases while the 45+ agents are new.",
-      "priority": 8.0,
-      "format": "How-to blog"
+      "title": "Produce the agentic-DXP competitive benchmark",
+      "why": "Sitecore, Adobe, and Bloomreach all made agentic announcements this quarter — the comparison content gap is wide open.",
+      "priority": 8.5,
+      "format": "Whitepaper + blog"
     },
     {
       "n": 4,
-      "title": "Commission the enterprise AI governance whitepaper/webinar",
-      "why": "For solution architects — closes an active content gap and answers procurement's top objection.",
+      "title": "Explain the Claude Opus 5 / inference-level upgrade to admins",
+      "why": "Model changes land quietly in release notes; customers want to know what changed and whether it affects cost or behavior.",
       "priority": 7.5,
-      "format": "Whitepaper + Webinar"
+      "format": "Explainer blog"
     },
     {
       "n": 5,
-      "title": "Run a registration campaign for the Sep 10 Commerce Connect webinar and Aug 20 Content and Beyond",
-      "why": "Both map cleanly to the Configured Commerce priority themes.",
+      "title": "Run a registration push for Camp Opticon and the Oslo Experimentation Forum",
+      "why": "Both events sit in the next three weeks and map directly to practitioner and partner audiences.",
       "priority": 7.0,
       "format": "Campaign"
     }
   ],
   "next7": [
     {
-      "bold": "Draft the Commerce 15 graph-first blog",
-      "text": "and commission an architecture diagram."
+      "bold": "Draft the Preview3 migration checklist",
+      "text": "and cross-link it from the CMS (SaaS) release notes."
     },
     {
-      "bold": "Scope the MCP B2B buyer-journey demo",
-      "text": "and stand up the GitHub sample repo."
+      "bold": "Record a short walkthrough of the CMS 13 Content Model and GEO Schema agents",
+      "text": "using a real page as the demo."
     },
     {
-      "bold": "Record a two-minute Opal release explainer",
-      "text": "tied to the July 29 release (Agent Builder, Skill Builder, governance)."
+      "bold": "Outline the agentic-DXP benchmark",
+      "text": "covering Opal, Sitecore Agentic Studio, Adobe's commerce agents, and Bloomreach Loomi."
+    },
+    {
+      "bold": "Write the Claude Opus 5 / inference-level explainer",
+      "text": "and confirm with support docs which levels map to which models."
     },
     {
       "bold": "Schedule the five LinkedIn posts",
-      "text": "lead with the Opal University proof point and the Commerce 15 dev angle."
+      "text": "lead with the Opus 5 teaser and the competitive round-up."
     },
     {
-      "bold": "Brief solution architects on Commerce 15",
-      "text": "talking points: graph-first, Visual Builder catalog, PCI/tokenized payments."
-    },
-    {
-      "bold": "Build the promo push for Sep 10 & Aug 20 events",
-      "text": "drive Commerce Connect and Content and Beyond registrations."
+      "bold": "Push registrations for Camp Opticon (Aug 31–Sep 1) and the Oslo Experimentation Forum (Sep 3)",
+      "text": "prioritize partner and practitioner lists."
     }
   ]
 };
