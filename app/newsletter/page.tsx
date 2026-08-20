@@ -210,6 +210,44 @@ export default function ReportPage() {
 
         <Section
           n="04"
+          title="Royal Cyber Upcoming Events"
+          intro="Royal Cyber's own Optimizely webinars and networking events — register directly on royalcyber.com."
+        >
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-[13.5px]">
+              <thead>
+                <tr>
+                  <th className={TH}>Event</th>
+                  <th className={TH}>When / Format</th>
+                  <th className={TH}>Focus</th>
+                  <th className={TH}>Register</th>
+                </tr>
+              </thead>
+              <tbody>
+                {report.royalCyberEvents.map((e, i) => (
+                  <tr key={i}>
+                    <td className={`${TD} font-medium`}>{e.event}</td>
+                    <td className={`${TD} text-opti-muted`}>{e.when}</td>
+                    <td className={`${TD} text-opti-muted`}>{e.focus}</td>
+                    <td className={TD}>
+                      <a
+                        href={e.register}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block whitespace-nowrap rounded-full bg-[#0d3b24] px-4 py-1.5 text-[13px] font-semibold text-white transition hover:bg-[#15633c]"
+                      >
+                        Register
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Section>
+
+        <Section
+          n="05"
           title="Product Roadmap"
           intro="Near-term items pulled from the current / Now / Q2 sections of each product-updates page. Forward-looking and informational only — Optimizely states the roadmap is not binding and may change."
         >
@@ -242,7 +280,7 @@ export default function ReportPage() {
         </Section>
 
         <Section
-          n="05"
+          n="06"
           title="High-Value Blog Opportunities"
           intro="Blog angles tied to in-window releases, roadmap items, or events. Scores are 1–10; composite priority weights AI relevance, enterprise relevance, momentum, uniqueness, and search trend."
         >
@@ -264,7 +302,7 @@ export default function ReportPage() {
         </Section>
 
         <Section
-          n="06"
+          n="07"
           title="Whitepaper Opportunities"
           intro="Longer-form, enterprise-oriented assets for buying committees and architecture reviews."
         >
@@ -286,7 +324,7 @@ export default function ReportPage() {
         </Section>
 
         <Section
-          n="07"
+          n="08"
           title="LinkedIn Post Ideas"
           intro="Short, evidence-led posts that ride current releases and events."
         >
@@ -306,7 +344,7 @@ export default function ReportPage() {
         </Section>
 
         <Section
-          n="08"
+          n="09"
           title="Competitive Insight"
           intro="Each focus cluster benchmarked against the competitor set."
         >
@@ -335,7 +373,7 @@ export default function ReportPage() {
         </Section>
 
         <Section
-          n="09"
+          n="10"
           title="Recommended Immediate Actions"
           intro="Top items by composite priority, blending AI and enterprise relevance, momentum, uniqueness, and freshness of the underlying signal."
         >
@@ -355,7 +393,7 @@ export default function ReportPage() {
           ))}
         </Section>
 
-        <Section n="10" title="Next 7 Days">
+        <Section n="11" title="Next 7 Days">
           <ul className="list-disc space-y-2 pl-5 text-sm text-opti-muted">
             {report.next7.map((it, i) => (
               <li key={i}>

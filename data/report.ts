@@ -80,6 +80,7 @@ export interface Report {
   trends: Trend[];
   releases: ReleaseUpdate[];
   events: EventItem[];
+  royalCyberEvents: EventItem[];
   roadmap: RoadmapCard[];
   blogs: ContentIdea[];
   whitepapers: ContentIdea[];
@@ -294,6 +295,20 @@ export const report: Report = {
       "when": "Sep 23, 2026 · On-location",
       "focus": "Digital experience platform, agentic marketing",
       "register": "https://www.optimizely.com/field-notes/events/dmexco-2026/"
+    }
+  ],
+  "royalCyberEvents": [
+    {
+      "event": "Upgrade to Optimizely CMS 13 Without Business Risk",
+      "when": "Aug 24, 2026 · 2:00 PM CST · Live webinar",
+      "focus": "Reducing CMS 13 migration risk with automated testing, content migration, and upgrade planning",
+      "register": "https://www.royalcyber.com/webinar/optimizely-cms-13-migration/"
+    },
+    {
+      "event": "Opticon 2026 Executive Networking Happy Hour — Optimizely CMS 13 & Beyond",
+      "when": "Sep 1, 2026 · 12:00 PM · Friedman's Hell's Kitchen, New York, NY",
+      "focus": "Co-hosted with Optimizely — CMS 13 migration, AI-powered experiences, personalization, and composable architecture",
+      "register": "https://www.royalcyber.com/opticon-2026-networking-event/"
     }
   ],
   "roadmap": [
