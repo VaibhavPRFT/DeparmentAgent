@@ -213,37 +213,52 @@ export default function ReportPage() {
           title="Royal Cyber Upcoming Events"
           intro="Royal Cyber's own Optimizely webinars and networking events — register directly on royalcyber.com."
         >
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-[13.5px]">
-              <thead>
-                <tr>
-                  <th className={TH}>Event</th>
-                  <th className={TH}>When / Format</th>
-                  <th className={TH}>Focus</th>
-                  <th className={TH}>Register</th>
-                </tr>
-              </thead>
-              <tbody>
-                {report.royalCyberEvents.map((e, i) => (
-                  <tr key={i}>
-                    <td className={`${TD} font-medium`}>{e.event}</td>
-                    <td className={`${TD} text-opti-muted`}>{e.when}</td>
-                    <td className={`${TD} text-opti-muted`}>{e.focus}</td>
-                    <td className={TD}>
-                      <a
-                        href={e.register}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block whitespace-nowrap rounded-full bg-[#0d3b24] px-4 py-1.5 text-[13px] font-semibold text-white transition hover:bg-[#15633c]"
-                      >
-                        Register
-                      </a>
-                    </td>
+          {report.royalCyberEvents.length === 0 ? (
+            <p className="rounded-xl border border-dashed border-opti-line bg-opti-panel p-4 text-[13.5px] text-opti-muted">
+              No Royal Cyber Optimizely events are currently scheduled. Check{" "}
+              <a
+                href="https://www.royalcyber.com/company/news-events/upcoming-events/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-opti-accent hover:underline"
+              >
+                royalcyber.com/company/news-events
+              </a>{" "}
+              for upcoming webinars.
+            </p>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse text-[13.5px]">
+                <thead>
+                  <tr>
+                    <th className={TH}>Event</th>
+                    <th className={TH}>When / Format</th>
+                    <th className={TH}>Focus</th>
+                    <th className={TH}>Register</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {report.royalCyberEvents.map((e, i) => (
+                    <tr key={i}>
+                      <td className={`${TD} font-medium`}>{e.event}</td>
+                      <td className={`${TD} text-opti-muted`}>{e.when}</td>
+                      <td className={`${TD} text-opti-muted`}>{e.focus}</td>
+                      <td className={TD}>
+                        <a
+                          href={e.register}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block whitespace-nowrap rounded-full bg-[#0d3b24] px-4 py-1.5 text-[13px] font-semibold text-white transition hover:bg-[#15633c]"
+                        >
+                          Register
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </Section>
 
         <Section
