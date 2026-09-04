@@ -80,6 +80,7 @@ export interface Report {
   trends: Trend[];
   releases: ReleaseUpdate[];
   events: EventItem[];
+  royalCyberEvents: EventItem[];
   roadmap: RoadmapCard[];
   blogs: ContentIdea[];
   whitepapers: ContentIdea[];
@@ -92,25 +93,25 @@ export interface Report {
 
 export const report: Report = {
   "title": "Optimizely Trend and Content Opportunities",
-  "generated": "August 20, 2026",
+  "generated": "September 4, 2026",
   "sub": "A weekly, evidence-led scan of Optimizely product signals, releases, events, and the content angles worth acting on — for content marketers, DevRel leads, solution architects, and product marketers.",
   "tags": [
     {
-      "label": "Breakout: The agentic-DXP race broadens — Sitecore, Adobe, and Bloomreach all shipped agent platforms this quarter",
+      "label": "Breakout: Opal becomes Optimizely Agent Platform — Virtual Teammates ship as first-class, Opti ID-carrying users",
       "hot": true
     },
     {
-      "label": "Signal window: 90 days (ending Aug 20, 2026)"
+      "label": "Signal window: 90 days (ending Sep 4, 2026)"
     },
     {
-      "label": "Focus: CMS 13 GEO/Content Agents · Opal Model Upgrades · Preview3 Migration"
+      "label": "Focus: Agent Platform Rebrand · Virtual Teammates · Purpose-Built AI Models"
     }
   ],
   "trends": [
     {
       "rank": 1,
-      "title": "Opal ships agent-building tools and a quiet model upgrade to Claude Opus 5",
-      "body": "The July 29 release added Agent Builder and Skill Builder so admins can configure and iterate on agents and skills directly inside Opal Chat, plus Safe URL Browsing, Version History, and remote MCP support. The August 14 update raised the ceiling further, upgrading the Complex and Code inference levels to run on claude-opus-5 and shipping graph_pinned_result and graph_synonyms tools for managing Optimizely Graph search behavior from inside chat (Opal release notes).",
+      "title": "Opal is now Optimizely Agent Platform — and Virtual Teammates ship as first-class users",
+      "body": "Effective September 1, 2026, Optimizely renamed Opal to Optimizely Agent Platform. The rebrand landed alongside the August 25 release of Virtual Teammates — AI agents with their own Opti ID and persistent memory that act as first-class Optimizely users across products. The first five are Chief of Staff, Marketing Analyst, SEO & AI Search Analyst, CRO Manager, and Personalization Strategist, joined by Team Messages (a real-time chat layer with agents and humans) and Brands (automatic on-brand styling for every generated artifact).",
       "flags": [
         {
           "kind": "ai",
@@ -124,23 +125,23 @@ export const report: Report = {
     },
     {
       "rank": 2,
-      "title": "CMS 13 gets its own content-modeling and GEO agents",
-      "body": "The August 17 CMS 13 release notes document a Content Model Creation agent that analyzes a URL or image to propose a best-practice content model, and a GEO Schema Optimization agent that recommends or generates JSON-LD schema for LLM discoverability. Both build on the SEO/GEO agent work Opal shipped in June, moving GEO from a dashboard you read to a task an agent performs for you.",
+      "title": "Purpose-built marketing models flip the RFP conversation",
+      "body": "Also on September 1, Optimizely introduced a family of purpose-built, post-trained AI models built specifically for marketing tasks, claiming roughly 10x cost efficiency versus frontier LLMs in early testing. The pitch: strip the general-purpose overhead out of a frontier model and tune for marketing-specific work. Expect 2027 platform-renewal RFPs to start asking \"which model fits this task\" instead of \"which LLM does the vendor use.\"",
       "flags": [
         {
           "kind": "ai",
           "label": "AI relevance"
         },
         {
-          "kind": "gap",
-          "label": "Content gap"
+          "kind": "ent",
+          "label": "Enterprise relevance"
         }
       ]
     },
     {
       "rank": 3,
-      "title": "Commerce Connect 15 finishes its PCI and async-order overhaul",
-      "body": "Commerce Connect 15 GA removes the legacy credit-card storage APIs entirely in favor of tokenized payment providers (Stripe, Adyen, PayPal), adds async versions of every IOrderRepository / ICartProvider / IPaymentPlanProvider method for non-blocking order operations, and defaults catalog entries to Visual Builder editing alongside CMS content. For B2B teams mid-upgrade, PCI compliance and async I/O are now forcing functions, not optional modernization.",
+      "title": "Forrester names Optimizely a Leader — with the top scores in agentic AI",
+      "body": "Optimizely was named a Leader and a Customer Favorite in The Forrester Wave: Experience Optimization Solutions, Q3 2026 (August 17), with the highest possible scores in generative AI, agentic AI, and both web and feature experimentation, plus top marks for vision, innovation, roadmap, and partner ecosystem. It's the clearest third-party validation yet for the agentic-experimentation pitch sales teams have been making all year.",
       "flags": [
         {
           "kind": "ent",
@@ -150,23 +151,23 @@ export const report: Report = {
     },
     {
       "rank": 4,
-      "title": "The agentic-DXP race stops being an Optimizely-only story",
-      "body": "Sitecore's SitecoreAI (Agentic Studio, roughly 20 agents, built on Microsoft Azure) and Adobe's agentic push in Commerce — framing storefronts as serving \"humans and AI agents\" alike — both landed this quarter, and Bloomreach continues to lean on Loomi and a three-time Gartner Leader position in Search and Product Discovery. Opal's Agent Library (45+ agents) and governance controls are still the widest catalog, but the competitive gap on agent count and marketing is closing fast.",
+      "title": "The agent rollout reaches Commerce and CMS 13 content ops",
+      "body": "The August 27 release added a Restriction Group Creation Agent that builds Configured Commerce product-restriction groups through a wizard instead of hand-built API calls, plus a Page Builder (PaaS) agent and a Content Analysis agent for CMS 13 that turn a document, image, or URL into publish-ready, on-pattern content. Agents are no longer just a chat-window feature — they're showing up inside the commerce and content admin screens people already use.",
       "flags": [
+        {
+          "kind": "ai",
+          "label": "AI relevance"
+        },
         {
           "kind": "ent",
           "label": "Enterprise relevance"
-        },
-        {
-          "kind": "gap",
-          "label": "Content gap"
         }
       ]
     },
     {
       "rank": 5,
-      "title": "CMS (SaaS) forces a breaking-change migration: Preview3 is gone",
-      "body": "On August 1, 2026, Optimizely retired the Preview3 CMS REST API endpoints and began disabling access; any CMS (SaaS) app still calling them needed to be on REST API v1 before the cutoff. It's a small technical note with an outsized blast radius for any integration built a couple of years ago and never revisited.",
+      "title": "The agentic-DXP race gets three keynote stages in one week",
+      "body": "Sitecore's SitecoreAI (Agentic Studio, ~20 agents) and Adobe's agentic Commerce push are both live, and HumanX and DMEXCO — both September 23 — will put \"agentic marketing\" on stage the same week Optimizely's Content and Beyond APAC and Virtual Teammates launch event run. With a Forrester Leader placement and Virtual Teammates now shipped, Optimizely enters that week with fresher proof points than it had a month ago.",
       "flags": [
         {
           "kind": "ent",
@@ -180,13 +181,9 @@ export const report: Report = {
     },
     {
       "rank": 6,
-      "title": "PIM becomes an Opal surface, not just a system of record",
-      "body": "The August 4 Product Information Management update added Opal system tools that pull Dashboard statistics on request, plus primary-category management and a faster Bulk Edit. It's a small release, but it's the clearest sign yet that Opal's reach is extending past CMS, Commerce, and Experimentation into the product-data layer B2B catalogs depend on.",
+      "title": "PIM picks up the shared brand — and a bulk-rename tool",
+      "body": "Product Information Management's interface was updated to the unified Optimizely color scheme and logo, and a new Rename Product Number import type lets teams bulk-standardize SKUs from an Excel file. Small on its own, but it confirms PIM is being folded into the same brand, UI, and agent-platform conventions as the rest of the suite rather than left as a legacy acquisition.",
       "flags": [
-        {
-          "kind": "ai",
-          "label": "AI relevance"
-        },
         {
           "kind": "ent",
           "label": "Enterprise relevance"
@@ -195,6 +192,48 @@ export const report: Report = {
     }
   ],
   "releases": [
+    {
+      "product": "Opal → Optimizely Agent Platform",
+      "date": "Sep 1, 2026",
+      "highlight": "Opal renamed to Optimizely Agent Platform. Branding change only — no API or workflow changes reported.",
+      "source": "support.optimizely.com",
+      "type": "Rebrand"
+    },
+    {
+      "product": "Optimizely AI",
+      "date": "Sep 1, 2026",
+      "highlight": "Purpose-built, post-trained AI models for marketing tasks launched — roughly 10x cost efficiency vs. frontier LLMs in early testing.",
+      "source": "optimizely.com",
+      "type": "GA release"
+    },
+    {
+      "product": "Optimizely PIM",
+      "date": "Sep 2026",
+      "highlight": "UI updated to the unified Optimizely color scheme and logo; added a Rename Product Number bulk-import type for SKU standardization.",
+      "source": "support.optimizely.com",
+      "type": "Enhancement"
+    },
+    {
+      "product": "Opal",
+      "date": "Aug 27, 2026",
+      "highlight": "Restriction Group Creation agent (Configured Commerce); Page Builder (PaaS) and Content Analysis agents for CMS 13.",
+      "source": "support.optimizely.com",
+      "type": "Enhancement"
+    },
+    {
+      "product": "Opal",
+      "date": "Aug 25, 2026",
+      "highlight": "Virtual Teammates GA — Chief of Staff, Marketing Analyst, SEO & AI Search Analyst, CRO Manager, Personalization Strategist — plus Team Messages and Brands.",
+      "source": "support.optimizely.com",
+      "type": "GA release"
+    },
+    {
+      "product": "Optimizely Experimentation",
+      "date": "Aug 17, 2026",
+      "highlight": "Named a Leader and Customer Favorite in The Forrester Wave: Experience Optimization Solutions, Q3 2026 — top scores in generative AI, agentic AI, web and feature experimentation.",
+      "source": "optimizely.com",
+      "type": "Analyst recognition"
+    },
     {
       "product": "CMS 13 (PaaS)",
       "date": "Aug 17, 2026",
@@ -208,80 +247,14 @@ export const report: Report = {
       "highlight": "Complex and Code inference levels upgraded to claude-opus-5; added graph_pinned_result and graph_synonyms tools for Optimizely Graph.",
       "source": "support.optimizely.com",
       "type": "Enhancement"
-    },
-    {
-      "product": "Optimizely PIM",
-      "date": "Aug 4, 2026",
-      "highlight": "Primary category management, faster Bulk Edit on the Product List, and a 30-day notification auto-retention policy.",
-      "source": "support.optimizely.com",
-      "type": "Enhancement"
-    },
-    {
-      "product": "CMS (SaaS)",
-      "date": "Aug 1, 2026",
-      "highlight": "Preview3 REST API endpoints retired; apps must run on CMS REST API v1.",
-      "source": "support.optimizely.com",
-      "type": "Breaking change"
-    },
-    {
-      "product": "Experimentation MCP",
-      "date": "Aug 2026",
-      "highlight": "Remote MCP Server now open to all Web & Feature Experimentation customers — no waitlist or separate sign-up.",
-      "source": "support.optimizely.com",
-      "type": "GA release"
-    },
-    {
-      "product": "Opal",
-      "date": "Jul 29, 2026",
-      "highlight": "Agent Builder and Skill Builder GA in Opal Chat; Safe URL Browsing, Version History, Nested Workflows, remote MCP support, Gmail/HubSpot/ZoomInfo connectors.",
-      "source": "support.optimizely.com",
-      "type": "GA release"
-    },
-    {
-      "product": "Commerce Connect 15",
-      "date": "Jul 2026",
-      "highlight": "Async IOrderRepository / ICartProvider / IPaymentPlanProvider methods GA; credit-card storage APIs removed for PCI DSS compliance.",
-      "source": "support.optimizely.com",
-      "type": "Enhancement"
-    },
-    {
-      "product": "Feature Experimentation",
-      "date": "Jul 7, 2026",
-      "highlight": "React SDK v4 async CMAB decision hooks (useDecideAsync, useDecideForKeysAsync); Local holdouts; Owner/Teams fields on flags.",
-      "source": "support.optimizely.com",
-      "type": "Enhancement"
     }
   ],
   "events": [
     {
-      "event": "Content and Beyond",
-      "when": "Aug 20, 2026 · Online",
-      "focus": "B2B, Commerce, AI",
-      "register": "https://www.optimizely.com/field-notes/events/content-and-beyond/"
-    },
-    {
-      "event": "OMVP Webinar for ANZ Partners",
-      "when": "Aug 28, 2026 · Online",
-      "focus": "How the Optimizely MVP program works for partners",
-      "register": "https://www.optimizely.com/field-notes/events/omvp-webinar-for-anz-partners/"
-    },
-    {
-      "event": "Camp Opticon (Opticon New York)",
-      "when": "Aug 31–Sep 1, 2026 · On-location, Javits Center, NYC",
-      "focus": "Flagship keynotes and hands-on sessions",
-      "register": "https://www.optimizely.com/field-notes/opticon/"
-    },
-    {
-      "event": "Optimizely Customer Day — Hamburg",
-      "when": "Sep 2, 2026 · On-location, Hamburg",
-      "focus": "Agentic email marketing, customers",
-      "register": "https://www.optimizely.com/field-notes/events/customer-day-hamburg/"
-    },
-    {
-      "event": "Experimentation Forum Oslo",
-      "when": "Sep 3, 2026 · On-location, Oslo",
-      "focus": "A/B testing, AI, analytics, data-driven growth",
-      "register": "https://www.optimizely.com/field-notes/events/experimentation-forum-oslo/"
+      "event": "Can Your Website Keep Up?",
+      "when": "Sep 9, 2026 · Online",
+      "focus": "How your website measures up against seven patterns shaping AI search success",
+      "register": "https://www.optimizely.com/field-notes/events/can-your-website-keep-up-what-the-data-says-about-ai-success/"
     },
     {
       "event": "What's new, what's next — Optimizely Commerce Connect",
@@ -290,21 +263,40 @@ export const report: Report = {
       "register": "https://www.optimizely.com/field-notes/events/whats-new-whats-next--optimizely-commerce-connect/"
     },
     {
+      "event": "Content and Beyond APAC",
+      "when": "Sep 23, 2026 · Online",
+      "focus": "AI, B2B, Commerce",
+      "register": "https://www.optimizely.com/field-notes/events/content-and-beyond-APAC/"
+    },
+    {
+      "event": "HumanX 2026 — \"The future of marketing is Agentic\"",
+      "when": "Sep 23, 2026 · On-location",
+      "focus": "A/B testing, AI, analytics — agentic marketing on stage",
+      "register": "https://www.optimizely.com/field-notes/events/HumanX-2026/"
+    },
+    {
       "event": "DMEXCO 2026 — \"The future of marketing is Agentic\"",
       "when": "Sep 23, 2026 · On-location",
       "focus": "Digital experience platform, agentic marketing",
       "register": "https://www.optimizely.com/field-notes/events/dmexco-2026/"
+    },
+    {
+      "event": "Introducing Virtual Teammates",
+      "when": "Sep 29, 2026 · Online",
+      "focus": "AI, B2B, Commerce — launch event for the new Virtual Teammates",
+      "register": "https://www.optimizely.com/field-notes/events/introducing-virtual-teammates/"
     }
   ],
+  "royalCyberEvents": [],
   "roadmap": [
     {
-      "product": "Opal (AI)",
-      "phase": "Q3 roadmap",
+      "product": "Optimizely Agent Platform (formerly Opal)",
+      "phase": "Now / Next",
       "items": [
-        "Voice Mode — hands-free, real-time chat with Opal",
-        "Virtual Teammates — bundle agents/tools into a configurable teammate (e.g., Chief of Staff)",
+        "Voice Mode — hands-free, real-time chat with the Agent Platform",
+        "More Virtual Teammates beyond the first five (Chief of Staff, Marketing Analyst, SEO & AI Search Analyst, CRO Manager, Personalization Strategist)",
         "Human-in-the-loop — native approval checkpoints embedded in workflows",
-        "Channel Packs & Brand Packs — on-brand campaign assets generated in seconds",
+        "Channel Packs — deeper on-brand campaign asset generation building on Brands",
         "Deeper Tools & MCP reach — Slack, Gmail, Google Ads, ZoomInfo and more"
       ],
       "link": "https://www.optimizely.com/product-updates/ai/"
@@ -393,8 +385,8 @@ export const report: Report = {
   ],
   "blogs": [
     {
-      "title": "The Agentic DXP Race: Benchmarking Opal Against Sitecore's Agentic Studio, Adobe's Commerce Agents, and Bloomreach's Loomi",
-      "why": "Why now: Sitecore, Adobe, and Bloomreach all made agentic announcements this quarter. Buyers are actively comparing agent platforms and independent content on the comparison is thin.",
+      "title": "The Agentic DXP Race Hits Two Stages at Once: Optimizely vs. Sitecore, Adobe, and Bloomreach at HumanX and DMEXCO",
+      "why": "Why now: Sitecore, Adobe, and Bloomreach have all made agentic announcements, and HumanX and DMEXCO both run September 23. Buyers are actively comparing agent platforms and independent content on the comparison is thin.",
       "audience": "Product marketers, analysts, prospects",
       "difficulty": "Advanced",
       "engagement": 9,
@@ -402,46 +394,46 @@ export const report: Report = {
       "priority": 9.0
     },
     {
-      "title": "Inside CMS 13's New Content Model & GEO Schema Agents: A First Look",
-      "why": "Why now: The August 17 release is fresh and has no independent walkthrough yet. Solution architects and content teams need a hands-on look before wider rollout.",
-      "audience": "Solution architects, content engineers",
+      "title": "Meet Your First Virtual Teammates: Chief of Staff, CRO Manager, and Three More",
+      "why": "Why now: Virtual Teammates went GA August 25 with no independent walkthrough yet — practitioners want to know what each one actually does day to day.",
+      "audience": "Marketing ops, practitioners",
       "difficulty": "Intermediate",
+      "engagement": 9,
+      "uniqueness": 8,
+      "priority": 8.5
+    },
+    {
+      "title": "Purpose-Built vs. Frontier: What Optimizely's New Marketing Models Mean for Your Stack",
+      "why": "Why now: The September 1 model launch claims 10x cost efficiency and directly reframes how 2027 RFPs will evaluate AI vendors.",
+      "audience": "Product marketers, IT buyers",
+      "difficulty": "Advanced",
+      "engagement": 8,
+      "uniqueness": 9,
+      "priority": 8.5
+    },
+    {
+      "title": "Opal Is Now Optimizely Agent Platform: What the Rename Actually Signals",
+      "why": "Why now: The September 1 rebrand is confusing customers searching for 'Opal' in docs and dashboards. A clear explainer of what changed (branding) and what didn't (APIs, workflows) heads off support tickets.",
+      "audience": "Admins, technical marketers",
+      "difficulty": "Beginner–Intermediate",
       "engagement": 8,
       "uniqueness": 8,
       "priority": 8.0
     },
     {
-      "title": "The Preview3 Sunset: A Migration Checklist for CMS (SaaS) Teams",
-      "why": "Why now: Preview3 endpoints were retired August 1. Any integration that hasn't moved to REST API v1 is already broken and searching for guidance.",
-      "audience": "Developers, technical architects",
+      "title": "Reading the Forrester Wave: What 'Leader' Actually Means for Optimizely Buyers",
+      "why": "Why now: The August 17 Forrester Wave Leader and Customer Favorite placement is fresh, sales-enablement-ready proof that's underused in current content.",
+      "audience": "Solution architects, buyers",
       "difficulty": "Intermediate",
-      "engagement": 8,
-      "uniqueness": 6,
-      "priority": 7.5
-    },
-    {
-      "title": "Local Holdouts vs. Global Holdouts: A Decision Guide for Feature Experimentation",
-      "why": "Why now: Local holdouts shipped July 7 alongside Owner/Teams fields. Practitioners need decision criteria for when to hold back a rule vs. an entire project.",
-      "audience": "Experimentation leads, data teams",
-      "difficulty": "Advanced",
       "engagement": 7,
-      "uniqueness": 8,
-      "priority": 7.5
-    },
-    {
-      "title": "Claude Opus 5 Inside Opal: What the Inference-Level Upgrade Actually Changes",
-      "why": "Why now: The August 14 update quietly moved Complex and Code inference to claude-opus-5. Admins want to know what changed in output quality, latency, and cost.",
-      "audience": "Admins, technical marketers",
-      "difficulty": "Beginner–Intermediate",
-      "engagement": 7,
-      "uniqueness": 8,
+      "uniqueness": 7,
       "priority": 7.0
     },
     {
-      "title": "PIM Meets Opal: Agentic Product Data Management Arrives",
-      "why": "Why now: The August 4 PIM release adds Opal system tools and primary-category management — a new, largely uncovered surface for Opal.",
-      "audience": "Merchandisers, PIM admins",
-      "difficulty": "Beginner–Intermediate",
+      "title": "Restriction Groups Without the API: A First Look at Configured Commerce's New Agent",
+      "why": "Why now: The August 27 Restriction Group Creation agent replaces hand-built API calls with a wizard — a concrete time-savings story for B2B commerce admins.",
+      "audience": "B2B commerce admins, solution architects",
+      "difficulty": "Intermediate",
       "engagement": 6,
       "uniqueness": 8,
       "priority": 7.0
@@ -458,67 +450,79 @@ export const report: Report = {
       "priority": 8.5
     },
     {
-      "title": "Governing Model Choice in Opal: Inference Levels, Claude Opus 5, and Cost Control",
-      "why": "Enterprise buyers ask about cost and governance the moment a vendor changes the model behind an AI feature. Turns the August inference-level upgrade into a procurement-ready explainer.",
-      "audience": "IT/procurement, solution architects",
+      "title": "Virtual Teammates in the Enterprise: Governance, Identity, and Where Opti ID Fits",
+      "why": "Virtual Teammates act as first-class users with their own Opti ID and persistent memory — a new identity and governance surface that IT and security buyers will ask about before rollout.",
+      "audience": "IT/security, procurement",
+      "difficulty": "Advanced",
+      "engagement": 7,
+      "uniqueness": 9,
+      "priority": 8.0
+    },
+    {
+      "title": "The Economics of Purpose-Built Marketing Models",
+      "why": "The claimed 10x cost efficiency needs an independent framework for evaluating cost, quality, and fit — not just a vendor's own benchmark.",
+      "audience": "Finance-savvy marketing leaders, IT buyers",
       "difficulty": "Intermediate",
       "engagement": 7,
       "uniqueness": 8,
       "priority": 7.5
-    },
-    {
-      "title": "Migrating Off Preview3: An Enterprise CMS (SaaS) API Modernization Playbook",
-      "why": "The August 1 retirement leaves any unmigrated integration broken. A structured playbook for auditing, migrating, and testing against REST API v1 has high, immediate demand.",
-      "audience": "Enterprise architects, IT buyers",
-      "difficulty": "Advanced",
-      "engagement": 7,
-      "uniqueness": 7,
-      "priority": 7.0
     }
   ],
   "linkedin": [
     {
-      "title": "Three DXPs, three agent platforms, one very busy August",
-      "why": "Sitecore's Agentic Studio, Adobe's agentic Commerce framing, and Bloomreach's Loomi all surfaced this month. A roundup post positions Optimizely's Agent Library and governance depth in context.",
-      "audience": "Marketing leaders",
+      "title": "Say hello to Optimizely Agent Platform (you know it as Opal)",
+      "why": "A direct rename announcement post, framed as 'same platform, new name' to head off confusion before customers hit it in the docs themselves.",
+      "audience": "Marketing leaders, admins",
+      "engagement": 8,
+      "uniqueness": 7
+    },
+    {
+      "title": "I have a Virtual Teammate now, and yes, it has its own login",
+      "why": "A playful hook on Opti ID-carrying agents — Virtual Teammates as first-class users is a genuinely new concept worth explaining simply.",
+      "audience": "Practitioners, marketing ops",
       "engagement": 8,
       "uniqueness": 8
     },
     {
-      "title": "Claude Opus 5 just quietly got wired into Opal",
-      "why": "The August 14 inference-level upgrade is easy to miss in release notes but meaningful for anyone running Complex or Code-level agents. Frame it as 'what changed under the hood.'",
-      "audience": "Technical marketers, admins",
+      "title": "Forrester just called our AI a Leader — here's the scorecard",
+      "why": "Straightforward analyst-recognition post citing the August 17 Forrester Wave Leader and Customer Favorite placement.",
+      "audience": "Marketing leaders, buyers",
       "engagement": 7,
-      "uniqueness": 7
-    },
-    {
-      "title": "Preview3 is officially retired — did your integration make the cut?",
-      "why": "A direct, slightly cautionary post pointing teams to the migration checklist. High relevance for anyone who missed the August 1 deadline.",
-      "audience": "Developers",
-      "engagement": 6,
       "uniqueness": 6
     },
     {
-      "title": "PIM finally gets an Opal seat at the table",
-      "why": "Tie to the August 4 release: Opal system tools for PIM dashboards and primary-category management. A short, concrete feature spotlight.",
-      "audience": "Merchandisers, PIM admins",
-      "engagement": 6,
-      "uniqueness": 7
+      "title": "10x cheaper AI, built only for marketing — here's the math",
+      "why": "Breaks down the purpose-built model claim from the September 1 launch in plain language.",
+      "audience": "Product marketers, IT buyers",
+      "engagement": 7,
+      "uniqueness": 8
     },
     {
-      "title": "Save the date: Camp Opticon hits NYC, Aug 31–Sep 1",
-      "why": "Countdown-style registration push for the flagship event, pairing with the Sep 3 Oslo Experimentation Forum for a two-city hook.",
+      "title": "HumanX, DMEXCO, and the future of agentic marketing — three weeks, three keynotes",
+      "why": "Countdown-style post tying HumanX and DMEXCO (both Sep 23) to Optimizely's own Content and Beyond APAC and Virtual Teammates launch event (Sep 29).",
       "audience": "Practitioners, partners",
       "engagement": 6,
-      "uniqueness": 5
+      "uniqueness": 6
     }
   ],
   "competitive": [
     {
-      "theme": "Agentic AI / prebuilt agents",
-      "optimizely": "Opal Agent Library (45+ agents), Agent Builder/Skill Builder GA, model-provider choice incl. Claude Opus 5",
+      "theme": "Analyst recognition",
+      "optimizely": "Forrester Wave Leader + Customer Favorite, Q3 2026 — top scores in generative AI, agentic AI, web and feature experimentation",
+      "competitor": "Sitecore, Adobe, and Bloomreach not named Leaders in this Wave",
+      "opportunity": "Lead every competitive deal with third-party validation, not just feature claims"
+    },
+    {
+      "theme": "Purpose-built AI economics",
+      "optimizely": "Post-trained, marketing-specific models — roughly 10x cost efficiency vs. frontier LLMs in early testing",
+      "competitor": "Sitecore, Adobe, and Bloomreach still largely wrapping general-purpose frontier models",
+      "opportunity": "Own the cost-and-fit argument, not just the feature-count argument"
+    },
+    {
+      "theme": "Agentic AI / prebuilt agents and teammates",
+      "optimizely": "Agent Platform (formerly Opal) Agent Library + Virtual Teammates as first-class, Opti ID-carrying users",
       "competitor": "Sitecore Agentic Studio (~20 agents, SitecoreAI on Azure); Adobe framing storefronts for 'humans and AI agents'",
-      "opportunity": "Lead on breadth, governance depth (sharing, guardrails, evaluations), and model choice — not just agent count"
+      "opportunity": "No rival has shipped an agent with its own persistent identity/login yet — a genuinely new differentiator"
     },
     {
       "theme": "MCP / agentic access",
@@ -528,84 +532,72 @@ export const report: Report = {
     },
     {
       "theme": "Content modeling / GEO for AI discoverability",
-      "optimizely": "CMS 13 Content Model Creation + GEO Schema Optimization agents; Agent Visibility Analytics",
+      "optimizely": "CMS 13 Content Model Creation, GEO Schema Optimization, Page Builder, and Content Analysis agents; Agent Visibility Analytics",
       "competitor": "Sitecore Agentic Studio content-migration agents; no direct GEO-schema equivalent found for Adobe or Bloomreach",
       "opportunity": "First-mover message: automated GEO schema generation is still a gap for the competitor set"
-    },
-    {
-      "theme": "Commerce modernization",
-      "optimizely": "Commerce Connect 15 — async order APIs, PCI-compliant tokenized payments, Visual Builder-first catalog",
-      "competitor": "Adobe Commerce Optimizer (SaaS enrichment layer); Bloomreach Discovery (3x Gartner Leader, Search & Product Discovery)",
-      "opportunity": "Pair the PCI/async infrastructure story with Bloomreach's search strength as a distinct modernization angle"
-    },
-    {
-      "theme": "Product data / PIM",
-      "optimizely": "Opal system tools now reach into PIM — Dashboard stats, primary-category management",
-      "competitor": "No direct PIM-agent equivalent surfaced for Sitecore, Adobe, or Bloomreach this quarter",
-      "opportunity": "Early and largely uncontested — worth a dedicated content push before competitors catch up"
     }
   ],
   "actions": [
     {
       "n": 1,
-      "title": "Publish the Preview3 migration checklist this week",
-      "why": "The cutoff already passed (Aug 1) — any customer still on Preview3 is in an active break/fix situation and searching for guidance now.",
+      "title": "Publish the \"Opal is now Optimizely Agent Platform\" explainer this week",
+      "why": "The September 1 rename is already live in-product; customers searching docs and dashboards for 'Opal' need a clear, quick answer before support tickets pile up.",
       "priority": 9.0,
-      "format": "Blog + checklist"
+      "format": "Explainer blog"
     },
     {
       "n": 2,
-      "title": "Ship the CMS 13 Content Model & GEO Schema agent walkthrough",
-      "why": "The Aug 17 release is fresh and the feature has no independent write-up yet.",
+      "title": "Ship the Virtual Teammates walkthrough",
+      "why": "Virtual Teammates went GA August 25 with no independent write-up yet — start with Chief of Staff and CRO Manager as the two most broadly relevant.",
       "priority": 8.5,
       "format": "How-to blog + short demo video"
     },
     {
       "n": 3,
-      "title": "Produce the agentic-DXP competitive benchmark",
-      "why": "Sitecore, Adobe, and Bloomreach all made agentic announcements this quarter — the comparison content gap is wide open.",
+      "title": "Turn the Forrester Wave Leader nod into a one-pager for active deals",
+      "why": "The August 17 Leader and Customer Favorite placement is fresh, credible, and currently sitting unused in sales conversations.",
       "priority": 8.5,
-      "format": "Whitepaper + blog"
+      "format": "Sales one-pager + blog"
     },
     {
       "n": 4,
-      "title": "Explain the Claude Opus 5 / inference-level upgrade to admins",
-      "why": "Model changes land quietly in release notes; customers want to know what changed and whether it affects cost or behavior.",
-      "priority": 7.5,
-      "format": "Explainer blog"
+      "title": "Explain the purpose-built marketing models / cost story for procurement",
+      "why": "The September 1 model launch's 10x cost-efficiency claim will come up in every 2027 RFP conversation — get ahead of it with an independent-feeling breakdown.",
+      "priority": 8.0,
+      "format": "Explainer blog + whitepaper"
     },
     {
       "n": 5,
-      "title": "Run a registration push for Camp Opticon and the Oslo Experimentation Forum",
-      "why": "Both events sit in the next three weeks and map directly to practitioner and partner audiences.",
+      "title": "Push registrations for HumanX and DMEXCO",
+      "why": "Both run September 23 and put agentic marketing on competitor stages the same week — Optimizely's own APAC and Virtual Teammates events need visibility alongside them.",
       "priority": 7.0,
       "format": "Campaign"
     }
   ],
   "next7": [
     {
-      "bold": "Draft the Preview3 migration checklist",
-      "text": "and cross-link it from the CMS (SaaS) release notes."
+      "bold": "Draft the Agent Platform rename explainer",
+      "text": "and confirm with support docs that no APIs or workflows actually changed."
     },
     {
-      "bold": "Record a short walkthrough of the CMS 13 Content Model and GEO Schema agents",
-      "text": "using a real page as the demo."
+      "bold": "Record a short Virtual Teammates demo",
+      "text": "covering Chief of Staff and CRO Manager as the two most broadly relevant teammates."
     },
     {
-      "bold": "Outline the agentic-DXP benchmark",
-      "text": "covering Opal, Sitecore Agentic Studio, Adobe's commerce agents, and Bloomreach Loomi."
+      "bold": "Turn the Forrester Wave Leader placement into a sales one-pager",
+      "text": "citing the top scores in generative AI, agentic AI, and experimentation."
     },
     {
-      "bold": "Write the Claude Opus 5 / inference-level explainer",
-      "text": "and confirm with support docs which levels map to which models."
+      "bold": "Outline the purpose-built-models cost/quality explainer",
+      "text": "and fact-check the 10x efficiency claim against Optimizely's own announcement."
     },
     {
       "bold": "Schedule the five LinkedIn posts",
-      "text": "lead with the Opus 5 teaser and the competitive round-up."
+      "text": "lead with the rename announcement and the Virtual Teammate hook."
     },
     {
-      "bold": "Push registrations for Camp Opticon (Aug 31–Sep 1) and the Oslo Experimentation Forum (Sep 3)",
-      "text": "prioritize partner and practitioner lists."
+      "bold": "Confirm HumanX and DMEXCO (Sep 23) session details",
+      "text": "and push registrations alongside the Sep 29 Virtual Teammates launch event."
     }
   ]
 };
