@@ -93,7 +93,7 @@ export interface Report {
 
 export const report: Report = {
   "title": "Optimizely Trend and Content Opportunities",
-  "generated": "September 23, 2026",
+  "generated": "September 28, 2026",
   "sub": "A weekly, evidence-led scan of Optimizely product signals, releases, events, and the content angles worth acting on — for content marketers, DevRel leads, solution architects, and product marketers.",
   "tags": [
     {
@@ -101,10 +101,10 @@ export const report: Report = {
       "hot": true
     },
     {
-      "label": "Signal window: 90 days (ending Sep 23, 2026)"
+      "label": "Signal window: 90 days (ending Sep 28, 2026)"
     },
     {
-      "label": "Focus: Agent Platform build-out · CMS MCP server · Opticon London (Oct 13) & Online (Oct 21)"
+      "label": "Focus: Agent Platform build-out · Partner enablement · Opticon London Partner Forum (Oct 12) & Opticon Online (Oct 21)"
     }
   ],
   "trends": [
@@ -144,6 +144,21 @@ export const report: Report = {
     },
     {
       "rank": 3,
+      "title": "Optimizely arms partners for the Virtual Teammates push — enablement kit, Academy paths and a Partner Forum",
+      "body": "The September 28 partner newsletter put a Virtual Teammates partner enablement toolkit in the Partner Portal and a matching Optimizely Academy learning path covering all five role-based teammates. It also added role-based paths for PaaS CMS 13 administrators (leading to the CMS PaaS Administrator Certification, including Agent Platform inside CMS) and CMP administrators, plus live sessions on connectors, agents in experimentation and the Feature Experimentation agent through November 18. Partner Forum returns at Opticon London on October 12 with executives and the sales team. Optimizely is counting on partners to drive Virtual Teammates and sub-agent adoption.",
+      "flags": [
+        {
+          "kind": "ai",
+          "label": "AI relevance"
+        },
+        {
+          "kind": "ent",
+          "label": "Enterprise relevance"
+        }
+      ]
+    },
+    {
+      "rank": 4,
       "title": "Opticon London (Oct 13) and Opticon Online (Oct 21) set up the next big announcement window",
       "body": "Opticon London runs October 13 at the Barbican (partner day October 12), and Opticon Online follows October 21 with keynotes from CEO Alex Atzberger and Seth Godin plus a product keynote promising \"major announcements\". Roadmap items still unshipped — Voice Mode, Personalize Opal, image generation and editing, human-in-the-loop checkpoints, Channel Packs — are the likeliest headliners. Content teams have about three weeks to line up pre-Opticon and reaction pieces.",
       "flags": [
@@ -158,7 +173,7 @@ export const report: Report = {
       ]
     },
     {
-      "rank": 4,
+      "rank": 5,
       "title": "Blueprints and multi-layout experiences land in CMS SaaS — and Opal can drive them",
       "body": "CMS (SaaS) releases on September 14 and 22 added multiple independent layouts per experience (for example main area plus sidebar, each Outline or Grid), faster scheduled publishing (about 5 minutes instead of up to 30), a clean Preview in Visual Builder, and Opal tools that list, inspect and create content from blueprints and manage categories. Blueprint tooling also shipped for CMS 13 PaaS, so reusable page patterns are now agent-operable on both SaaS and PaaS.",
       "flags": [
@@ -173,7 +188,7 @@ export const report: Report = {
       ]
     },
     {
-      "rank": 5,
+      "rank": 6,
       "title": "AI trust becomes the counter-narrative — Optimizely leans in",
       "body": "Optimizely's September 22 UK study (1,000 consumers, 100 marketers) found 62% of consumers trust marketing less since brands started using AI and 66% think brands put volume over quality. Acquia's September 14 survey found only 41% of CMOs feel confident governing their AI initiatives. Governance, brand control and quality — not raw output volume — are becoming the buying criteria, which suits Brands, permission-aware tools and human-in-the-loop messaging.",
       "flags": [
@@ -188,7 +203,7 @@ export const report: Report = {
       ]
     },
     {
-      "rank": 6,
+      "rank": 7,
       "title": "Salesforce closes Contentful — the headless CMS field shifts",
       "body": "Salesforce completed its roughly $1.5B acquisition of Contentful on September 1, positioning it as the content layer for its agentic \"Headless 360\" stack. Contentful customers now face a Salesforce-centric roadmap, while Optimizely keeps shipping its own Contentful MCP connector (now with EU and Global endpoints). Expect independent-CMS buyers to re-evaluate — a clear opening for Optimizely CMS SaaS positioning.",
       "flags": [
@@ -204,6 +219,13 @@ export const report: Report = {
     }
   ],
   "releases": [
+    {
+      "product": "Partner Portal / Optimizely Academy",
+      "date": "Sep 28, 2026",
+      "highlight": "Virtual Teammates partner enablement toolkit and learning path; new admin paths for PaaS CMS 13 (prepares for CMS PaaS Administrator Certification) and CMP; sub-agents overview published.",
+      "source": "Optimizely partner newsletter",
+      "type": "Enablement"
+    },
     {
       "product": "Optimizely Agent Platform",
       "date": "Sep 21, 2026",
@@ -291,28 +313,16 @@ export const report: Report = {
   ],
   "events": [
     {
-      "event": "Content and Beyond APAC",
-      "when": "Sep 23, 2026 · Online",
-      "focus": "AI, B2B, Commerce",
-      "register": "https://www.optimizely.com/field-notes/events/content-and-beyond-APAC/"
-    },
-    {
-      "event": "HumanX 2026 — \"The future of marketing is Agentic\"",
-      "when": "Sep 23, 2026 · On-location",
-      "focus": "Agentic marketing",
-      "register": "https://www.optimizely.com/field-notes/events/HumanX-2026/"
-    },
-    {
-      "event": "DMEXCO 2026 — \"The future of marketing is Agentic\"",
-      "when": "Sep 23, 2026 · On-location",
-      "focus": "Digital experience platform, agentic marketing",
-      "register": "https://www.optimizely.com/field-notes/events/dmexco-2026/"
-    },
-    {
       "event": "Introducing Virtual Teammates",
       "when": "Sep 29, 2026 · Online",
       "focus": "Launch event for Virtual Teammates",
       "register": "https://www.optimizely.com/field-notes/events/introducing-virtual-teammates/"
+    },
+    {
+      "event": "Academy live: Proving the Value of your Experimentation Programme (Katie Bloor)",
+      "when": "Oct 1, 2026 · Online · 8–9 PM GMT+6",
+      "focus": "Experimentation program ROI",
+      "register": "https://academy.optimizely.com/student/page/3224970-proving-the-value-of-your-experimentation-programme"
     },
     {
       "event": "Breakfast seminar with Sikte AI",
@@ -321,10 +331,28 @@ export const report: Report = {
       "register": "https://www.optimizely.com/field-notes/events/breakfast-seminar-with-sikte/"
     },
     {
+      "event": "Academy live: Optimizely as the Source of Truth for Experimentation Results (Mike Chu)",
+      "when": "Oct 6, 2026 · Online · 9:30–10:30 PM GMT+6",
+      "focus": "Experimentation results and reporting",
+      "register": "https://academy.optimizely.com/student/page/3224936-establishing-optimizely-as-the-source-of-truth-for-experimentation-results-exp"
+    },
+    {
       "event": "Personalization at scale — Corinthia Hotels",
       "when": "Oct 7, 2026 · Online",
       "focus": "Seven-agent AI personalization system",
       "register": "https://www.optimizely.com/field-notes/events/ai-personalization-webinar-corinthia-hotels/"
+    },
+    {
+      "event": "Academy live: Agent Platform Connectors — how-tos and use cases (Alexander Whitney)",
+      "when": "Oct 7, 2026 · Online · 9–10 PM GMT+6",
+      "focus": "Agent Platform connectors, best practices",
+      "register": "https://academy.optimizely.com/student/page/3655559-agent-platform-connectors-how-tos-best-practices-and-use-cases"
+    },
+    {
+      "event": "Partner Forum at Opticon London",
+      "when": "Oct 12, 2026 · London",
+      "focus": "Partner day: executives, sales team, unannounced previews — add during Opticon registration or in the attendee hub",
+      "register": "https://www.optimizely.com/field-notes/opticon"
     },
     {
       "event": "Opticon London",
@@ -349,6 +377,30 @@ export const report: Report = {
       "when": "Oct 27, 2026 · Online",
       "focus": "Secure AI workflows on the Agent Platform",
       "register": "https://www.optimizely.com/field-notes/events/how-to-go-from-an-ai-experiment-to-operating-model/"
+    },
+    {
+      "event": "Academy live: Meet your Virtual Teammates (Ali Hart)",
+      "when": "Oct 29, 2026 · Online · 8–9 PM GMT+6",
+      "focus": "Virtual Teammates",
+      "register": "https://academy.optimizely.com/student/page/3600718-meet-your-virtual-teammates"
+    },
+    {
+      "event": "Academy live: Agents in Experimentation (Daniel Rathke)",
+      "when": "Nov 5, 2026 · Online · 9–10 PM GMT+6",
+      "focus": "AI agents for experimentation",
+      "register": "https://academy.optimizely.com/student/page/3635805-agents-in-experimentation"
+    },
+    {
+      "event": "Academy live: Choosing the Right Metrics for Your Experiments (Sam Pointing)",
+      "when": "Nov 17, 2026 · Online · 9–10 PM GMT+6",
+      "focus": "Experiment metrics",
+      "register": "https://academy.optimizely.com/student/page/3635892-choosing-the-right-metrics-for-your-experiments"
+    },
+    {
+      "event": "Academy live: Optimizely Agent for Feature Experimentation (Matjaz Pirnovar)",
+      "when": "Nov 18, 2026 · Online · 9–10 PM GMT+6",
+      "focus": "Feature Experimentation agent",
+      "register": "https://academy.optimizely.com/student/page/3664251-optimizely-agent-for-feature-experimentation"
     }
   ],
   "royalCyberEvents": [],
@@ -542,6 +594,13 @@ export const report: Report = {
       "uniqueness": 9
     },
     {
+      "title": "We're heading to Partner Forum at Opticon London on Oct 12",
+      "why": "Partner-perspective post on the Oct 12 Partner Forum and the new Virtual Teammates enablement kit — signals Royal Cyber's readiness to deliver.",
+      "audience": "Customers, prospects, Optimizely partner team",
+      "engagement": 7,
+      "uniqueness": 7
+    },
+    {
       "title": "Opticon London in 20 days — here's what we're watching",
       "why": "Countdown post to Oct 13, naming the roadmap items (Voice Mode, image generation, human-in-the-loop) most likely to be announced.",
       "audience": "Partners, marketing leaders",
@@ -612,27 +671,34 @@ export const report: Report = {
     },
     {
       "n": 2,
+      "title": "Complete partner enablement for Virtual Teammates and sub-agents",
+      "why": "The Sep 28 partner newsletter shipped the toolkit, Academy learning path and sub-agents overview — certified, demo-ready consultants are needed before Opticon.",
+      "priority": 8.5,
+      "format": "Internal enablement + Academy learning paths"
+    },
+    {
+      "n": 3,
       "title": "Build the Opticon content kit now",
       "why": "Opticon London (Oct 13) and Online (Oct 21) are the next announcement window — prepare a preview post, live-coverage plan and reaction templates.",
       "priority": 8.5,
       "format": "Blog + LinkedIn series"
     },
     {
-      "n": 3,
+      "n": 4,
       "title": "Recap the Sep 13–21 Agent Platform releases",
       "why": "Sub-agents, the Code step and Personal files change what workflow agents can do; customers need a single clear summary.",
       "priority": 8.5,
       "format": "Explainer blog"
     },
     {
-      "n": 4,
+      "n": 5,
       "title": "Launch a trust-and-governance angle using the Sep 22 research",
       "why": "Pair Optimizely's 62% trust finding with Acquia's CMO data to lead with governance, not volume.",
       "priority": 8.0,
       "format": "Thought-leadership blog + whitepaper"
     },
     {
-      "n": 5,
+      "n": 6,
       "title": "Target Contentful customers after the Salesforce close",
       "why": "Buyers reassessing vendor lock-in are open to an independent-CMS comparison right now.",
       "priority": 7.5,
@@ -641,28 +707,28 @@ export const report: Report = {
   ],
   "next7": [
     {
+      "bold": "Register for Partner Forum at Opticon London (Oct 12)",
+      "text": "— add it during Opticon registration, or via the attendee hub if already registered."
+    },
+    {
+      "bold": "Download the Virtual Teammates enablement toolkit",
+      "text": "from the Partner Portal and assign the Academy learning path to the delivery team."
+    },
+    {
+      "bold": "Enrol CMS admins in the PaaS CMS 13 Essentials path",
+      "text": "to prepare for the CMS PaaS Administrator Certification; CMP leads take the CMP for Administrators path."
+    },
+    {
+      "bold": "Sign the team up for Academy live sessions",
+      "text": "starting Oct 1 (experimentation value) and Oct 7 (Agent Platform connectors)."
+    },
+    {
       "bold": "Stand up a CMS 13 MCP demo",
-      "text": "connecting Claude Code to a sandbox CMS 13 site with client-secret auth, and record it."
+      "text": "connecting Claude Code to a sandbox CMS 13 site, and read the new sub-agents overview."
     },
     {
       "bold": "Draft the Opticon preview post",
-      "text": "and register the team for Opticon London (Oct 13) and Opticon Online (Oct 21)."
-    },
-    {
-      "bold": "Write the Agent Platform release recap",
-      "text": "covering sub-agents, the Code step, Personal files and the six new connectors."
-    },
-    {
-      "bold": "Pull stats from the Sep 22 UK AI-trust study",
-      "text": "and the Acquia Sep 14 survey for the governance piece."
-    },
-    {
-      "bold": "Check the Configured Commerce Sep 24 release",
-      "text": "and add any notable items to next week's sweep."
-    },
-    {
-      "bold": "Schedule the five LinkedIn posts",
-      "text": "leading with the CMS MCP hook and the Opticon countdown; promote the Sep 29 Virtual Teammates event."
+      "text": "and schedule LinkedIn posts leading with the Partner Forum and CMS MCP hooks."
     }
   ]
 };
