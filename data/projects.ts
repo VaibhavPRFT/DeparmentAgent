@@ -58,7 +58,7 @@ export const projectsData: ProjectsData = {
           "designation": "Project Manager"
         },
         {
-          "name": "Krishna Kumar",
+          "name": "Kanchan Rautela",
           "designation": "Delivery Manager"
         },
         {
@@ -85,7 +85,7 @@ export const projectsData: ProjectsData = {
           "designation": "Project Manager"
         },
         {
-          "name": "Krishna Kumar",
+          "name": "Kanchan Rautela",
           "designation": "Delivery Manager"
         },
         {
@@ -112,7 +112,7 @@ export const projectsData: ProjectsData = {
           "designation": "Project Manager"
         },
         {
-          "name": "Krishna Kumar",
+          "name": "Kanchan Rautela",
           "designation": "Delivery Manager"
         },
         {
