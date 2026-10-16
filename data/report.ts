@@ -372,7 +372,14 @@ export const report: Report = {
       "register": "https://academy.optimizely.com/student/page/3664251-optimizely-agent-for-feature-experimentation"
     }
   ],
-  "royalCyberEvents": [],
+  "royalCyberEvents": [
+    {
+      "event": "From Digital Complexity to Connected Experiences with Optimizely — Royal Cyber, JE Dunn & Optimizely",
+      "when": "Oct 28, 2026 · Live webinar · 12:00 PM CDT",
+      "focus": "JE Dunn's transformation journey, Optimizely content, personalization and customer engagement, Royal Cyber's implementation approach and accelerators, solution walkthrough. Speakers: Tracy Silverberg (Optimizely), Mark Neill (JE Dunn), Mahaveer Amudhachandran (Royal Cyber)",
+      "register": "https://www.royalcyber.com/webinar/digital-experience-optimizely/"
+    }
+  ],
   "roadmap": [
     {
       "product": "Optimizely Agent Platform (formerly Opal)",
