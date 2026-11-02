@@ -93,45 +93,44 @@ export interface Report {
 
 export const report: Report = {
   "title": "Optimizely Trend and Content Opportunities",
-  "generated": "October 13, 2026",
+  "generated": "November 2, 2026",
   "sub": "A weekly, evidence-led scan of Optimizely product signals, releases, events, and the content angles worth acting on — for content marketers, DevRel leads, solution architects, and product marketers.",
   "tags": [
     {
-      "label": "Breakout: October Agent Platform release — Brand Packs, Skills Directory, 2 new Virtual Teammates and 7 new agents (Oct 13)",
+      "label": "Action required: Node.js security advisory — redeploy DXP sites and upgrade Configured Commerce (updated Oct 27)",
       "hot": true
     },
     {
-      "label": "Signal window: 90 days (ending Oct 13, 2026)"
+      "label": "Payment Service notice updated Oct 28: LTS path 5.2.2608.722+lts, deadline Dec 31, 2027"
     },
     {
-      "label": "Focus: Brand governance · Skills & agent directory · Opticon London (today) & Opticon Online (Oct 21)"
+      "label": "Signal window: 90 days (ending Nov 2, 2026)"
+    },
+    {
+      "label": "Focus: Platform security · Payment Service migration · AEM & Siteimprove MCP connectors · Agent-ready websites"
     }
   ],
   "trends": [
     {
       "rank": 1,
-      "title": "Brand Packs make on-brand AI output the default, not a review step",
-      "body": "The October 13 Agent Platform release turns each brand's guidelines, templates and brand portal into a single Brand Pack — a skill applied automatically whenever text or images are generated. Image-editor Variants then adapt an approved image for every channel. Together they answer the trust and quality concerns raised in Optimizely's own September UK research, and move brand governance into generation itself.",
+      "title": "Node.js vulnerabilities trigger a platform-wide patch cycle",
+      "body": "Node.js patched multiple vulnerabilities across its 22.x, 24.x and 26.x lines, and Optimizely began a platform-wide review on Oct 22 (advisory updated Oct 27). Optimizely rates the Brotli overflow bug High but reports no evidence of exploitation. Most SaaS products are patched automatically; DXP (CMS and Commerce Connect) customers must deploy a newly named or versioned package to force a fresh container build, Node.js 18/20 sites must first move to Node 22 or 24, and Configured Commerce must upgrade to 5.2.2610.487+sts or 5.2.2608.730+lts. Optimizely Desktop gets no fixes and is deprecated Dec 31, 2026.",
       "flags": [
-        {
-          "kind": "ai",
-          "label": "AI relevance"
-        },
         {
           "kind": "ent",
           "label": "Enterprise relevance"
+        },
+        {
+          "kind": "gap",
+          "label": "Content gap"
         }
       ]
     },
     {
       "rank": 2,
-      "title": "A Skills Directory and unified agent marketplace arrive",
-      "body": "More than 20 pre-built marketing skills (competitive positioning, website best practices, report formatting and more) now sit in one directory alongside out-of-the-box agents and Virtual Teammates, where users can find and install them. It shifts the pitch from 'build your own agent' to 'value on day one' — and gives partners a ready catalogue to demo.",
+      "title": "Payment Service gets an LTS path and a later deadline",
+      "body": "Payment Service is moving card capture from Spreedly's legacy iFrame to the Spreedly Web Checkout SDK, which adds server-signed tokenization sessions plus SRI and CSP support. The Oct 28 notice names 5.2.2608.722+lts or newer as the required version and sets the deadline at Dec 31, 2027 — replacing the earlier '5.2.2609+ by Dec 31, 2026' guidance. Spreedly stopped updating the iFrame on Oct 31, 2026 and retires it in 2028, so Optimizely still advises upgrading now. Merchant and gateway configurations carry over automatically.",
       "flags": [
-        {
-          "kind": "ai",
-          "label": "AI relevance"
-        },
         {
           "kind": "ent",
           "label": "Enterprise relevance"
@@ -144,23 +143,8 @@ export const report: Report = {
     },
     {
       "rank": 3,
-      "title": "Virtual Teammates grow to seven — Web Manager and Content Marketer join",
-      "body": "Web Manager keeps a site current, compliant and converting; Content Marketer finds content gaps and ties the editorial plan to real audience signals. Seven new directory agents shipped the same day: Eye Tracking Auditor and Smart Campaign Design (Campaign), Experiment Value Estimator (Web and Feature Experimentation), List Creation and Promotion Creation (Configured Commerce), Product Catalog Auditor (Commerce Connect) and WCAG Compliance Auditor (CMS SaaS).",
-      "flags": [
-        {
-          "kind": "ai",
-          "label": "AI relevance"
-        },
-        {
-          "kind": "ent",
-          "label": "Enterprise relevance"
-        }
-      ]
-    },
-    {
-      "rank": 4,
-      "title": "Experimentation gets a CFO-ready number",
-      "body": "The new Experiment Value Estimator agent produces a stakeholder-ready report on the projected annualized dollar impact of rolling out a winning variation. Paired with the Academy's 'Proving the Value of your Experimentation Programme' content, it gives experimentation teams a direct answer to budget scrutiny.",
+      "title": "Agents now work inside other vendors' stacks — AEM and Siteimprove",
+      "body": "The Agent Platform added a Siteimprove remote MCP connector (Oct 19) that checks pages for accessibility issues and suggests WCAG-based fixes, and an Adobe Experience Manager remote MCP connector in beta (Oct 27) that lets agents manage assets, pages and launches, check brand governance and troubleshoot CDN and replication issues. Optimizely's agents can now sell into mixed or Adobe-led estates, not just Optimizely CMS customers.",
       "flags": [
         {
           "kind": "ai",
@@ -177,9 +161,9 @@ export const report: Report = {
       ]
     },
     {
-      "rank": 5,
-      "title": "Connectors reach ads, sales intelligence, SEO and tag management",
-      "body": "October adds connectors for Slack, 6sense and SEMrush, a Google Tag Manager connector (Oct 6) that audits and publishes container versions, and write access for LinkedIn Ads (campaign groups, campaigns, creatives, sponsored posts). Agents can now act on ad performance, account intelligence, SEO and tagging data, not just report on it.",
+      "rank": 4,
+      "title": "Agent governance tightens: clearer tiers and private sub-agent logs",
+      "body": "On Oct 28 sub-agent tiers were renamed from Deep/Fast/Mini to Advanced/Standard/Simple, each with a description, and sub-agent execution logs became private to the person who started the conversation — extending the Oct 5 private executions. Underlying models for Mark's inference levels were updated again on Oct 16. Admins get plainer cost/quality choices and fewer data-visibility questions from legal.",
       "flags": [
         {
           "kind": "ai",
@@ -192,9 +176,9 @@ export const report: Report = {
       ]
     },
     {
-      "rank": 6,
-      "title": "Governance and AI-crawler controls show up across the stack",
-      "body": "Private executions (Oct 5) keep a specialized agent's logs and outputs visible only to the user who ran it. DXP sites can now use Cloudflare's AI crawler controls (Sep 28) to block AI training while keeping search access. CMS SaaS added scoped REST API tokens and tighter upload security (Oct 7–9). Enterprise buyers asking 'who sees what' now get concrete answers.",
+      "rank": 5,
+      "title": "CMS 13 settles into a fast patch cadence",
+      "body": "CMS.Core 13.4.0 (Oct 15) added a Preview button in Visual Builder, DAM image rendition selection and ImageSharp 3.2.0; 13.4.1 (Oct 26) fixed culture-specific property and inline-block save issues. Forms.Samples 5.0.0 (Oct 20) brings CMS 13 support on .NET 10. For teams mid-upgrade from CMS 12, the target is moving every couple of weeks — pin versions and plan regression passes.",
       "flags": [
         {
           "kind": "ent",
@@ -203,9 +187,24 @@ export const report: Report = {
       ]
     },
     {
+      "rank": 6,
+      "title": "'Agent-ready websites' and agentic personalization lead Optimizely's agenda",
+      "body": "Optimizely's November–December webinars focus on autonomous personalization (Corinthia Hotels, Nov 5), agentic ABM ('No account left behind', Nov 19) and how to build a website AI agents can find, read, trust and buy from (Dec 3). This builds on Opticon's WebMCP preview and GEO tooling — and opens room for practical CMS 13 implementation content from partners.",
+      "flags": [
+        {
+          "kind": "ai",
+          "label": "AI relevance"
+        },
+        {
+          "kind": "gap",
+          "label": "Content gap"
+        }
+      ]
+    },
+    {
       "rank": 7,
-      "title": "Competitors push AI visibility and agentic marketing hubs",
-      "body": "Contentstack launched Canoe (Oct 1), an AI-visibility tool with a free plan and remote MCP server that works even for non-Contentstack brands. Bloomreach was recognized in the 2026 Gartner Magic Quadrant for Multichannel Marketing Hubs, and Salesforce lists Agentforce Campaign Agent and MCP-based Headless Marketing as GA in October, with Contentful as its CMS. Sitecore Symposium and Adobe MAX (both Nov 10–12) are next.",
+      "title": "Competitor events reset the conversation next week",
+      "body": "Sitecore Symposium and Adobe MAX both run Nov 10–12, following Contentstack's Canoe AI-visibility launch (Oct 1) and Salesforce's October Agentforce Campaign Agent GA. Optimizely's October releases — Brand Packs, the Skills Directory, seven Virtual Teammates and now an AEM connector — need to be in market before those announcements land.",
       "flags": [
         {
           "kind": "ent",
@@ -220,166 +219,140 @@ export const report: Report = {
   ],
   "releases": [
     {
-      "product": "Agent Platform",
-      "date": "Oct 13, 2026",
-      "highlight": "Brand Packs (guidelines, templates and brand portal applied automatically to all text and image output) and image-editor Variants for per-channel resizing.",
+      "product": "Security advisory — Node.js",
+      "date": "Oct 22–27, 2026",
+      "highlight": "Node.js 22/24/26 vulnerabilities (Brotli overflow rated High; no evidence of exploitation). DXP: deploy a new package name/version to rebuild containers; move off Node 18/20. Configured Commerce: upgrade to 5.2.2610.487+sts or 5.2.2608.730+lts. SaaS patched automatically.",
       "source": "support.optimizely.com",
-      "type": "GA release"
+      "type": "Security advisory"
+    },
+    {
+      "product": "Configured Commerce — Payment Service",
+      "date": "Oct 28, 2026 (updated)",
+      "highlight": "Move to Spreedly Web Checkout SDK: upgrade to 5.2.2608.722+lts or newer by Dec 31, 2027. iFrame updates stopped Oct 31, 2026; retired 2028. Configurations carry over.",
+      "source": "docs.optimizely.com",
+      "type": "Notice"
     },
     {
       "product": "Agent Platform",
-      "date": "Oct 13, 2026",
-      "highlight": "Skills Directory with 20+ pre-built marketing skills, in a unified directory with agents and Virtual Teammates.",
-      "source": "support.optimizely.com",
-      "type": "GA release"
-    },
-    {
-      "product": "Virtual Teammates",
-      "date": "Oct 13, 2026",
-      "highlight": "Web Manager and Content Marketer join the original five.",
-      "source": "support.optimizely.com",
-      "type": "GA release"
-    },
-    {
-      "product": "Agent Directory",
-      "date": "Oct 13, 2026",
-      "highlight": "Seven new agents: Eye Tracking Auditor, Smart Campaign Design, Experiment Value Estimator, List Creation, Promotion Creation, Product Catalog Auditor, WCAG Compliance Auditor.",
-      "source": "support.optimizely.com",
-      "type": "GA release"
+      "date": "Oct 28, 2026",
+      "highlight": "Sub-agent tiers renamed Advanced / Standard / Simple (were Deep / Fast / Mini); sub-agent execution logs private to the conversation owner.",
+      "source": "docs.optimizely.com",
+      "type": "Enhancement"
     },
     {
       "product": "Agent Platform connectors",
-      "date": "Oct 6–13, 2026",
-      "highlight": "Google Tag Manager connector (Oct 6); Slack, 6sense and SEMrush connectors; LinkedIn Ads gains create/update for campaigns, creatives and sponsored posts.",
-      "source": "support.optimizely.com / partner email",
+      "date": "Oct 27, 2026",
+      "highlight": "Adobe Experience Manager remote MCP connector — manage assets, pages and launches, check brand governance, troubleshoot CDN/replication.",
+      "source": "docs.optimizely.com",
+      "type": "Beta"
+    },
+    {
+      "product": "CMS 13 (PaaS)",
+      "date": "Oct 26, 2026",
+      "highlight": "CMS.Core 13.4.1: bug fixes for culture-specific properties, Cms.Contracts.V1 API, and inline-block move/remove saves.",
+      "source": "docs.optimizely.com",
+      "type": "Bug fix"
+    },
+    {
+      "product": "Configured Commerce",
+      "date": "Oct 22, 2026",
+      "highlight": "October STS release 5.2.2610.481+sts (Node.js-patched build: 5.2.2610.487+sts).",
+      "source": "docs.optimizely.com",
+      "type": "GA release"
+    },
+    {
+      "product": "CMS 13 (PaaS)",
+      "date": "Oct 20, 2026",
+      "highlight": "EPiServer.Forms.Samples 5.0.0: CMS 13 support, Date time and reCAPTCHA elements, Submitted Form audience criteria; .NET 10, Forms 6.0.1+.",
+      "source": "docs.optimizely.com",
       "type": "Enhancement"
     },
     {
-      "product": "Agent Platform",
-      "date": "Oct 5, 2026",
-      "highlight": "Private executions: a specialized agent's run logs and outputs visible only to the user who triggered it.",
-      "source": "support.optimizely.com",
+      "product": "Agent Platform connectors",
+      "date": "Oct 19, 2026",
+      "highlight": "Siteimprove remote MCP connector — page accessibility checks with WCAG-based fix suggestions.",
+      "source": "docs.optimizely.com",
       "type": "GA release"
     },
     {
       "product": "Agent Platform",
-      "date": "Sep 30, 2026",
-      "highlight": "Underlying models for the inference levels updated (Optimizely's October video cites Claude Sonnet 5).",
-      "source": "support.optimizely.com",
-      "type": "Enhancement"
-    },
-    {
-      "product": "CMS (SaaS)",
-      "date": "Oct 7–9, 2026",
-      "highlight": "DAM rendition selection with usage tracking, in-editor published-page view, scoped REST API tokens, stronger upload security, faster Graph indexing.",
-      "source": "support.optimizely.com",
+      "date": "Oct 16, 2026",
+      "highlight": "Underlying models for Mark's inference levels updated for response quality.",
+      "source": "docs.optimizely.com",
       "type": "Enhancement"
     },
     {
       "product": "CMS 13 (PaaS)",
-      "date": "Oct 5, 2026",
-      "highlight": "CMS.Core 13.3.0: faster Scheduled Jobs and Graph full sync. Upgraded CMS 12 sites must grant SearchIndexer read access for Graph.",
-      "source": "support.optimizely.com",
+      "date": "Oct 15, 2026",
+      "highlight": "CMS.Core 13.4.0: Visual Builder Preview button, DAM image rendition selection, ImageSharp 3.2.0.",
+      "source": "docs.optimizely.com",
       "type": "Enhancement"
     },
     {
-      "product": "CMS 13 / DXP",
-      "date": "Sep 28, 2026",
-      "highlight": "Cloudflare AI crawler controls — e.g. disallow AI training while keeping search access.",
-      "source": "support.optimizely.com",
-      "type": "Enhancement"
-    },
-    {
-      "product": "CMS SaaS JS SDK",
-      "date": "Sep 24, 2026",
-      "highlight": "Forms support GA, Astro support, cms-cli 3.0.0 — with breaking changes (property type constraints; Rich Text returns JSON by default).",
-      "source": "support.optimizely.com",
-      "type": "GA release"
-    },
-    {
-      "product": "Configured Commerce",
-      "date": "Sep 24, 2026",
-      "highlight": "5.2.2609: Admin Console accessibility, unified multilingual URLs, .well-known hosting, Search v3 failover. Payment Service customers must upgrade by Dec 31, 2026.",
+      "product": "Agent Platform",
+      "date": "Oct 13, 2026",
+      "highlight": "Brand Packs and image Variants; Skills Directory (20+ skills); Web Manager and Content Marketer Virtual Teammates; seven new directory agents incl. Experiment Value Estimator and WCAG Compliance Auditor; LinkedIn Ads write tools.",
       "source": "docs.optimizely.com",
       "type": "GA release"
     }
   ],
   "events": [
     {
-      "event": "Opticon London",
-      "when": "Oct 13, 2026 · Barbican Centre, London",
-      "focus": "Agentic AI, CMS and experimentation",
-      "register": "https://www.optimizely.com/field-notes/opticon/london"
-    },
-    {
-      "event": "Agents at work with Valantic and NoA Ignite",
-      "when": "Oct 20, 2026 · Online",
-      "focus": "Partner AI-agent use cases (DMEXCO recap)",
-      "register": "https://www.optimizely.com/field-notes/events/agents-at-work-with-valantic-noa-ignite/"
-    },
-    {
-      "event": "Opticon Online",
-      "when": "Oct 21, 2026 · Virtual",
-      "focus": "Alex Atzberger keynote; product keynote \"One platform. Three trails.\"; Seth Godin",
-      "register": "https://www.optimizely.com/field-notes/opticon/online"
-    },
-    {
-      "event": "Introducing Virtual Teammates (APJ)",
-      "when": "Oct 22, 2026 · Online",
-      "focus": "Virtual Teammates for APJ",
-      "register": "https://www.optimizely.com/field-notes/events/virtual-teammates-APJ/"
-    },
-    {
-      "event": "From AI experiment to operating model — Road Scholar",
-      "when": "Oct 27, 2026 · Online",
-      "focus": "Secure AI workflows on the Agent Platform",
-      "register": "https://www.optimizely.com/field-notes/events/how-to-go-from-an-ai-experiment-to-operating-model/"
-    },
-    {
-      "event": "Common Ground Boston",
-      "when": "Oct 28, 2026 · Boston",
-      "focus": "Customer half-day: Virtual Teammates; B2B, B2C and regulated-industry workshops",
-      "register": "https://www.optimizely.com/field-notes/events/common-ground-boston/"
-    },
-    {
-      "event": "Academy live: Meet your Virtual Teammates (Ali Hart)",
-      "when": "Oct 29, 2026 · Online · 8–9 PM GMT+6",
-      "focus": "Virtual Teammates",
-      "register": "https://academy.optimizely.com/student/page/3600718-meet-your-virtual-teammates"
-    },
-    {
       "event": "Personalization at scale — Corinthia Hotels",
       "when": "Nov 5, 2026 · Online",
-      "focus": "Seven-agent AI personalization system",
+      "focus": "Seven-agent AI personalization system for one-to-one experiences",
       "register": "https://www.optimizely.com/field-notes/events/corinthia-hotels-personalization-at-scale/"
     },
     {
       "event": "Academy live: Agents in Experimentation (Daniel Rathke)",
-      "when": "Nov 5, 2026 · Online · 9–10 PM GMT+6",
+      "when": "Nov 5, 2026 · Online · 10–11 AM EST",
       "focus": "AI agents for experimentation",
       "register": "https://academy.optimizely.com/student/page/3635805-agents-in-experimentation"
     },
     {
+      "event": "Partner Sales Inspiration",
+      "when": "Nov 9, 2026 · Villa Copenhagen · 1:00–5:30 PM",
+      "focus": "Partner sales day (Denmark)",
+      "register": "https://www.optimizely.com/field-notes/events/partner-day-dk/"
+    },
+    {
+      "event": "Academy live: Segmentation in Optimizely Data Platform (Matthew Nonnamaker)",
+      "when": "Nov 10, 2026 · Online · 11 AM–12 PM EST",
+      "focus": "ODP segmentation",
+      "register": "https://academy.optimizely.com/student/page/2472049-segmentation-in-optimizely-data-platform-odp"
+    },
+    {
       "event": "Academy live: Choosing the Right Metrics for Your Experiments (Sam Pointing)",
-      "when": "Nov 17, 2026 · Online · 9–10 PM GMT+6",
+      "when": "Nov 17, 2026 · Online · 10–11 AM EST",
       "focus": "Experiment metrics",
       "register": "https://academy.optimizely.com/student/page/3635892-choosing-the-right-metrics-for-your-experiments"
     },
     {
       "event": "Academy live: Optimizely Agent for Feature Experimentation (Matjaz Pirnovar)",
-      "when": "Nov 18, 2026 · Online · 9–10 PM GMT+6",
+      "when": "Nov 18, 2026 · Online · 10–11 AM EST",
       "focus": "Feature Experimentation agent",
       "register": "https://academy.optimizely.com/student/page/3664251-optimizely-agent-for-feature-experimentation"
-    }
-  ],
-  "royalCyberEvents": [
+    },
     {
-      "event": "From Digital Complexity to Connected Experiences with Optimizely — Royal Cyber, JE Dunn & Optimizely",
-      "when": "Oct 28, 2026 · Live webinar · 12:00 PM CDT",
-      "focus": "JE Dunn's transformation journey, Optimizely content, personalization and customer engagement, Royal Cyber's implementation approach and accelerators, solution walkthrough. Speakers: Tracy Silverberg (Optimizely), Mark Neill (JE Dunn), Mahaveer Amudhachandran (Royal Cyber)",
-      "register": "https://www.royalcyber.com/webinar/digital-experience-optimizely/"
+      "event": "No account left behind",
+      "when": "Nov 19, 2026 · Online",
+      "focus": "Agentic personalization framework for top accounts — tailored research, messaging and experiences",
+      "register": "https://www.optimizely.com/field-notes/events/no-account-left-behind/"
+    },
+    {
+      "event": "How to build an agent-ready website",
+      "when": "Dec 3, 2026 · Online",
+      "focus": "Making a site AI agents can find, read, trust and buy from",
+      "register": "https://www.optimizely.com/field-notes/events/agent-ready-website-webinar/"
+    },
+    {
+      "event": "Academy live: Going Agentic with Experimentation",
+      "when": "Feb 15, 2027 · Online · 10–11 AM EST",
+      "focus": "Agentic experimentation",
+      "register": "https://academy.optimizely.com/student/page/3768254-going-agentic-with-experimentation"
     }
   ],
+  "royalCyberEvents": [],
   "roadmap": [
     {
       "product": "Optimizely Agent Platform (formerly Opal)",
@@ -387,9 +360,9 @@ export const report: Report = {
       "items": [
         "Voice Mode — hands-free, real-time chat with the Agent Platform",
         "Human-in-the-loop — native approval checkpoints embedded in workflows",
-        "Messaging and further channel capabilities building on Brand Packs",
+        "AEM remote MCP connector moving from beta toward GA",
         "More Virtual Teammates beyond the current seven",
-        "Shipped Oct 13: Brand Packs, Variants, Skills Directory, Web Manager & Content Marketer"
+        "Shipped Oct 16–28: model update, Siteimprove & AEM (beta) connectors, Advanced/Standard/Simple tiers, private sub-agent logs"
       ],
       "link": "https://www.optimizely.com/product-updates/ai/"
     },
@@ -401,7 +374,7 @@ export const report: Report = {
         "Further blueprint and multi-layout editing in Visual Builder",
         "Content-model locking and taxonomy/tagging improvements",
         "JavaScript SDK improvements; TinyMCE for SaaS",
-        "More Opal content agents beyond Content Model Creation and GEO Schema"
+        "Shipped Oct 15–26: CMS.Core 13.4.0 / 13.4.1, Forms.Samples 5.0.0 for CMS 13"
       ],
       "link": "https://www.optimizely.com/product-updates/content-management/"
     },
@@ -421,11 +394,11 @@ export const report: Report = {
       "product": "Configured Commerce",
       "phase": "Coming soon",
       "items": [
-        "Next releases: Oct 22 (5.2.2610 STS), Nov 19, Dec 17 — Payment Service customers must be on 5.2.2609+ by Dec 31, 2026",
+        "Next releases: Nov 19 (5.2.2611 STS) and Dec 17 (5.2.2612 STS) — dates may shift",
+        "Node.js security: upgrade to 5.2.2610.487+sts or 5.2.2608.730+lts now",
+        "Payment Service → Spreedly Web Checkout SDK: 5.2.2608.722+lts or newer by Dec 31, 2027",
         "Buy-now-pay-later payments (Klarna, Afterpay, Affirm) via a single toggle",
-        "Cloudflare for SaaS (Orange-to-Orange) — bring your own WAF/bot rules",
-        "Website-level Search Service (mix Optimizely Search v3 with HawkSearch/Coveo)",
-        "Datadog visibility inside Mission Control"
+        "Cloudflare for SaaS (Orange-to-Orange); website-level Search Service; Datadog in Mission Control"
       ],
       "link": "https://www.optimizely.com/product-updates/commerce/"
     },
@@ -436,7 +409,7 @@ export const report: Report = {
         "Developer Mode — full-screen code workspace",
         "Contextual Bandits — deeper segment insights",
         "Web Companion Chrome extension for the Visual Editor",
-        "Variation & Template creation in the Visual Editor",
+        "Optimizely Desktop deprecated Dec 31, 2026 — move to the Visual Editor",
         "Bayesian & Frequentist stats engines; Akamai edge delivery"
       ],
       "link": "https://www.optimizely.com/product-updates/web-experimentation/"
@@ -478,82 +451,82 @@ export const report: Report = {
   ],
   "blogs": [
     {
-      "title": "Brand Packs Explained: Making Every AI-Generated Asset On-Brand by Default",
-      "why": "Why now: shipped Oct 13 and directly addresses the #1 objection to generative marketing — off-brand, low-quality output.",
-      "audience": "Brand managers, content leaders",
+      "title": "Optimizely Node.js Security Advisory: What DXP and Configured Commerce Teams Must Do Now",
+      "why": "Why now: advisory updated Oct 27; DXP sites need a fresh container build and Configured Commerce needs a patched version — clear, urgent search intent.",
+      "audience": "Developers, platform owners, IT/security",
       "difficulty": "Intermediate",
       "engagement": 9,
       "uniqueness": 9,
       "priority": 9.0
     },
     {
-      "title": "Opticon London Recap: What Was Announced and What It Means for Your Roadmap",
-      "why": "Why now: Opticon London is today and Opticon Online follows Oct 21 — recap content captures peak search interest.",
-      "audience": "Marketing leaders, customers, prospects",
-      "difficulty": "Intermediate",
-      "engagement": 9,
-      "uniqueness": 8,
-      "priority": 8.5
-    },
-    {
-      "title": "Meet Web Manager and Content Marketer: The Newest Virtual Teammates",
-      "why": "Why now: two new teammates on Oct 13 with no independent walkthrough yet.",
-      "audience": "Marketing ops, web teams",
+      "title": "Payment Service and the Spreedly Web Checkout SDK: LTS Upgrade Path and the Dec 31, 2027 Deadline",
+      "why": "Why now: the Oct 28 notice changed the version and deadline — earlier guidance (5.2.2609+ by Dec 31, 2026) is out of date.",
+      "audience": "B2B commerce admins, developers",
       "difficulty": "Intermediate",
       "engagement": 8,
-      "uniqueness": 8,
+      "uniqueness": 9,
       "priority": 8.5
     },
     {
-      "title": "Putting a Dollar Figure on Experiments with the Experiment Value Estimator",
-      "why": "Why now: new Oct 13 agent gives experimentation teams a CFO-ready ROI story.",
-      "audience": "Experimentation leads, product managers",
+      "title": "Optimizely Agents Inside Adobe AEM and Siteimprove: What the New MCP Connectors Do",
+      "why": "Why now: Oct 19 and Oct 27 connectors, with no independent walkthrough — and Adobe MAX is Nov 10–12.",
+      "audience": "Martech leaders, solution architects",
       "difficulty": "Intermediate",
+      "engagement": 8,
+      "uniqueness": 9,
+      "priority": 8.5
+    },
+    {
+      "title": "Building an Agent-Ready Website on Optimizely CMS 13",
+      "why": "Why now: Optimizely's Dec 3 webinar will drive search interest; partners can own the hands-on implementation angle.",
+      "audience": "Developers, digital leaders",
+      "difficulty": "Advanced",
       "engagement": 8,
       "uniqueness": 8,
       "priority": 8.0
     },
     {
-      "title": "20+ Skills on Day One: A Tour of the Agent Platform Skills Directory",
-      "why": "Why now: the new directory changes how teams start with agents — useful for both customers and prospects.",
-      "audience": "Practitioners, admins",
-      "difficulty": "Beginner–Intermediate",
-      "engagement": 8,
+      "title": "CMS 13.4: Visual Builder Preview, DAM Renditions and What to Test Before You Upgrade",
+      "why": "Why now: 13.4.0 and 13.4.1 shipped in October; teams moving from CMS 12 want a practical checklist.",
+      "audience": "CMS developers, editors",
+      "difficulty": "Intermediate",
+      "engagement": 7,
       "uniqueness": 7,
       "priority": 7.5
     },
     {
-      "title": "Configured Commerce Payment Service Customers: Your Dec 31 Upgrade Checklist",
-      "why": "Why now: Spreedly's iFrame retirement forces an upgrade to 5.2.2609+ by Dec 31 — a time-bound, high-intent topic.",
-      "audience": "B2B commerce admins, developers",
+      "title": "Brand Packs Explained: Making Every AI-Generated Asset On-Brand by Default",
+      "why": "Still timely: Oct 13 release and the strongest answer to AI-quality objections ahead of competitor events.",
+      "audience": "Brand managers, content leaders",
       "difficulty": "Intermediate",
-      "engagement": 7,
+      "engagement": 8,
       "uniqueness": 8,
       "priority": 7.5
     }
   ],
   "whitepapers": [
     {
-      "title": "Governed Generative Marketing: Brand Packs, Private Executions and Permission-Aware Agents",
-      "why": "Combines the October releases into one enterprise governance story for IT, legal and brand stakeholders.",
-      "audience": "IT/security, brand and legal",
+      "title": "Patch-Ready Optimizely: Runtime and Release Governance for DXP and Configured Commerce",
+      "why": "The Node.js advisory and Payment Service notice show why teams need a plan for runtimes, LTS vs STS releases and redeploys.",
+      "audience": "IT leaders, platform owners",
       "difficulty": "Advanced",
       "engagement": 8,
       "uniqueness": 9,
       "priority": 8.5
     },
     {
-      "title": "Agentic Accessibility: Using the WCAG Compliance Auditor and Web Manager at Scale",
-      "why": "Accessibility compliance is a hard deadline for many enterprises; two new Oct 13 agents make it automatable.",
-      "audience": "Web leaders, compliance teams",
-      "difficulty": "Intermediate",
-      "engagement": 7,
-      "uniqueness": 9,
+      "title": "Governed Generative Marketing: Brand Packs, Private Logs and Permission-Aware Agents",
+      "why": "October releases (Brand Packs, private executions, private sub-agent logs) add up to one enterprise governance story.",
+      "audience": "IT/security, brand and legal",
+      "difficulty": "Advanced",
+      "engagement": 8,
+      "uniqueness": 8,
       "priority": 8.0
     },
     {
-      "title": "AI Visibility in 2027: Optimizely GEO Tools vs. Contentstack Canoe and Salesforce Palmata",
-      "why": "AEO/GEO is the new competitive front; buyers need an independent comparison.",
+      "title": "Agent-Ready Experiences: WebMCP, GEO and AI Visibility on Optimizely vs. Contentstack Canoe",
+      "why": "AEO/GEO and agent commerce are the new competitive front; buyers need an independent view.",
       "audience": "Enterprise buyers, SEO leaders",
       "difficulty": "Advanced",
       "engagement": 8,
@@ -563,42 +536,48 @@ export const report: Report = {
   ],
   "linkedin": [
     {
-      "title": "Live from Opticon London: the three announcements that matter",
-      "why": "Real-time recap post from today's event.",
-      "audience": "Customers, partners, prospects",
-      "engagement": 9,
-      "uniqueness": 7
-    },
-    {
-      "title": "Your brand guidelines are now an AI skill",
-      "why": "Simple hook on Brand Packs — on-brand output by default.",
-      "audience": "Brand and content leaders",
+      "title": "Running Optimizely on DXP? Redeploy this week.",
+      "why": "Short, practical advisory on the Node.js patch — new package version, Node 22/24.",
+      "audience": "Developers, platform owners",
       "engagement": 8,
       "uniqueness": 8
     },
     {
-      "title": "Our team just got two new (virtual) colleagues",
-      "why": "Playful intro to Web Manager and Content Marketer.",
-      "audience": "Marketing ops, practitioners",
-      "engagement": 8,
-      "uniqueness": 7
-    },
-    {
-      "title": "What's that winning test actually worth? Now there's an agent for that.",
-      "why": "Experiment Value Estimator hook for experimentation leaders.",
-      "audience": "Experimentation and product leaders",
+      "title": "The Payment Service deadline moved — here's why you still shouldn't wait",
+      "why": "Clarifies the new Dec 31, 2027 date and the Oct 31 iFrame freeze.",
+      "audience": "B2B commerce leaders",
       "engagement": 7,
+      "uniqueness": 9
+    },
+    {
+      "title": "Optimizely's agents now work inside Adobe AEM",
+      "why": "Surprising hook on the AEM MCP connector beta, timed before Adobe MAX.",
+      "audience": "Martech leaders, Adobe customers",
+      "engagement": 9,
       "uniqueness": 8
     },
     {
-      "title": "Join us online for Opticon on Oct 21",
-      "why": "Promote Opticon Online and the 'One platform. Three trails.' product keynote.",
+      "title": "Before Sitecore Symposium and Adobe MAX: what Optimizely shipped in October",
+      "why": "Roundup that frames the competitive week.",
       "audience": "Customers, prospects",
-      "engagement": 6,
+      "engagement": 8,
+      "uniqueness": 7
+    },
+    {
+      "title": "Is your website ready for AI agents? Join Optimizely on Dec 3",
+      "why": "Promote the agent-ready website webinar with a Royal Cyber point of view.",
+      "audience": "Digital leaders, prospects",
+      "engagement": 7,
       "uniqueness": 6
     }
   ],
   "competitive": [
+    {
+      "theme": "Cross-platform agents",
+      "optimizely": "AEM remote MCP connector (beta, Oct 27) and Siteimprove connector (Oct 19)",
+      "competitor": "Adobe MAX (Nov 10–12); Contentstack Canoe works for non-Contentstack brands",
+      "opportunity": "Position Optimizely agents as useful even in Adobe-led estates — a land-and-expand path"
+    },
     {
       "theme": "Brand governance for AI output",
       "optimizely": "Brand Packs + Variants apply guidelines automatically to all text and image output",
@@ -606,91 +585,85 @@ export const report: Report = {
       "opportunity": "Lead with 'on-brand by default' — governance built into generation, not bolted on"
     },
     {
-      "theme": "Prebuilt agents and skills",
-      "optimizely": "7 Virtual Teammates, 20+ skills, unified directory, 7 new agents on Oct 13",
-      "competitor": "Sitecore Agentic Studio (~20 agents); Bloomreach Loomi",
-      "opportunity": "Show breadth across CMS, Commerce, Experimentation and Campaign in one directory"
+      "theme": "Platform security posture",
+      "optimizely": "Public Node.js advisory with per-product actions; SaaS auto-patched",
+      "competitor": "Every Node-based DXP/headless stack faces the same Node.js patches",
+      "opportunity": "Use transparent remediation guidance as a trust signal in enterprise deals"
     },
     {
-      "theme": "AI visibility / AEO",
-      "optimizely": "GEO Schema agent, Cloudflare AI crawler controls, Agent Visibility Analytics",
-      "competitor": "Contentstack Canoe (Oct 1, free tier + MCP); Salesforce 'Palmata from Contentful'",
-      "opportunity": "Answer Canoe quickly with a GEO/AEO proof piece for Optimizely customers"
-    },
-    {
-      "theme": "Analyst recognition",
-      "optimizely": "Forrester Wave Experience Optimization Q3 2026 Leader + Customer Favorite",
-      "competitor": "Bloomreach in Gartner MQ for Multichannel Marketing Hubs (Sep 22)",
-      "opportunity": "Keep Forrester proof front and centre through Opticon and year-end deals"
+      "theme": "AI visibility / agent-ready sites",
+      "optimizely": "GEO Schema agent, WebMCP preview, Cloudflare AI crawler controls; Dec 3 webinar",
+      "competitor": "Contentstack Canoe (free tier + MCP); Salesforce 'Palmata from Contentful'",
+      "opportunity": "Publish an agent-ready CMS 13 implementation guide before Dec 3"
     },
     {
       "theme": "Event calendar",
-      "optimizely": "Opticon London (Oct 13), Opticon Online (Oct 21), Common Ground Boston (Oct 28)",
+      "optimizely": "Corinthia Hotels (Nov 5), No account left behind (Nov 19), Agent-ready website (Dec 3)",
       "competitor": "Sitecore Symposium and Adobe MAX (both Nov 10–12)",
-      "opportunity": "Publish Opticon follow-ups before competitor events reset the conversation"
+      "opportunity": "Ship October-release content before Nov 10 so competitor news doesn't bury it"
     }
   ],
   "actions": [
     {
       "n": 1,
-      "title": "Publish the Opticon London recap within 48 hours",
-      "why": "Peak interest is now; update it after the Oct 21 Opticon Online product keynote.",
-      "priority": 9.0,
-      "format": "Blog + LinkedIn series"
+      "title": "Remediate the Node.js advisory across client estates",
+      "why": "DXP sites need a new-version redeploy (and Node 22/24); Configured Commerce needs 5.2.2610.487+sts or 5.2.2608.730+lts.",
+      "priority": 9.5,
+      "format": "Client advisory + delivery tickets"
     },
     {
       "n": 2,
-      "title": "Ship the Brand Packs explainer and demo",
-      "why": "The most customer-relevant Oct 13 release and a direct answer to AI-quality objections.",
+      "title": "Correct the Payment Service guidance sent to Configured Commerce clients",
+      "why": "Earlier messaging said 5.2.2609+ by Dec 31, 2026; the Oct 28 notice says 5.2.2608.722+lts or newer by Dec 31, 2027.",
       "priority": 9.0,
-      "format": "Explainer blog + short video"
+      "format": "Follow-up client email + upgrade plan"
     },
     {
       "n": 3,
-      "title": "Update Virtual Teammates enablement for Web Manager and Content Marketer",
-      "why": "Partner materials cover the original five; clients will ask about the new two.",
+      "title": "Publish the Node.js advisory explainer",
+      "why": "Urgent, high-intent topic with little partner coverage.",
       "priority": 8.5,
-      "format": "Internal enablement + demo"
+      "format": "Blog + LinkedIn post"
     },
     {
       "n": 4,
-      "title": "Contact Configured Commerce Payment Service clients about the Dec 31 upgrade",
-      "why": "Mandatory upgrade to 5.2.2609+ — a service opportunity and a risk if missed.",
-      "priority": 8.5,
-      "format": "Client advisory email + checklist"
+      "title": "Demo the AEM and Siteimprove connectors for mixed-stack prospects",
+      "why": "Opens Agent Platform conversations with Adobe-led accounts.",
+      "priority": 8.0,
+      "format": "Demo script + one-pager"
     },
     {
       "n": 5,
-      "title": "Build a Skills Directory starter pack for client demos",
-      "why": "20+ prebuilt skills give a 'value on day one' story for prospects.",
+      "title": "Get October-release content live before Nov 10",
+      "why": "Sitecore Symposium and Adobe MAX will dominate coverage Nov 10–12.",
       "priority": 7.5,
-      "format": "Demo script + one-pager"
+      "format": "Blog roundup + LinkedIn series"
     }
   ],
   "next7": [
     {
-      "bold": "Capture Opticon London announcements today",
-      "text": "and draft the recap post; confirm against Optimizely's press releases once published."
+      "bold": "List client DXP sites still on Node.js 18 or 20",
+      "text": "and schedule upgrades to Node 22/24 before redeploying."
     },
     {
-      "bold": "Register the team for Opticon Online (Oct 21)",
-      "text": "and plan a follow-up post on the 'One platform. Three trails.' product keynote."
+      "bold": "Redeploy every DXP CMS / Commerce Connect site",
+      "text": "with a new package name or version to force a patched container build."
     },
     {
-      "bold": "Set up a Brand Pack for a sandbox brand",
-      "text": "and record a short demo with Variants."
+      "bold": "Upgrade Configured Commerce clients",
+      "text": "to 5.2.2610.487+sts or 5.2.2608.730+lts, and confirm Payment Service users are on 5.2.2608.722+lts or newer."
     },
     {
-      "bold": "Try Web Manager, Content Marketer and the WCAG Compliance Auditor",
-      "text": "on a demo site; note results for client conversations."
+      "bold": "Send the corrected Payment Service notice",
+      "text": "(deadline Dec 31, 2027; iFrame updates stopped Oct 31, 2026)."
     },
     {
-      "bold": "Email Configured Commerce Payment Service clients",
-      "text": "about the Dec 31, 2026 upgrade deadline (5.2.2609+)."
+      "bold": "Move any Optimizely Desktop users to the Visual Editor",
+      "text": "before the Dec 31, 2026 deprecation — Desktop gets no security fixes."
     },
     {
-      "bold": "Share the October release video with the delivery team",
-      "text": "(optimizely.com/field-notes/videos/whats-new-in-optimizely-agent-platform-october-2026)."
+      "bold": "Register for Nov 5 Academy 'Agents in Experimentation' and the Dec 3 agent-ready website webinar",
+      "text": "and assign owners for follow-up content."
     }
   ]
 };
